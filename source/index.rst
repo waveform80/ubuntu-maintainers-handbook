@@ -1,6 +1,6 @@
-============================
-Ubuntu Maintainer's Handbook
-============================
+================================
+The Ubuntu Maintainer's Handbook
+================================
 
 This handbook explains how to do the common tasks of an Ubuntu package
 maintainer.  In particular, it explains how the git-ubuntu tool-suite is used
@@ -21,7 +21,7 @@ Sections
 --------
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
 
     Concepts
     Setup

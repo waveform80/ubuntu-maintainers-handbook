@@ -53,7 +53,7 @@ def main(args: t.List[str] = None):
 def get_config(args: t.List[str]) -> Namespace:
     config = ConfigParser(
         defaults={
-            'command': 'make doc',
+            'command': 'make html',
             'html': 'build/html',
             'watch': '',
             'ignore': '\n'.join(['*.swp', '*.bak', '*~', '.*']),

@@ -6,9 +6,9 @@
 
 # -- Project information -----------------------------------------------------
 
-project = "Ubuntu Maintainers Handbook"
-copyright = "2022 Ubuntu Contributors"
+project = "The UMH"
 author = "Ubuntu Contributors"
+copyright = f"2022 {author}"
 release = "1.0"
 
 

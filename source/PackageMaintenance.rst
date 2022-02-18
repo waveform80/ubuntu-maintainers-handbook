@@ -1,0 +1,5 @@
+.. toctree::
+
+    PackageFixing
+    PackageMerging
+    MainInclusion

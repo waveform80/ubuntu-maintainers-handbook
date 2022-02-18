@@ -1,0 +1,60 @@
+{%- if meta is defined and meta is not none %}
+{%- endif %}
+
+{%- if (show_source and has_source and sourcename) or display_github or display_gitlab or display_bitbucket %}
+  <h3>{{ _('This Page') }}</h3>
+  <ul class="this-page-menu">
+    {%- if show_source and has_source and sourcename %}
+    <li><a href="{{ pathto('_sources/' + sourcename, true)|e }}"
+          rel="nofollow">{{ _('Show Source') }}</a></li>
+    {%- endif %}
+    {%- if display_github %}
+    <li><a href="https://{{
+        github_host|default("github.com") }}/{{
+        github_user }}/{{
+        github_repo }}/blob/{{
+        github_version }}{{
+        conf_py_path }}{{ pagename }}{{ page_source_suffix }}">{{
+        _('Show on GitHub') }}</a></li>
+    <li><a href="https://{{
+        github_host|default("github.com") }}/{{
+        github_user }}/{{
+        github_repo }}/edit/{{
+        github_version }}{{
+        conf_py_path }}{{ pagename }}{{ page_source_suffix }}">{{
+        _('Edit on GitHub') }}</a></li>
+    {%- endif %}
+    {%- if display_gitlab %}
+    <li><a href="https://{{
+        gitlab_host|default("gitlab.com") }}/{{
+        gitlab_user }}/{{
+        gitlab_repo }}/blob/{{
+        gitlab_version }}{{
+        conf_py_path }}{{ pagename }}{{ page_source_suffix }}">{{
+        _('Show on GitLab') }}</a></li>
+    <li><a href="https://{{
+        gitlab_host|default("gitlab.com") }}/{{
+        gitlab_user }}/{{
+        gitlab_repo }}/edit/{{
+        gitlab_version }}{{
+        conf_py_path }}{{ pagename }}{{ page_source_suffix }}">{{
+        _('Edit on GitLab') }}</a></li>
+    {%- endif %}
+    {%- if display_bitbucket %}
+    <li><a href="https://{{
+        bitbucket_host|default("bitbucket.org") }}/{{
+        bitbucket_user }}/{{
+        bitbucket_repo }}/src/{{
+        bitbucket_version }}{{
+        conf_py_path }}{{ pagename }}{{ page_source_suffix }}?mode=view">{{
+        _('Show on BitBucket') }}</a></li>
+    <li><a href="https://{{
+        bitbucket_host|default("bitbucket.org") }}/{{
+        bitbucket_user }}/{{
+        bitbucket_repo }}/src/{{
+        bitbucket_version }}{{
+        conf_py_path }}{{ pagename }}{{ page_source_suffix }}?mode=edit">{{
+        _('Edit on BitBucket') }}</a></li>
+    {%- endif %}
+  </ul>
+{%- endif %}

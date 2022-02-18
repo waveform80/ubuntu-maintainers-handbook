@@ -1,0 +1,9 @@
+{%- if 'singlehtml' not in builder %}
+  {%- set global_toc = toctree(collapse=theme_globaltoc_collapse|tobool,
+                               maxdepth=theme_globaltoc_maxdepth|int,
+                               includehidden=theme_globaltoc_includehidden|tobool) %}
+{%- endif %}
+{%- if global_toc %}
+<h3>{{ _('Contents') }}</h3>
+{{ global_toc }}
+{%- endif %}

@@ -1,4 +1,9 @@
+============
+Common Tasks
+============
+
 .. toctree::
+    :maxdepth: 2
 
     DebianPatch
     CommittingChanges

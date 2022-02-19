@@ -39,7 +39,7 @@ html_short_title = project
 # Some customization of the theme to show GitHub links, a limited amount of the
 # global ToC, and no source links (other than the GitHub ones)
 html_theme_options = {
-    'globaltoc_maxdepth': 2,
+    'globaltoc_maxdepth': 1,
 }
 
 html_context = {

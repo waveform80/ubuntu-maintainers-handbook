@@ -43,6 +43,7 @@ html_theme_options = {
 }
 
 html_context = {
+    'html5_doctype': True,
     'display_github': True,
     'github_user': 'waveform80',
     'github_repo': 'ubuntu-maintainers-handbook',

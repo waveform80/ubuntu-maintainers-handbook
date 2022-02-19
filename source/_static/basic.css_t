@@ -32,6 +32,7 @@ h3 { font-size: 1.7rem; font-weight: 100; }
 h4 { font-size: 1.3rem; }
 h5 { font-size: 1.1rem; }
 h6 { font-size: 1rem; }
+h1, h2, h3, h4, h5, h6 { line-height: 1em; }
 
 a { text-decoration: none; color: #06c; }
 a:hover { text-decoration: underline; }
@@ -45,6 +46,7 @@ pre, code {
 pre {
     background: #00000008;
     padding: 0.5rem 1rem;
+    overflow: auto;
 }
 
 
@@ -82,10 +84,17 @@ body > footer {
     border-top: 3px solid #e95420;
 }
 
-@media screen and (max-width: 67.5rem) {
+@media screen and (max-width: 66.5rem) {
     body {
-        grid-template-columns: 0 18fr 44fr 0;
+        grid-template-areas:
+            "header header"
+            "aside  main"
+            "footer footer";
+        grid-template-columns: calc(30.97% - 0.75rem) calc(69.03% - 0.75rem);
     }
+
+    body > aside { margin-left: 1.5rem; }
+    body > main { margin-right: 1.5rem; }
 
     body > header nav {
         grid-template-columns: 1.5rem 112px 1fr 1.5rem;

@@ -1,3 +1,7 @@
+=========
+Debugging
+=========
+
 .. toctree::
 
     DebugApportCrash

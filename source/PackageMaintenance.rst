@@ -7,4 +7,5 @@ Package Maintenance
 
     PackageFixing
     PackageMerging
+    Syncs
     MainInclusion

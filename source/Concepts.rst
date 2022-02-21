@@ -582,8 +582,8 @@ merge proposal.
 See Also
 ========
 
-https://www.debian.org/doc/debian-policy/
+* https://www.debian.org/doc/debian-policy/
 
-https://ubuntu.com/legal/terms-and-policies
+* https://ubuntu.com/legal/terms-and-policies
 
-apt install ubuntu-policy
+* apt install ubuntu-policy

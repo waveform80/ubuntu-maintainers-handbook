@@ -10,3 +10,4 @@ Common Tasks
     PackageBuilding
     PackageTests
     MergeProposal
+    ProposedMigration

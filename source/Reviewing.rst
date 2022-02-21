@@ -5,4 +5,3 @@ Reviewing
 .. toctree::
 
     MergeProposalReview
-    BugTriage

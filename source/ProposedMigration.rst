@@ -5,8 +5,8 @@ Proposed Migration
 Uploads of fixed or merged packages don't automatically get released to Ubuntu
 users, but rather go into a special pocket called 'proposed' for testing and
 integration.  Once a package is deemed ok, it 'migrates' into the release
-pocket for users to consume.  This is called the ["Proposed Migration"
-process](https://wiki.ubuntu.com/ProposedMigration).
+pocket for users to consume.  This is called the `"Proposed Migration"
+process`_.
 
 Here is the typical lifecycle for an upload:
 
@@ -304,9 +304,8 @@ This is done by setting the ```long_tests``` option.  Similarly, some tests may
 need more CPU or memory than in a standard worker.  The ```big_packages```
 option directs autopkgtest to run these on workers with more CPU and memory.
 Both these options and the effective memory/cpu sizes are explained on the
-`ProposedMigration`_
-page. It is worth to mention that Debian test sizing is currently (as of 2021)
-equivalent to our big_packages.
+`ProposedMigration`_ page. It is worth to mention that Debian test sizing is
+currently (as of 2021) equivalent to our big_packages.
 
 The configuration that associates source packages to either ``big_packages`` /
 ``long_tests`` and the actual deployment code was recently split. `The new
@@ -321,7 +320,7 @@ Autopkgtest runs tests in a controlled network environment, so if a test case
 expects to download material from the internet, it will likely fail.  If the
 test case is attempting to download a dependency (e.g. via PIP or Maven),
 sometimes this can be worked around by adding the missing dependency to
-```debian/tests/control```.  If it is attempting to download an example file,
+``debian/tests/control``.  If it is attempting to download an example file,
 then it may be possible to make the test case use a local file, or to load from
 the proxy network.
 
@@ -490,3 +489,4 @@ Has no binaries on any arch (- to x.y.z)
 .. _automatically include: https://git.launchpad.net/~ubuntu-core-dev/ubuntu-seeds/+git/ubuntu/tree/supported#n124
 .. _Germinate: https://people.canonical.com/~ubuntu-archive/germinate-output/ubuntu.jammy/all
 .. _example with net-snmp: https://code.launchpad.net/~sergiodj/ubuntu-seeds/+git/ubuntu/+merge/414063
+.. _"Proposed Migration" process: https://wiki.ubuntu.com/ProposedMigration

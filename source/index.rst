@@ -25,6 +25,7 @@ Sections
 
     Concepts
     Setup
+    BugHandling
     CommonTasks
     PackageMaintenance
     Debugging

@@ -1,0 +1,703 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Fixing a Package &#8212; The UMH 1.0 documentation</title>
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Merging" href="PackageMerging.html" />
+    <link rel="prev" title="Package Maintenance" href="PackageMaintenance.html" />
+    <link rel="preload" as="font" type="font/woff2" href="https://assets.ubuntu.com/v1/46ed6870-Ubuntu-L-subset.woff2" crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href="https://assets.ubuntu.com/v1/3baab91b-Ubuntu-Th-subset.woff2" crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href="https://assets.ubuntu.com/v1/6113b69a-Ubuntu-LI-subset.woff2" crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href="https://assets.ubuntu.com/v1/0c7b8dc0-Ubuntu-R-subset.woff2" crossorigin /> 
+  </head><body>
+  <header>
+    <nav aria-label="site navigation">
+      <a href="https://ubuntu.com/">
+        <svg width="107px" height="32px" viewBox="0 0 107 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="ubuntu-logo"><path d="M100.470409,13.7615448 C96.9385448,13.7615448 94.0754031,10.8982838 94.0754031,7.36627238 C94.0754031,3.83426097 96.9385448,0.971 100.470409,0.971 C104.002273,0.971 106.865415,3.83426097 106.865415,7.36627238 C106.865415,10.8982838 104.002273,13.7615448 100.470409,13.7615448 Z M96.479398,6.59820047 C96.0559273,6.59820047 95.7123568,6.9417853 95.7123568,7.36727117 C95.7123568,7.78976066 96.0559273,8.13434429 96.479398,8.13434429 C96.9038674,8.13434429 97.2504342,7.78976066 97.2504342,7.36727117 C97.2504342,6.9417853 96.9038674,6.59820047 96.479398,6.59820047 Z M101.966539,10.0919788 C101.601995,10.3017254 101.475153,10.7731557 101.684891,11.1377152 C101.898624,11.5092663 102.369036,11.6341154 102.73358,11.4213725 C103.103118,11.2116259 103.22996,10.7401956 103.015228,10.3726397 C102.803493,10.0030862 102.334079,9.87823709 101.966539,10.0929776 L101.966539,10.0919788 Z M98.1493106,7.36727117 C98.1493106,6.6081884 98.5268386,5.93500183 99.104117,5.52949182 L98.5428187,4.58762991 C97.8686614,5.03708681 97.3682869,5.72425648 97.1605465,6.52828495 C97.4062394,6.72804357 97.5580496,7.02768151 97.5580496,7.36727117 C97.5580496,7.70386446 97.4062394,8.00649877 97.1605465,8.20425981 C97.3682869,9.00828828 97.8696601,9.69445915 98.5428187,10.1419185 L99.104117,9.20305294 C98.5268386,8.79754293 98.1493106,8.12435636 98.1493106,7.36727117 Z M100.392506,5.11998664 C101.568037,5.11998664 102.529835,6.02089804 102.62971,7.16951013 L103.726339,7.14953427 C103.671408,6.30555408 103.30187,5.54147734 102.73358,4.98714716 C102.438948,5.09501681 102.100372,5.08003492 101.809735,4.90924129 C101.518099,4.74144405 101.337325,4.4577868 101.286389,4.15015852 C101.001745,4.07225265 100.703118,4.03030334 100.392506,4.03030334 C99.8631682,4.03030334 99.3617949,4.15415369 98.9143542,4.37388818 L99.4486863,5.33073199 C99.735328,5.19589492 100.057925,5.12098543 100.392506,5.12098543 L100.392506,5.11998664 Z M100.392506,9.61155932 C100.056926,9.61155932 99.735328,9.53565105 99.4486863,9.40181277 L98.9143542,10.3586566 C99.3607962,10.5783911 99.8631682,10.7022414 100.392506,10.7022414 C100.704117,10.7022414 101.001745,10.6622897 101.286389,10.5823862 C101.336327,10.2727604 101.518099,9.98810433 101.809735,9.82130588 C102.103368,9.65350864 102.438948,9.63553036 102.73358,9.74839398 C103.302868,9.18607345 103.670409,8.42599188 103.726339,7.5810129 L102.62971,7.56503221 C102.529835,8.71064793 101.568037,9.61056053 100.392506,9.61056053 L100.392506,9.61155932 Z M101.966539,4.64156473 C102.334079,4.85430767 102.803493,4.72945853 103.015228,4.35990507 C103.22996,3.993348 103.103118,3.52091885 102.735578,3.30917471 C102.370035,3.09942815 101.899623,3.22427729 101.686888,3.59183316 C101.474154,3.95839024 101.600996,4.4288218 101.966539,4.64056594 L101.966539,4.64156473 Z M12.7910109,24.1489933 C12.1418224,24.3107977 11.2828961,24.4855865 10.2172282,24.6663681 C9.15056154,24.850146 7.91610464,24.942035 6.5178525,24.942035 C5.29737813,24.942035 4.27365781,24.7642498 3.43970028,24.4086795 C2.60774025,24.0541079 1.93857672,23.551715 1.4322097,22.9005019 C0.922846416,22.2512863 0.558302106,21.4842132 0.335580515,20.6032777 C0.109862669,19.7153506 0,18.7385309 0,17.6598343 L0,8.76857793 L2.83146059,8.76857793 L2.83146059,17.0515693 C2.83146059,18.9822364 3.13508106,20.3635673 3.746317,21.1945632 C4.35555543,22.0275567 5.38127325,22.4430546 6.82247172,22.4430546 C7.12609218,22.4430546 7.44169767,22.4330667 7.76629191,22.4110932 C8.09188491,22.3911174 8.39750288,22.3661475 8.67915081,22.3361837 C8.96279625,22.3062199 9.22247165,22.2762561 9.45617951,22.2462924 C9.68988736,22.214331 9.85568012,22.1813708 9.95955028,22.1384227 L9.95955028,8.76857793 L12.7910109,8.76857793 L12.7910109,24.1499921 L12.7910109,24.1489933 Z M19.7033702,9.46773311 C20.049937,9.24600104 20.5722841,9.01028586 21.2734076,8.76857793 C21.9725337,8.5258712 22.7785262,8.40202085 23.6943813,8.40202085 C24.8299618,8.40202085 25.8396996,8.60777223 26.7235947,9.01128466 C27.6084886,9.41679466 28.3535572,9.98710554 28.9637944,10.7192209 C29.5700366,11.4483399 30.0324586,12.3212851 30.3470653,13.3360589 C30.6636695,14.3518315 30.8204735,15.469481 30.8204735,16.6880086 C30.8204735,17.9664638 30.6327082,19.1180723 30.2551802,20.1438328 C29.8786508,21.1685946 29.3463163,22.0365458 28.6571777,22.7466877 C27.9660416,23.459826 27.1350804,24.005167 26.1583014,24.3917 C25.1865161,24.7782329 24.0908857,24.971 22.8694126,24.971 C21.5490631,24.971 20.3825213,24.8781122 19.366791,24.6953331 C18.3520594,24.512554 17.5191006,24.328776 16.8699121,24.1459969 L16.8699121,1.45940984 L19.7023715,0.971998793 L19.7023715,9.46773311 L19.700374,9.46773311 L19.7033702,9.46773311 Z M20.9078646,22.3661475 C21.4242191,22.4390594 22.0664163,22.4730184 22.8404488,22.4730184 C24.3605486,22.4730184 25.5820217,21.9686279 26.4938819,20.9648408 C27.4077395,19.9590561 27.8651677,18.5327795 27.8651677,16.686011 C27.8651677,15.8739922 27.7852676,15.1129119 27.6214724,14.4007724 C27.4586759,13.6896317 27.1940067,13.0763727 26.8294624,12.557999 C26.4639193,12.0386266 25.9905111,11.636113 25.4152302,11.3394714 C24.8339568,11.0438287 24.1388258,10.8970061 23.3278395,10.8970061 C22.5548058,10.8970061 21.8456923,11.0298456 21.195505,11.2915294 C20.5463165,11.5582071 20.0469408,11.8308776 19.7023715,12.1155337 L19.7023715,22.1354263 C19.9880144,22.2203237 20.3885138,22.296232 20.9078646,22.3661475 Z M46.6257165,24.1489933 C45.976528,24.3107977 45.1176017,24.4855865 44.0529326,24.6663681 C42.9872647,24.850146 41.7528078,24.942035 40.3505606,24.942035 C39.1340813,24.942035 38.1083635,24.7642498 37.2764034,24.4086795 C36.4444434,24.0541079 35.7742811,23.551715 35.2689128,22.9005019 C34.7575521,22.2512863 34.3940065,21.4842132 34.1702862,20.6032777 C33.9475646,19.7173482 33.8367032,18.7395297 33.8367032,17.6618319 L33.8367032,8.77057551 L36.6681637,8.77057551 L36.6681637,17.0535669 C36.6681637,18.984234 36.9717842,20.3655649 37.5810226,21.1965608 C38.1902611,22.0295542 39.2149802,22.4450522 40.6571774,22.4450522 C40.9617966,22.4450522 41.2784008,22.4350643 41.6029951,22.4130908 C41.9275893,22.3931149 42.2322085,22.3681451 42.5168527,22.3381813 C42.7994994,22.3082175 43.0591748,22.2782537 43.2938814,22.2482899 C43.5255918,22.2153298 43.693382,22.1823696 43.7962534,22.1384227 L43.7962534,8.77057551 L46.6287128,8.77057551 L46.6287128,24.1519896 L46.6267153,24.1519896 L46.6257165,24.1489933 Z M50.7066153,9.22602518 C51.3558038,9.06222311 52.2177263,8.89142948 53.2953793,8.70665275 C54.3710347,8.52686999 55.6084878,8.43398223 57.010735,8.43398223 C58.2711594,8.43398223 59.3148547,8.61176741 60.1468148,8.96633897 C60.9807723,9.32190932 61.6449421,9.8183095 62.1423203,10.4585359 C62.6396986,11.0977635 62.9912591,11.8648366 63.1940057,12.7557601 C63.3957535,13.6526763 63.4976262,14.6354887 63.4976262,15.7121877 L63.4976262,24.6054417 L60.6641681,24.6054417 L60.6641681,16.3214515 C60.6641681,15.3456307 60.5982505,14.513636 60.467414,13.8244687 C60.3355788,13.1313063 60.117851,12.5759773 59.812233,12.1494927 C59.5096113,11.7200116 59.1011219,11.4123833 58.5937561,11.220615 C58.0873891,11.0238528 57.4551794,10.9289675 56.7061157,10.9289675 C56.4014965,10.9289675 56.0868898,10.9419518 55.764293,10.9619276 C55.4387,10.9819035 55.1280883,11.0078721 54.8354541,11.0378359 C54.5358287,11.0677997 54.2761533,11.1037563 54.0414466,11.143708 C53.8057413,11.1836597 53.6389498,11.2156211 53.5380759,11.2335994 L53.5380759,24.6044429 L50.7066153,24.6044429 L50.7066153,9.22602518 Z M70.0444424,8.76857793 L76.0449416,8.76857793 L76.0449416,11.143708 L70.0444424,11.143708 L70.0444424,18.4548737 C70.0444424,19.2439202 70.106365,19.9031237 70.2292115,20.4175021 C70.3490617,20.9368746 70.5328319,21.3443822 70.7765273,21.6380273 C71.0202227,21.9296749 71.3258407,22.1374239 71.6893862,22.262273 C72.0549293,22.3841258 72.4813962,22.4440534 72.9677882,22.4440534 C73.8396983,22.4440534 74.5298356,22.3471705 75.0401976,22.1544034 C75.5465646,21.9606375 75.8921327,21.8248017 76.0739054,21.7419018 L76.6831439,24.0591019 C76.3994984,24.2009305 75.8961277,24.3827108 75.1750291,24.6054417 C74.455928,24.8301702 73.6389492,24.9430338 72.7250916,24.9430338 C71.6484374,24.9430338 70.7595485,24.8061991 70.058425,24.5305322 C69.3592989,24.2548653 68.796003,23.8453601 68.3705349,23.2970227 C67.9430692,22.7496841 67.6434438,22.0744999 67.4716585,21.2724691 C67.2978757,20.4684406 67.2119831,19.5405618 67.2119831,18.4858362 L67.2119831,4.35191473 L70.0424449,3.8625061 L70.0424449,8.77057551 L70.0444424,8.77057551 L70.0444424,8.76857793 Z M91.4556778,24.1489933 C90.803493,24.3107977 89.947563,24.4855865 88.8788988,24.6663681 C87.8142297,24.850146 86.5817703,24.942035 85.1835182,24.942035 C83.9630438,24.942035 82.9393235,24.7642498 82.1073634,24.4086795 C81.2714084,24.0541079 80.6022449,23.551715 80.0958779,22.9005019 C79.5865146,22.2512863 79.2239678,21.4842132 78.9972512,20.6032777 C78.7775258,19.7173482 78.6626694,18.7395297 78.6626694,17.6618319 L78.6626694,8.77057551 L81.4991238,8.77057551 L81.4991238,17.0535669 C81.4991238,18.984234 81.8027442,20.3655649 82.4109839,21.1965608 C83.0202223,22.0295542 84.0459402,22.4450522 85.4871386,22.4450522 C85.7917578,22.4450522 86.1063646,22.4350643 86.4319576,22.4130908 C86.7535556,22.3931149 87.0591735,22.3681451 87.3438177,22.3381813 C87.6274632,22.3082175 87.8891361,22.2782537 88.1198477,22.2482899 C88.3535555,22.2153298 88.5223445,22.1823696 88.6242172,22.1384227 L88.6242172,8.77057551 L91.4576753,8.77057551 L91.4576753,24.1519896 L91.4556778,24.1519896 L91.4556778,24.1489933 Z" id="ubuntu" fill="#FFFFFF" fill-rule="nonzero"></path></g></svg>
+      </a>
+      <ul>
+        <li><a href="#">Enterprise</a></li>
+        <li><a href="#">Developer</a></li>
+        <li><a href="#">Community</a></li>
+        <li><a href="#">Download</a></li>
+      </ul>
+    </nav>
+    <nav aria-label="related navigation">
+      <a href="index.html">The UMH</a>
+      <ul>
+        <li>
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a>
+        </li>
+        <li>
+          <a href="PackageMerging.html" title="Merging"
+             accesskey="N">next</a>
+        </li>
+        <li>
+          <a href="PackageMaintenance.html" title="Package Maintenance"
+             accesskey="P">previous</a>
+        </li>
+        <li><a href="PackageMaintenance.html" accesskey="U">Package Maintenance</a></li>
+      </ul>
+    </nav>
+  </header>
+  <aside>
+    <nav aria-label="main navigation">
+<h3>Contents</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Concepts.html">High Level Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Setup.html">Setting up for Ubuntu Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BugHandling.html">Bug Reports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CommonTasks.html">Common Tasks</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="PackageMaintenance.html">Package Maintenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Debugging.html">Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Reviewing.html">Reviewing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="RequestingUploadRights.html">Requesting Upload Rights</a></li>
+</ul>
+
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="https://github.com/waveform80/ubuntu-maintainers-handbook/blob/main/source/PackageFixing.rst">Show on GitHub</a></li>
+    <li><a href="https://github.com/waveform80/ubuntu-maintainers-handbook/edit/main/source/PackageFixing.rst">Edit on GitHub</a></li>
+  </ul>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+    </nav>
+  </aside>
+  <main>
+    
+  <div class="section" id="fixing-a-package">
+<h1>Fixing a Package<a class="headerlink" href="#fixing-a-package" title="Permalink to this headline">¶</a></h1>
+<p>In this tutorial we walk through the process of evaluating a bug, finding a fix for it, and then packaging the fix for Ubuntu.  Every bug is unique, of course; this is intended to illustrate the mindset and steps one would follow generally.</p>
+<div class="section" id="required-reading">
+<h2>Required Reading<a class="headerlink" href="#required-reading" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="https://ubuntu.com/blog/git-ubuntu-clone">https://ubuntu.com/blog/git-ubuntu-clone</a></li>
+<li><a class="reference external" href="http://dep.debian.net/deps/dep3">http://dep.debian.net/deps/dep3</a></li>
+<li><a class="reference external" href="https://wiki.ubuntu.com/SecurityTeam/UpdatePreparation">https://wiki.ubuntu.com/SecurityTeam/UpdatePreparation</a></li>
+<li><a class="reference external" href="https://wiki.ubuntu.com/StableReleaseUpdates">https://wiki.ubuntu.com/StableReleaseUpdates</a></li>
+</ul>
+</div>
+<div class="section" id="evaluate-the-bug">
+<h2>Evaluate the Bug<a class="headerlink" href="#evaluate-the-bug" title="Permalink to this headline">¶</a></h2>
+<p>Bug Report: <a class="reference external" href="https://bugs.launchpad.net/ubuntu/+source/postfix/+bug/1753470">https://bugs.launchpad.net/ubuntu/+source/postfix/+bug/1753470</a></p>
+<p><strong>Description:</strong></p>
+<p>The original bug report was filed with just this description:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Fresh</span> <span class="n">install</span> <span class="n">of</span> <span class="mf">18.04</span> <span class="n">server</span><span class="o">.</span> <span class="n">Every</span> <span class="mi">5</span> <span class="n">minutes</span> <span class="n">postconf</span> <span class="n">segfaults</span><span class="p">:</span>
+
+<span class="n">Mar</span> <span class="mi">5</span> <span class="mi">14</span><span class="p">:</span><span class="mi">30</span><span class="p">:</span><span class="mi">05</span> <span class="n">hostname</span><span class="o">-</span><span class="n">here</span> <span class="n">kernel</span><span class="p">:</span> <span class="p">[</span> <span class="mf">672.082204</span><span class="p">]</span> <span class="n">postconf</span><span class="p">[</span><span class="mi">12975</span><span class="p">]:</span> <span class="n">segfault</span> <span class="n">at</span> <span class="mi">40</span> <span class="n">ip</span> <span class="mi">0000564</span><span class="n">d613ff053</span> <span class="n">sp</span> <span class="mi">00007</span><span class="n">ffc39e19b90</span> <span class="n">error</span> <span class="mi">4</span> <span class="ow">in</span> <span class="n">postconf</span><span class="p">[</span><span class="mi">564</span><span class="n">d613e7000</span><span class="o">+</span><span class="mi">25000</span><span class="p">]</span>
+<span class="n">Mar</span> <span class="mi">5</span> <span class="mi">14</span><span class="p">:</span><span class="mi">30</span><span class="p">:</span><span class="mi">06</span> <span class="n">hostname</span><span class="o">-</span><span class="n">here</span> <span class="n">kernel</span><span class="p">:</span> <span class="p">[</span> <span class="mf">672.303499</span><span class="p">]</span> <span class="n">postconf</span><span class="p">[</span><span class="mi">13004</span><span class="p">]:</span> <span class="n">segfault</span> <span class="n">at</span> <span class="mi">40</span> <span class="n">ip</span> <span class="mi">000055</span><span class="n">b29d0f8053</span> <span class="n">sp</span> <span class="mi">00007</span><span class="n">fff72f4b740</span> <span class="n">error</span> <span class="mi">4</span> <span class="ow">in</span> <span class="n">postconf</span><span class="p">[</span><span class="mi">55</span><span class="n">b29d0e0000</span><span class="o">+</span><span class="mi">25000</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>According to the Apport log, the crash is caused by following command line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ postconf -h queue_directory
+</pre></div>
+</div>
+<p>Running the command in the shell, however, works as expected and lists
+the default spool directory (/var/spool/postfix).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ProblemType</span><span class="p">:</span> <span class="n">Bug</span>
+<span class="n">DistroRelease</span><span class="p">:</span> <span class="n">Ubuntu</span> <span class="mf">18.04</span>
+<span class="n">Package</span><span class="p">:</span> <span class="n">postfix</span> <span class="mf">3.3</span><span class="o">.</span><span class="mi">0</span><span class="o">-</span><span class="mi">1</span>
+<span class="n">ProcVersionSignature</span><span class="p">:</span> <span class="n">Ubuntu</span> <span class="mf">4.15</span><span class="o">.</span><span class="mi">0</span><span class="o">-</span><span class="mf">10.11</span><span class="o">-</span><span class="n">generic</span> <span class="mf">4.15</span><span class="o">.</span><span class="mi">3</span>
+<span class="n">Uname</span><span class="p">:</span> <span class="n">Linux</span> <span class="mf">4.15</span><span class="o">.</span><span class="mi">0</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="n">generic</span> <span class="n">x86_64</span>
+<span class="n">ApportVersion</span><span class="p">:</span> <span class="mf">2.20</span><span class="o">.</span><span class="mi">8</span><span class="o">-</span><span class="mi">0</span><span class="n">ubuntu10</span>
+<span class="n">Architecture</span><span class="p">:</span> <span class="n">amd64</span>
+<span class="n">Date</span><span class="p">:</span> <span class="n">Mon</span> <span class="n">Mar</span> <span class="mi">5</span> <span class="mi">14</span><span class="p">:</span><span class="mi">26</span><span class="p">:</span><span class="mi">27</span> <span class="mi">2018</span>
+<span class="n">SourcePackage</span><span class="p">:</span> <span class="n">postfix</span>
+<span class="n">UpgradeStatus</span><span class="p">:</span> <span class="n">No</span> <span class="n">upgrade</span> <span class="n">log</span> <span class="n">present</span> <span class="p">(</span><span class="n">probably</span> <span class="n">fresh</span> <span class="n">install</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Note that the metadata at the end of the description is what gets appended when
+filing a bug report is automatically triggered, or if the user uses a bug
+reporting assistant (i.e. Apport).</p>
+<p>Sometimes these types of bug reports will also include an attached
+“something.crash” file.  This is created by the Apport process running on the
+user’s system at the time of segfault, and typically includes the core dump,
+logs, and other relevant information.  If the user has provided a .crash file,
+you can (examine it manually)[DebugApportCrash.md] to get a useful stacktrace.</p>
+<div class="section" id="try-to-reproduce-the-issue">
+<h3>Try to reproduce the issue<a class="headerlink" href="#try-to-reproduce-the-issue" title="Permalink to this headline">¶</a></h3>
+<p>Not all bugs can be easily reproduced, and not all reproducible bugs will be
+obvious how to reproduce them.  In these cases, some bug work will be needed to
+isolate the problem ourselves or work with bug reporters to narrow the cause
+enough to identify a fix.</p>
+<p>However, in this case we’re lucky.  The bug triagers have identified a way to
+reproduce the issue, in <a class="reference external" href="https://bugs.launchpad.net/ubuntu/+source/postfix/+bug/1753470/comments/12">comment #12</a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ubuntu@bionic-postfix:~$ postconf virtual_alias_map
+Segmentation fault (core dumped)
+ubuntu@bionic-postfix:~$ dpkg-query -W postfix
+postfix 3.3.0-1
+ubuntu@bionic-postfix:~$ ll /etc/postfix/valiases.cf
+-rw-r----- 1 root root 169 May 7 14:08 /etc/postfix/valiases.cf
+ubuntu@bionic-postfix:~$
+</pre></div>
+</div>
+<p>Let’s see if we can reproduce the issue as well, using these directions.</p>
+<p>Before that, we need to set up an environment for doing the testing.  There’s
+many options for where to do your testing, and different developers have their
+own preferences.  Here’s a couple:</p>
+<div class="section" id="make-a-container-for-testing">
+<h4>Make a container for testing<a class="headerlink" href="#make-a-container-for-testing" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ lxc launch images:ubuntu/bionic tester
+$ lxc exec tester -- bash
+</pre></div>
+</div>
+</div>
+<div class="section" id="alternatively-make-a-vm-for-testing">
+<h4>Alternatively: Make a VM for testing<a class="headerlink" href="#alternatively-make-a-vm-for-testing" title="Permalink to this headline">¶</a></h4>
+<p>The user’s password in this tester VM will be “ubuntu”</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ uvt-simplestreams-libvirt --verbose sync --source http://cloud-images.ubuntu.com/daily release=bionic arch=amd64
+$ uvt-simplestreams-libvirt --verbose sync release=bionic arch=amd64
+$ uvt-kvm create tester release=bionic arch=amd64 label=daily --password ubuntu
+$ uvt-kvm wait tester
+$ uvt-kvm ssh tester
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-up-to-date-and-install-postfix">
+<h4>Get up to date and install postfix<a class="headerlink" href="#get-up-to-date-and-install-postfix" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">root</span><span class="nd">@tester</span><span class="p">:</span><span class="o">~</span><span class="c1"># apt dist-upgrade</span>
+<span class="n">root</span><span class="nd">@tester</span><span class="p">:</span><span class="o">~</span><span class="c1"># apt install -y postfix</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="tell-postfix-to-use-a-map-file">
+<h4>Tell postfix to use a map file<a class="headerlink" href="#tell-postfix-to-use-a-map-file" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">root</span><span class="nd">@tester</span><span class="p">:</span><span class="o">~</span><span class="c1"># echo &quot;virtual_alias_maps = pgsql:/etc/postfix/valiases.cf&quot; &gt;&gt; /etc/postfix/main.cf</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="to-reproduce-the-file-must-be-unreadable-by-the-current-user">
+<h4>To reproduce, the file must be unreadable by the current user<a class="headerlink" href="#to-reproduce-the-file-must-be-unreadable-by-the-current-user" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">root</span><span class="nd">@tester</span><span class="p">:</span><span class="o">~</span><span class="c1"># touch /etc/postfix/valiases.cf</span>
+<span class="n">root</span><span class="nd">@tester</span><span class="p">:</span><span class="o">~</span><span class="c1"># chmod 0600 /etc/postfix/valiases.cf</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="reproduce-the-issue">
+<h4>Reproduce the issue<a class="headerlink" href="#reproduce-the-issue" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>root@tester:~# su - ubuntu
+ubuntu@tester:~$ /usr/sbin/postconf virtual_alias_map
+Segmentation fault (core dumped)
+</pre></div>
+</div>
+<p>Now we have confirmed the bug.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Keep track of the commands you used to reproduce the bug. You’ll need them
+later.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="check-if-it-s-already-been-fixed">
+<h2>Check if it’s already been fixed<a class="headerlink" href="#check-if-it-s-already-been-fixed" title="Permalink to this headline">¶</a></h2>
+<p>Often we can save time by leveraging someone else’s work, so it’s always worth
+doing some research upfront.  Fixes for bugs can be found in newer versions of
+Ubuntu, Debian, or upstream, and sometimes in external forums or bug trackers.</p>
+<div class="section" id="was-it-fixed-in-a-newer-ubuntu">
+<h3>Was it fixed in a newer Ubuntu?<a class="headerlink" href="#was-it-fixed-in-a-newer-ubuntu" title="Permalink to this headline">¶</a></h3>
+<p>Easiest thing to review the package’s status in Ubuntu:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ rmadison postfix
+ postfix | 2.9.1-4           | precise         | source, amd64, armel, armhf, i386, powerpc
+ postfix | 2.9.6-1~12.04.3   | precise-updates | source, amd64, armel, armhf, i386, powerpc
+ postfix | 2.11.0-1          | trusty          | source, amd64, arm64, armhf, i386, powerpc, ppc64el
+ postfix | 2.11.0-1ubuntu1.2 | trusty-updates  | source, amd64, arm64, armhf, i386, powerpc, ppc64el
+ postfix | 3.1.0-3           | xenial          | source, amd64, arm64, armhf, i386, powerpc, ppc64el, s390x
+ postfix | 3.1.0-3ubuntu0.3  | xenial-updates  | source, amd64, arm64, armhf, i386, powerpc, ppc64el, s390x
+ postfix | 3.3.0-1           | bionic          | source, amd64, arm64, armhf, i386, ppc64el, s390x
+ postfix | 3.3.0-1ubuntu1    | cosmic          | source, amd64, arm64, armhf, i386, ppc64el, s390x
+</pre></div>
+</div>
+<p>Debian can also be worth checking:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ rmadison -u debian postfix
+postfix    | 3.3.0-1          | testing        | source, amd64, arm64, armel, armhf, i386, mips64el, mipsel, ppc64el, s390x
+postfix    | 3.3.0-1          | unstable       | source, amd64, arm64, armel, armhf, i386, mips64el, mipsel, ppc64el, s390x
+...
+</pre></div>
+</div>
+<p>We see that 3.3.0-1ubuntu1 exists under cosmic, so postfix has been modified
+there. Let’s see what was changed.</p>
+<div class="section" id="clone-the-package">
+<h4>Clone the Package<a class="headerlink" href="#clone-the-package" title="Permalink to this headline">¶</a></h4>
+<p>Find the repository name:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ apt-cache show postfix | grep Source:
+</pre></div>
+</div>
+<p>In this case, there is no Source field, so we just use “postfix”.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git ubuntu clone postfix postfix-gu
+</pre></div>
+</div>
+<p>This will create a new git clone of the postfix repo named “postfix-gu”, with a
+remote of “pkg”. The current branch will be ubuntu-devel, and the various
+versions for each distribution version will be under <code class="docutils literal notranslate"><span class="pre">pkg/ubuntu/version</span></code>.</p>
+<p>Notes:</p>
+<ul class="simple">
+<li>Due to <a class="reference external" href="https://launchpad.net/bugs/1761821">https://launchpad.net/bugs/1761821</a>, you may get: <code class="docutils literal notranslate"><span class="pre">fatal:</span> <span class="pre">could</span> <span class="pre">not</span>
+<span class="pre">read</span> <span class="pre">Username</span> <span class="pre">for</span> <span class="pre">'https://git.launchpad.net':</span> <span class="pre">terminal</span> <span class="pre">prompts</span> <span class="pre">disabled.</span></code>
+It’s safe to ignore this.</li>
+<li>First time will add a git-ubuntu entry to .gitignore</li>
+<li>Sometimes it can also be helpful to checkout the git repositories for the
+package maintained by Debian and/or upstream.  These would be checked out to
+“postfix-debian” and “postfix” respectively.</li>
+</ul>
+</div>
+<div class="section" id="view-the-commit-log">
+<h4>View the Commit Log<a class="headerlink" href="#view-the-commit-log" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git log -b pkg/ubuntu/cosmic
+...
+commit 73cb543efe06a340021cbf538d3ca88abfd96bd8 (tag: pkg/upload/3.3.0-1ubuntu1)
+Author: Andreas Hasenack &lt;andreas@canonical.com&gt;
+Date:   Wed May 9 10:14:49 2018 -0300
+
+    changelog
+
+commit d4cb4562480496f8a1b25ddc397cef45dd45d855
+Author: Andreas Hasenack &lt;andreas@canonical.com&gt;
+Date:   Wed May 9 09:51:20 2018 -0300
+
+      * debian/patches/fix-postconf-segfault.diff: Fix a postconf segfault
+        when map file cannot be read.  Thanks to Viktor Dukhovni &lt;postfix-
+        users@dukhovni.org&gt;. (LP: #1753470)
+</pre></div>
+</div>
+<p>d4cb45 sure looks like a fix for this issue!</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git log -b -p pkg/ubuntu/cosmic
+...
+diff --git a/debian/patches/fix-postconf-segfault.diff b/debian/patches/fix-postconf-segfault.diff
+new file mode 100644
+index 00000000..f8eef6bf
+--- /dev/null
++++ b/debian/patches/fix-postconf-segfault.diff
+@@ -0,0 +1,25 @@
++Description: Fix a postconf segfault when map file cannot be read
++Author: Viktor Dukhovni &lt;postfix-users@dukhovni.org&gt;
++Origin: https://marc.info/?l=postfix-users&amp;m=152578771531514&amp;w=2
++Bug-Debian: https://bugs.debian.org/898271
++Bug-Ubuntu: https://launchpad.net/bugs/1753470
++Last-Update: 2018-05-09
++---
++This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
++--- a/src/postconf/postconf_dbms.c
+++++ b/src/postconf/postconf_dbms.c
++@@ -174,10 +174,10 @@
++        */
++       dict = dict_ht_open(dict_spec, O_CREAT | O_RDWR, 0);
++       dict_register(dict_spec, dict);
++-      if ((fp = vstream_fopen(cf_file, O_RDONLY, 0)) == 0
++-          &amp;&amp; errno != EACCES) {
++-          msg_warn(&quot;open \&quot;%s\&quot; configuration \&quot;%s\&quot;: %m&quot;,
++-                   dp-&gt;db_type, cf_file);
+++      if ((fp = vstream_fopen(cf_file, O_RDONLY, 0)) == 0) {
+++        if (errno != EACCES)
+++              msg_warn(&quot;open \&quot;%s\&quot; configuration \&quot;%s\&quot;: %m&quot;,
+++                           dp-&gt;db_type, cf_file);
++           myfree(dict_spec);
++           return;
++       }
+diff --git a/debian/patches/series b/debian/patches/series
+index c2e47271..1f77ec0b 100644
+--- a/debian/patches/series
++++ b/debian/patches/series
+@@ -15,3 +15,4 @@
+ 50_LANG.diff
+ 70_postfix-check.diff
+ tls_version.diff
++fix-postconf-segfault.diff
+</pre></div>
+</div>
+<p>Here we see the patch and the change to debian/patches/series to include the
+patch. This is the fix we need!</p>
+</div>
+</div>
+<div class="section" id="was-it-fixed-in-debian">
+<h3>Was it fixed in Debian?<a class="headerlink" href="#was-it-fixed-in-debian" title="Permalink to this headline">¶</a></h3>
+<p>Sometimes the fix may have been updated in Debian instead of Ubuntu.  There are
+many ways to locate fixes from Debian.  Debian maintains its own git repository
+for many (but not all) of its packages, so having a clone of this can be handy.</p>
+<p>For example, let’s assume for argument’s sake that we had a problem with sshd
+in xenial, where it would fail to check config files before reloading
+(<a class="reference external" href="https://bugs.launchpad.net/ubuntu/+source/openssh/+bug/1771340">https://bugs.launchpad.net/ubuntu/+source/openssh/+bug/1771340</a>).  From
+Debian’s openssh source package page
+(<a class="reference external" href="https://packages.debian.org/source/stretch/openssh">https://packages.debian.org/source/stretch/openssh</a>), we find the git
+repository (<a class="reference external" href="https://salsa.debian.org/ssh-team/openssh">https://salsa.debian.org/ssh-team/openssh</a>), and can check it out:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git clone https://salsa.debian.org/ssh-team/openssh.git openssh-debian
+$ cd openssh-debian
+$ git branch -av | cat
+* master                               296562ba1 releasing package openssh version 1:8.2p1-4
+  remotes/origin/HEAD                  -&gt; origin/master
+  remotes/origin/buster                6d9ca74c4 releasing package openssh version 1:7.9p1-10+deb10u2
+  remotes/origin/etch                  851625c74 releasing version 1:4.3p2-9etch1
+  remotes/origin/experimental          09a03c340 Update contact information for Natalie Amery
+  remotes/origin/jessie                9da94db38 Merge branch &#39;jessie&#39; into &#39;jessie&#39;
+  remotes/origin/master                296562ba1 releasing package openssh version 1:8.2p1-4
+  remotes/origin/pristine-tar          5fdaf4d7d pristine-tar data for openssh_8.2p1.orig.tar.gz
+  remotes/origin/sarge                 f297a6e07 debconf-updatepo
+  remotes/origin/squeeze               faa0b9a59 releasing package openssh version 1:5.5p1-6+squeeze5
+  remotes/origin/stretch               0ef21e4e2 Merge branch &#39;fix-923486-stretch&#39; into &#39;stretch&#39;
+  remotes/origin/ubuntu/saucy          f8daff632 releasing package openssh version 1:6.2p2-6ubuntu0.5
+  remotes/origin/ubuntu/trusty         f6ffa5954 releasing package openssh version 1:6.6p1-2ubuntu2
+  remotes/origin/ubuntu/xenial         bd9cfb441 releasing package openssh version 1:7.2p2-4ubuntu1
+  remotes/origin/upstream              f0de78bd4 Import openssh_8.2p1.orig.tar.gz
+  remotes/origin/upstream-experimental 102062f82 Import openssh_8.0p1.orig.tar.gz
+  remotes/origin/upstream-jessie       487bdb3a5 Import openssh_6.7p1.orig.tar.gz
+  remotes/origin/upstream-stretch      971a76537 Import openssh_7.4p1.orig.tar.gz
+  remotes/origin/wheezy                e345e2a5f releasing package openssh 1:6.0p1-4+deb7u3
+  remotes/origin/wheezy-backports      1d95da812 Remove now-unnecessary backports-specific version changes.
+</pre></div>
+</div>
+<p>That’s a lot of branches, but the ones of most interest will be master and
+sometimes experimental.  Master is already checked out, so lets peruse its
+commit history.  Doing this, we find:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">commit</span> <span class="n">d4181e15b03171d1363cd9d7a50b209697a80b01</span>
+<span class="n">Author</span><span class="p">:</span>     <span class="n">Colin</span> <span class="n">Watson</span> <span class="o">&lt;</span><span class="n">cjwatson</span><span class="nd">@debian</span><span class="o">.</span><span class="n">org</span><span class="o">&gt;</span>
+<span class="n">AuthorDate</span><span class="p">:</span> <span class="n">Mon</span> <span class="n">Jun</span> <span class="mi">26</span> <span class="mi">10</span><span class="p">:</span><span class="mi">18</span><span class="p">:</span><span class="mi">26</span> <span class="mi">2017</span> <span class="o">+</span><span class="mi">0100</span>
+<span class="n">Commit</span><span class="p">:</span>     <span class="n">Colin</span> <span class="n">Watson</span> <span class="o">&lt;</span><span class="n">cjwatson</span><span class="nd">@debian</span><span class="o">.</span><span class="n">org</span><span class="o">&gt;</span>
+<span class="n">CommitDate</span><span class="p">:</span> <span class="n">Mon</span> <span class="n">Jun</span> <span class="mi">26</span> <span class="mi">10</span><span class="p">:</span><span class="mi">18</span><span class="p">:</span><span class="mi">26</span> <span class="mi">2017</span> <span class="o">+</span><span class="mi">0100</span>
+
+    <span class="n">Test</span> <span class="n">configuration</span> <span class="n">before</span> <span class="n">starting</span> <span class="ow">or</span> <span class="n">reloading</span> <span class="n">sshd</span> <span class="n">under</span> <span class="n">systemd</span> <span class="p">(</span><span class="n">closes</span><span class="p">:</span> <span class="c1">#865770).</span>
+</pre></div>
+</div>
+<p>Our issue would be the same as Debian bug #865770.</p>
+<p>It’s also possible to search for commits via Debian’s web front-end for git,
+<a class="reference external" href="https://salsa.debian.org">https://salsa.debian.org</a>.  Doing so in this case would bring you to
+<a class="reference external" href="https://salsa.debian.org/ssh-team/openssh/commit/d4181e15b03171d1363cd9d7a50b209697a80b01">https://salsa.debian.org/ssh-team/openssh/commit/d4181e15b03171d1363cd9d7a50b209697a80b01</a></p>
+<p>Either way, you should also mention the salsa link in the fixed up bug report,
+and possibly include it in your fix commit message.</p>
+<p>Since we can’t push new versions of packages to previous Ubuntu releases, you’d
+need to backport the fix by copying what Debian did into a new commit on
+xenial.</p>
+</div>
+<div class="section" id="was-it-fixed-upstream">
+<h3>Was it fixed upstream?<a class="headerlink" href="#was-it-fixed-upstream" title="Permalink to this headline">¶</a></h3>
+<p>For bugs that aren’t already fixed in Ubuntu or Debian, sometimes the original
+developers of the software have already found and fixed the issue, or at least
+are aware of it and may have a proposed solution or workaround available.</p>
+<p>From the unpacked package directory, a quick way to see if there’s a newer
+upstream release is via <code class="docutils literal notranslate"><span class="pre">uscan</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd dovecot-gu/
+$ uscan --safe
+uscan: Newest version of dovecot on remote site is 2.3.10, local version is 2.3.7.2
+uscan:    =&gt; Newer package available from
+  https://dovecot.org/releases/2.3/dovecot-2.3.10.tar.gz
+</pre></div>
+</div>
+<p>This only works if the package has a debian/watches file.  If it doesn’t, look
+in the package’s README or other documentation, and do the research online
+manually.</p>
+<p>Searching the upstream bug tracker, or generally googling on error messages or
+symptoms can sometimes turn up a patch or bug report of relevance.</p>
+</div>
+<div class="section" id="forwarding-issues-upstream">
+<h3>Forwarding issues upstream<a class="headerlink" href="#forwarding-issues-upstream" title="Permalink to this headline">¶</a></h3>
+<p>If there are no existing fixes for an issue, you can either develop one
+yourself, or communicate the problem to Debian or the upstream developers.
+Sometimes clues can be found “in the wild” via random forum posts or bug
+trackers, but be aware these can span the full range from high quality to
+dangerous so treat them only as ideas and don’t accept anything blindly.</p>
+<p>Each upstream project has its own conventions and expectations for how they can
+be communicated with.  Check the source tree and development section of the
+upstream’s website for policies, or study other recent bug reports and patch
+contributions for best practices to follow.</p>
+<p>In general though, it is a good idea to make sure you are able to reliably
+reproduce the issue yourself.  Document the steps you follow in a way that
+non-Ubuntu users could follow.  If there is a workload or test case, try to
+simplify it down to the minimal set of commands to reproduce the problem.</p>
+<p>When filing the bug report or pull request upstream, do identify yourself as a
+Ubuntu developer and your role in forwarding an issue reported against the
+distribution.</p>
+</div>
+</div>
+<div class="section" id="apply-the-fix">
+<h2>Apply the Fix<a class="headerlink" href="#apply-the-fix" title="Permalink to this headline">¶</a></h2>
+<p>Changes to packages are done via patches. The patches themselves are stored in
+debian/patches/ under the root of the package repository. debian/patches/series
+lists the order in which the patches should be applied. debian/changelog lists
+what changes have been made to the package over time.</p>
+<p>We use git-ubuntu to make changes to packages.</p>
+<div class="section" id="step-1-assign-the-task-to-yourself">
+<h3>Step 1: Assign the task to yourself<a class="headerlink" href="#step-1-assign-the-task-to-yourself" title="Permalink to this headline">¶</a></h3>
+<p>First, go back to
+<a class="reference external" href="https://bugs.launchpad.net/ubuntu/+source/postfix/+bug/1753470">https://bugs.launchpad.net/ubuntu/+source/postfix/+bug/1753470</a></p>
+<p>Go to the task (row) that starts with “bionic” and assign the task to yourself
+and switch the status to “in progress” using the yellow pencil icons. If you
+don’t see yellow pencil icons, you need to get permissions.</p>
+</div>
+<div class="section" id="step-2-clone-the-package-if-you-haven-t-already">
+<h3>Step 2: Clone the package (if you haven’t already)<a class="headerlink" href="#step-2-clone-the-package-if-you-haven-t-already" title="Permalink to this headline">¶</a></h3>
+<p>Find the repository name:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ apt-cache show postfix | grep Source:
+</pre></div>
+</div>
+<p>In this case, there is no Source field, so we just use postfix:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git ubuntu clone postfix postfix-gu
+$ cd postfix-gu
+</pre></div>
+</div>
+</div>
+<div class="section" id="step-3-make-a-branch-based-on-the-appropriate-ubuntu-branch">
+<h3>Step 3: Make a branch based on the appropriate ubuntu branch<a class="headerlink" href="#step-3-make-a-branch-based-on-the-appropriate-ubuntu-branch" title="Permalink to this headline">¶</a></h3>
+<p>The affected version of postfix is in bionic, so we branch from
+<code class="docutils literal notranslate"><span class="pre">bionic-devel</span></code>. It helps to use a branch name that’s descriptive:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git checkout pkg/ubuntu/bionic-devel -b postfix-sru-lp1753470-segfault-bionic
+</pre></div>
+</div>
+</div>
+<div class="section" id="step-4-make-a-patch-to-fix-the-issue-maybe">
+<h3>Step 4: Make a patch to fix the issue (maybe)<a class="headerlink" href="#step-4-make-a-patch-to-fix-the-issue-maybe" title="Permalink to this headline">¶</a></h3>
+<p>If the only changes you made are within the debian subdir, you don’t need a
+patchfile, and can skip this step.</p>
+<p>On the other hand, if you’ve made changes to the upstream code (anything
+outside of the debian directory), you’ll need to generate a patch in
+debian/patches.</p>
+<p>See <a class="reference internal" href="DebianPatch.html"><span class="doc">Making a Patchfile</span></a>.</p>
+</div>
+<div class="section" id="step-5-commit-the-patch">
+<h3>Step 5: Commit the patch<a class="headerlink" href="#step-5-commit-the-patch" title="Permalink to this headline">¶</a></h3>
+<p>See <a class="reference internal" href="CommittingChanges.html"><span class="doc">Committing Your Changes</span></a>.</p>
+</div>
+</div>
+<div class="section" id="build-a-fixed-package">
+<h2>Build a Fixed Package<a class="headerlink" href="#build-a-fixed-package" title="Permalink to this headline">¶</a></h2>
+<p>See <a class="reference internal" href="PackageBuilding.html"><span class="doc">Package Building</span></a>.</p>
+</div>
+<div class="section" id="test-the-package">
+<h2>Test the Package<a class="headerlink" href="#test-the-package" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="start-a-bionic-container-and-enter-it">
+<h3>Start a bionic container and enter it<a class="headerlink" href="#start-a-bionic-container-and-enter-it" title="Permalink to this headline">¶</a></h3>
+<p>We can name our lxc containers with any scheme we wish, such as ‘tester’
+earlier for a temporary one to test with.  But for bug fixes we’ll often need
+to keep the container around for reference as the bug fix goes through the
+review, sponsorship, and SRU processes.  So, to keep things consistent let’s
+reuse our git branch name, and just prefix the package name:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ lxc launch ubuntu:bionic postfix-sru-lp1753470-segfault-bionic
+Creating postfix-sru-lp1753470-segfault-bionic
+Starting postfix-sru-lp1753470-segfault-bionic
+
+$ lxc exec postfix-sru-lp1753470-segfault-bionic -- bash
+root@postfix-sru-lp1753470-segfault-bionic:~#
+</pre></div>
+</div>
+</div>
+<div class="section" id="reproduce-the-bug">
+<h3>Reproduce the Bug<a class="headerlink" href="#reproduce-the-bug" title="Permalink to this headline">¶</a></h3>
+<p>Record your steps as you go (you’ll need them later):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># apt dist-upgrade
+# apt install -y postfix
+# touch /etc/postfix/valiases.cf
+# chmod 0600 /etc/postfix/valiases.cf
+# echo &quot;virtual_alias_maps = pgsql:/etc/postfix/valiases.cf&quot; &gt;&gt; /etc/postfix/main.cf
+# su - ubuntu
+$ /usr/sbin/postconf virtual_alias_map
+Segmentation fault (core dumped)
+</pre></div>
+</div>
+</div>
+<div class="section" id="install-the-fixed-package">
+<h3>Install the fixed package<a class="headerlink" href="#install-the-fixed-package" title="Permalink to this headline">¶</a></h3>
+<p>In this case, I’m using the PPA. Alternatively, if you’ve built locally, you
+can copy in the .deb file and install it manually.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo add-apt-repository -ys ppa:kstenerud/postfix-sru-lp1753470-segfault
+$ sudo apt update
+$ sudo apt upgrade -y
+</pre></div>
+</div>
+</div>
+<div class="section" id="test-the-bug-again">
+<h3>Test the Bug Again<a class="headerlink" href="#test-the-bug-again" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ /usr/sbin/postconf virtual_alias_map
+/usr/sbin/postconf: warning: virtual_alias_map: unknown parameter
+</pre></div>
+</div>
+<p>The bug is fixed! Sweet!</p>
+</div>
+</div>
+<div class="section" id="run-the-package-tests">
+<h2>Run the Package Tests<a class="headerlink" href="#run-the-package-tests" title="Permalink to this headline">¶</a></h2>
+<p>The DEP8 autopkgtests don’t exercise our bug, but are worth running as
+just-in-case sanity checks and to catch regressions.</p>
+<p>See <a class="reference internal" href="PackageTests.html"><span class="doc">Running Package Tests</span></a>.</p>
+<p>Any change in behavior should be considered priorities to resolve before
+proceeding.</p>
+</div>
+<div class="section" id="start-a-merge-proposal">
+<h2>Start a Merge Proposal<a class="headerlink" href="#start-a-merge-proposal" title="Permalink to this headline">¶</a></h2>
+<p>See <a class="reference internal" href="MergeProposal.html"><span class="doc">Opening a Merge Proposal</span></a>.</p>
+</div>
+<div class="section" id="update-the-bug-report">
+<h2>Update the Bug Report<a class="headerlink" href="#update-the-bug-report" title="Permalink to this headline">¶</a></h2>
+<p>For regular bug fixes and merges, adding a comment about your progress is
+typically all you’ll need.  You might provide some links to your PPA if you’d
+like to get people to test your fix, or if you want to provide the fix to the
+userbase swiftly.</p>
+<div class="section" id="sru-paperwork">
+<h3>SRU Paperwork<a class="headerlink" href="#sru-paperwork" title="Permalink to this headline">¶</a></h3>
+<p>For stable release updates (SRUs), on the other hand, you need to add a bit
+more detail.</p>
+<p>Go back to the bug report (in my case,
+<a class="reference external" href="https://bugs.launchpad.net/ubuntu/+source/postfix/+bug/1753470">https://bugs.launchpad.net/ubuntu/+source/postfix/+bug/1753470</a>).</p>
+<p>Modify the bug description (yellow pencil icon) and update it to conform with
+<a class="reference external" href="https://wiki.ubuntu.com/StableReleaseUpdates#SRU_Bug_Template">https://wiki.ubuntu.com/StableReleaseUpdates#SRU_Bug_Template</a>  These are
+normally the [Impact], [Test Case] and [Where problems could occur] sections.
+It is good practice to make the Test Case section itemized with explicit steps,
+“paint by numbers” style.  It is also best practice to include both a
+[Development Fix] and [Stable Fix]; the former explains the situation with the
+fix in the current development release, while the latter explains your strategy
+for addressing (or skipping) it in LTS and other stable releases.</p>
+<p>Note: Keep the original description as-is, in a section called <code class="docutils literal notranslate"><span class="pre">[Original</span>
+<span class="pre">Description]</span></code> at the bottom.</p>
+<p>Note: You’ll see your branch and merge proposal in the <code class="docutils literal notranslate"><span class="pre">Related</span> <span class="pre">branches</span></code>
+because of the (LP: #NNNNNN) in the changelog entry.</p>
+</div>
+</div>
+<div class="section" id="sru-review-process">
+<h2>SRU Review Process<a class="headerlink" href="#sru-review-process" title="Permalink to this headline">¶</a></h2>
+<p>There is a distinction between sponsorship and the SRU process. They are
+possibly a little confused in the SRU wiki page (especially section 6 “Fixing
+several bugs in one upload).</p>
+<p>Consider the process from the point of view of your sponsor and the SRU team.
+On review, they will start from the diff and expect to see:</p>
+<ul class="simple">
+<li>The diff fully explained by the changelog entry. This means that if there is
+something in the diff that is not explained by the changelog, then there is a
+problem.</li>
+<li>A bug for everything mentioned in the changelog entry. Reviewers are
+pragmatic: there is no strict rule such as “every bullet point must refer to
+a bug””, but more that logically everything mentioned corresponds to a bug,
+so that a reviewer can go to a bug to find more information on any part of
+the changelog. For an SRU, even added functionality must refer to a bug. If
+some part of a changelog entry does not obviously refer to a bug, then there
+is a problem.</li>
+<li>Every issue mentioned in an SRU changelog must have a bug task filed against
+the package.  The same bug # can be mentioned in different SRUs, since a bug
+may have multiple bug tasks. The Ubuntu Bug Control Team, or other members of
+the server team can assist if you need help creating bug tasks.</li>
+<li>The issue should be resolved for the Ubuntu development release.  This is
+tracked by having a bug task set to Fix Released for the devel series. The
+goal is to avoid regression from a user’s perspective when they upgrade to
+the newer Ubuntu release. If the status is not Fix Released but you still
+want to proceed with the SRU, explain what is going on in a [Development Fix]
+section.</li>
+<li>Every LP bug # mentioned in an SRU changelog must have “SRU paperwork” filled
+out as described in the previous section.</li>
+</ul>
+<p>After you or your sponsor have uploaded your package:</p>
+<ul class="simple">
+<li>Set the bug task status to “In Progress”</li>
+<li>The upload will appear in the “unapproved queue”, for example
+<a class="reference external" href="https://launchpad.net/ubuntu/focal/+queue?queue_state=1">https://launchpad.net/ubuntu/focal/+queue?queue_state=1</a>.  It may take a week
+or two before its processed.</li>
+<li>If you find a problem while its still unapproved, ask in the Freenode
+#ubuntu-release channel for the package to be rejected from the queue.  This
+is a trivial task for archive admins.  If rejected at this stage then the
+same version number can be re-used in a subsequent upload.</li>
+<li>The SRU team will review incoming SRU uploads from the unapproved queue and
+expect to see the review items completed correctly as above. They will either
+accept or reject (with a reason) from the unapproved queue. If they reject,
+then you will need to handle the rejection reason and then start again from
+the beginning. If they accept, then the bug task will change to Fix
+Committed, the package will enter the -proposed pocket and then the package
+binaries will be built.</li>
+</ul>
+</div>
+<div class="section" id="when-the-bugfix-is-accepted">
+<h2>When the Bugfix is Accepted<a class="headerlink" href="#when-the-bugfix-is-accepted" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="the-acceptance-email">
+<h3>The Acceptance Email<a class="headerlink" href="#the-acceptance-email" title="Permalink to this headline">¶</a></h3>
+<p>You’ll receive an email notification that the bugfix was accepted:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Accepted postfix into bionic-proposed. The package will build now and be
+available at
+https://launchpad.net/ubuntu/+source/postfix/3.3.0-1ubuntu0.1 in a few
+hours, and then in the -proposed repository.
+
+Please help us by testing this new package.  See
+https://wiki.ubuntu.com/Testing/EnableProposed for documentation on how
+to enable and use -proposed.Your feedback will aid us getting this
+update out to other Ubuntu users.
+
+If this package fixes the bug for you, please add a comment to this bug,
+mentioning the version of the package you tested and change the tag from
+verification-needed-bionic to verification-done-bionic. If it does not
+fix the bug for you, please add a comment stating that, and change the
+tag to verification-failed-bionic. In either case, details of your
+testing will help us make a better decision.
+
+Further information regarding the verification process can be found at
+https://wiki.ubuntu.com/QATeam/PerformingSRUVerification .  Thank you in
+advance!
+
+** Changed in: postfix (Ubuntu Bionic)
+       Status: In Progress =&gt; Fix Committed
+
+** Tags added: verification-needed verification-needed-bionic
+</pre></div>
+</div>
+<p>Follow the build link
+(<a class="reference external" href="https://launchpad.net/ubuntu/+source/postfix/3.3.0-1ubuntu0.1">https://launchpad.net/ubuntu/+source/postfix/3.3.0-1ubuntu0.1</a>) and make sure
+that it’s publishing to the correct place (bionic), and that the builds
+completed (green checkmarks).</p>
+</div>
+<div class="section" id="irc-monitoring">
+<h3>IRC Monitoring<a class="headerlink" href="#irc-monitoring" title="Permalink to this headline">¶</a></h3>
+<p>Join <code class="docutils literal notranslate"><span class="pre">#ubuntu-ci-eng</span></code> on the freenode IRC server to get pinged with your name
+when CI events occur.</p>
+</div>
+<div class="section" id="the-excuses-page">
+<h3>The Excuses Page<a class="headerlink" href="#the-excuses-page" title="Permalink to this headline">¶</a></h3>
+<p>Check the “excuses” or “migration” page (for bionic in this case):
+<a class="reference external" href="http://people.canonical.com/~ubuntu-archive/proposed-migration/bionic/update_excuses.html">http://people.canonical.com/~ubuntu-archive/proposed-migration/bionic/update_excuses.html</a></p>
+<p>General page:
+<a class="reference external" href="http://people.canonical.com/~ubuntu-archive/proposed-migration/update_excuses.html">http://people.canonical.com/~ubuntu-archive/proposed-migration/update_excuses.html</a></p>
+<p>Eventually, the package with your fixes will appear there (search for postfix
+in this case). It will show the dep8 tests for postfix and anything that
+depends on it. Any tests that fail will show in red.</p>
+<p>Note: This page is generated every few minutes, and doesn’t update real-time.</p>
+</div>
+<div class="section" id="sru-verification">
+<h3>SRU Verification<a class="headerlink" href="#sru-verification" title="Permalink to this headline">¶</a></h3>
+<p>It’s best to have the package independently verified (preferably by the person
+who reported the bug), but if it sits idle too long (2 days or so), you can
+verify it yourself.  Follow the instructions provided by the SRU team, which
+usually means changing the verification-needed tag into verification-done.</p>
+<p><a class="reference external" href="https://people.canonical.com/~ubuntu-archive/pending-sru.html">https://people.canonical.com/~ubuntu-archive/pending-sru.html</a> shows what SRUs
+are pending, and what their status is.  Note that this includes dep8 test
+results; if these have failed then it is unlikely the SRU team will release the
+update, so it’s wise to followup if this happens.</p>
+<p>Once all of the SRU’s bugs have reached verification-done and a 7-day waiting
+period has elapsed, the SRU team will move the source and binary packages into
+the -updates pocket and mark the bug task(s) as Fix Released.</p>
+</div>
+</div>
+</div>
+
+
+    <footer>
+      Last updated Monday, 21 February 2022.
+    </footer>
+  </main>
+  <footer>
+        &#169; Copyright 2022 Ubuntu Contributors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 1.8.5.
+  </footer>
+  </body>
+</html>

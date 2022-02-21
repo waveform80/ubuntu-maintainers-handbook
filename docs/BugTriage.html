@@ -1,0 +1,501 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Bug Triage &#8212; The UMH 1.0 documentation</title>
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Bug Report Responses" href="BugReportResponses.html" />
+    <link rel="prev" title="Bug Reports" href="BugHandling.html" />
+    <link rel="preload" as="font" type="font/woff2" href="https://assets.ubuntu.com/v1/46ed6870-Ubuntu-L-subset.woff2" crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href="https://assets.ubuntu.com/v1/3baab91b-Ubuntu-Th-subset.woff2" crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href="https://assets.ubuntu.com/v1/6113b69a-Ubuntu-LI-subset.woff2" crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href="https://assets.ubuntu.com/v1/0c7b8dc0-Ubuntu-R-subset.woff2" crossorigin /> 
+  </head><body>
+  <header>
+    <nav aria-label="site navigation">
+      <a href="https://ubuntu.com/">
+        <svg width="107px" height="32px" viewBox="0 0 107 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="ubuntu-logo"><path d="M100.470409,13.7615448 C96.9385448,13.7615448 94.0754031,10.8982838 94.0754031,7.36627238 C94.0754031,3.83426097 96.9385448,0.971 100.470409,0.971 C104.002273,0.971 106.865415,3.83426097 106.865415,7.36627238 C106.865415,10.8982838 104.002273,13.7615448 100.470409,13.7615448 Z M96.479398,6.59820047 C96.0559273,6.59820047 95.7123568,6.9417853 95.7123568,7.36727117 C95.7123568,7.78976066 96.0559273,8.13434429 96.479398,8.13434429 C96.9038674,8.13434429 97.2504342,7.78976066 97.2504342,7.36727117 C97.2504342,6.9417853 96.9038674,6.59820047 96.479398,6.59820047 Z M101.966539,10.0919788 C101.601995,10.3017254 101.475153,10.7731557 101.684891,11.1377152 C101.898624,11.5092663 102.369036,11.6341154 102.73358,11.4213725 C103.103118,11.2116259 103.22996,10.7401956 103.015228,10.3726397 C102.803493,10.0030862 102.334079,9.87823709 101.966539,10.0929776 L101.966539,10.0919788 Z M98.1493106,7.36727117 C98.1493106,6.6081884 98.5268386,5.93500183 99.104117,5.52949182 L98.5428187,4.58762991 C97.8686614,5.03708681 97.3682869,5.72425648 97.1605465,6.52828495 C97.4062394,6.72804357 97.5580496,7.02768151 97.5580496,7.36727117 C97.5580496,7.70386446 97.4062394,8.00649877 97.1605465,8.20425981 C97.3682869,9.00828828 97.8696601,9.69445915 98.5428187,10.1419185 L99.104117,9.20305294 C98.5268386,8.79754293 98.1493106,8.12435636 98.1493106,7.36727117 Z M100.392506,5.11998664 C101.568037,5.11998664 102.529835,6.02089804 102.62971,7.16951013 L103.726339,7.14953427 C103.671408,6.30555408 103.30187,5.54147734 102.73358,4.98714716 C102.438948,5.09501681 102.100372,5.08003492 101.809735,4.90924129 C101.518099,4.74144405 101.337325,4.4577868 101.286389,4.15015852 C101.001745,4.07225265 100.703118,4.03030334 100.392506,4.03030334 C99.8631682,4.03030334 99.3617949,4.15415369 98.9143542,4.37388818 L99.4486863,5.33073199 C99.735328,5.19589492 100.057925,5.12098543 100.392506,5.12098543 L100.392506,5.11998664 Z M100.392506,9.61155932 C100.056926,9.61155932 99.735328,9.53565105 99.4486863,9.40181277 L98.9143542,10.3586566 C99.3607962,10.5783911 99.8631682,10.7022414 100.392506,10.7022414 C100.704117,10.7022414 101.001745,10.6622897 101.286389,10.5823862 C101.336327,10.2727604 101.518099,9.98810433 101.809735,9.82130588 C102.103368,9.65350864 102.438948,9.63553036 102.73358,9.74839398 C103.302868,9.18607345 103.670409,8.42599188 103.726339,7.5810129 L102.62971,7.56503221 C102.529835,8.71064793 101.568037,9.61056053 100.392506,9.61056053 L100.392506,9.61155932 Z M101.966539,4.64156473 C102.334079,4.85430767 102.803493,4.72945853 103.015228,4.35990507 C103.22996,3.993348 103.103118,3.52091885 102.735578,3.30917471 C102.370035,3.09942815 101.899623,3.22427729 101.686888,3.59183316 C101.474154,3.95839024 101.600996,4.4288218 101.966539,4.64056594 L101.966539,4.64156473 Z M12.7910109,24.1489933 C12.1418224,24.3107977 11.2828961,24.4855865 10.2172282,24.6663681 C9.15056154,24.850146 7.91610464,24.942035 6.5178525,24.942035 C5.29737813,24.942035 4.27365781,24.7642498 3.43970028,24.4086795 C2.60774025,24.0541079 1.93857672,23.551715 1.4322097,22.9005019 C0.922846416,22.2512863 0.558302106,21.4842132 0.335580515,20.6032777 C0.109862669,19.7153506 0,18.7385309 0,17.6598343 L0,8.76857793 L2.83146059,8.76857793 L2.83146059,17.0515693 C2.83146059,18.9822364 3.13508106,20.3635673 3.746317,21.1945632 C4.35555543,22.0275567 5.38127325,22.4430546 6.82247172,22.4430546 C7.12609218,22.4430546 7.44169767,22.4330667 7.76629191,22.4110932 C8.09188491,22.3911174 8.39750288,22.3661475 8.67915081,22.3361837 C8.96279625,22.3062199 9.22247165,22.2762561 9.45617951,22.2462924 C9.68988736,22.214331 9.85568012,22.1813708 9.95955028,22.1384227 L9.95955028,8.76857793 L12.7910109,8.76857793 L12.7910109,24.1499921 L12.7910109,24.1489933 Z M19.7033702,9.46773311 C20.049937,9.24600104 20.5722841,9.01028586 21.2734076,8.76857793 C21.9725337,8.5258712 22.7785262,8.40202085 23.6943813,8.40202085 C24.8299618,8.40202085 25.8396996,8.60777223 26.7235947,9.01128466 C27.6084886,9.41679466 28.3535572,9.98710554 28.9637944,10.7192209 C29.5700366,11.4483399 30.0324586,12.3212851 30.3470653,13.3360589 C30.6636695,14.3518315 30.8204735,15.469481 30.8204735,16.6880086 C30.8204735,17.9664638 30.6327082,19.1180723 30.2551802,20.1438328 C29.8786508,21.1685946 29.3463163,22.0365458 28.6571777,22.7466877 C27.9660416,23.459826 27.1350804,24.005167 26.1583014,24.3917 C25.1865161,24.7782329 24.0908857,24.971 22.8694126,24.971 C21.5490631,24.971 20.3825213,24.8781122 19.366791,24.6953331 C18.3520594,24.512554 17.5191006,24.328776 16.8699121,24.1459969 L16.8699121,1.45940984 L19.7023715,0.971998793 L19.7023715,9.46773311 L19.700374,9.46773311 L19.7033702,9.46773311 Z M20.9078646,22.3661475 C21.4242191,22.4390594 22.0664163,22.4730184 22.8404488,22.4730184 C24.3605486,22.4730184 25.5820217,21.9686279 26.4938819,20.9648408 C27.4077395,19.9590561 27.8651677,18.5327795 27.8651677,16.686011 C27.8651677,15.8739922 27.7852676,15.1129119 27.6214724,14.4007724 C27.4586759,13.6896317 27.1940067,13.0763727 26.8294624,12.557999 C26.4639193,12.0386266 25.9905111,11.636113 25.4152302,11.3394714 C24.8339568,11.0438287 24.1388258,10.8970061 23.3278395,10.8970061 C22.5548058,10.8970061 21.8456923,11.0298456 21.195505,11.2915294 C20.5463165,11.5582071 20.0469408,11.8308776 19.7023715,12.1155337 L19.7023715,22.1354263 C19.9880144,22.2203237 20.3885138,22.296232 20.9078646,22.3661475 Z M46.6257165,24.1489933 C45.976528,24.3107977 45.1176017,24.4855865 44.0529326,24.6663681 C42.9872647,24.850146 41.7528078,24.942035 40.3505606,24.942035 C39.1340813,24.942035 38.1083635,24.7642498 37.2764034,24.4086795 C36.4444434,24.0541079 35.7742811,23.551715 35.2689128,22.9005019 C34.7575521,22.2512863 34.3940065,21.4842132 34.1702862,20.6032777 C33.9475646,19.7173482 33.8367032,18.7395297 33.8367032,17.6618319 L33.8367032,8.77057551 L36.6681637,8.77057551 L36.6681637,17.0535669 C36.6681637,18.984234 36.9717842,20.3655649 37.5810226,21.1965608 C38.1902611,22.0295542 39.2149802,22.4450522 40.6571774,22.4450522 C40.9617966,22.4450522 41.2784008,22.4350643 41.6029951,22.4130908 C41.9275893,22.3931149 42.2322085,22.3681451 42.5168527,22.3381813 C42.7994994,22.3082175 43.0591748,22.2782537 43.2938814,22.2482899 C43.5255918,22.2153298 43.693382,22.1823696 43.7962534,22.1384227 L43.7962534,8.77057551 L46.6287128,8.77057551 L46.6287128,24.1519896 L46.6267153,24.1519896 L46.6257165,24.1489933 Z M50.7066153,9.22602518 C51.3558038,9.06222311 52.2177263,8.89142948 53.2953793,8.70665275 C54.3710347,8.52686999 55.6084878,8.43398223 57.010735,8.43398223 C58.2711594,8.43398223 59.3148547,8.61176741 60.1468148,8.96633897 C60.9807723,9.32190932 61.6449421,9.8183095 62.1423203,10.4585359 C62.6396986,11.0977635 62.9912591,11.8648366 63.1940057,12.7557601 C63.3957535,13.6526763 63.4976262,14.6354887 63.4976262,15.7121877 L63.4976262,24.6054417 L60.6641681,24.6054417 L60.6641681,16.3214515 C60.6641681,15.3456307 60.5982505,14.513636 60.467414,13.8244687 C60.3355788,13.1313063 60.117851,12.5759773 59.812233,12.1494927 C59.5096113,11.7200116 59.1011219,11.4123833 58.5937561,11.220615 C58.0873891,11.0238528 57.4551794,10.9289675 56.7061157,10.9289675 C56.4014965,10.9289675 56.0868898,10.9419518 55.764293,10.9619276 C55.4387,10.9819035 55.1280883,11.0078721 54.8354541,11.0378359 C54.5358287,11.0677997 54.2761533,11.1037563 54.0414466,11.143708 C53.8057413,11.1836597 53.6389498,11.2156211 53.5380759,11.2335994 L53.5380759,24.6044429 L50.7066153,24.6044429 L50.7066153,9.22602518 Z M70.0444424,8.76857793 L76.0449416,8.76857793 L76.0449416,11.143708 L70.0444424,11.143708 L70.0444424,18.4548737 C70.0444424,19.2439202 70.106365,19.9031237 70.2292115,20.4175021 C70.3490617,20.9368746 70.5328319,21.3443822 70.7765273,21.6380273 C71.0202227,21.9296749 71.3258407,22.1374239 71.6893862,22.262273 C72.0549293,22.3841258 72.4813962,22.4440534 72.9677882,22.4440534 C73.8396983,22.4440534 74.5298356,22.3471705 75.0401976,22.1544034 C75.5465646,21.9606375 75.8921327,21.8248017 76.0739054,21.7419018 L76.6831439,24.0591019 C76.3994984,24.2009305 75.8961277,24.3827108 75.1750291,24.6054417 C74.455928,24.8301702 73.6389492,24.9430338 72.7250916,24.9430338 C71.6484374,24.9430338 70.7595485,24.8061991 70.058425,24.5305322 C69.3592989,24.2548653 68.796003,23.8453601 68.3705349,23.2970227 C67.9430692,22.7496841 67.6434438,22.0744999 67.4716585,21.2724691 C67.2978757,20.4684406 67.2119831,19.5405618 67.2119831,18.4858362 L67.2119831,4.35191473 L70.0424449,3.8625061 L70.0424449,8.77057551 L70.0444424,8.77057551 L70.0444424,8.76857793 Z M91.4556778,24.1489933 C90.803493,24.3107977 89.947563,24.4855865 88.8788988,24.6663681 C87.8142297,24.850146 86.5817703,24.942035 85.1835182,24.942035 C83.9630438,24.942035 82.9393235,24.7642498 82.1073634,24.4086795 C81.2714084,24.0541079 80.6022449,23.551715 80.0958779,22.9005019 C79.5865146,22.2512863 79.2239678,21.4842132 78.9972512,20.6032777 C78.7775258,19.7173482 78.6626694,18.7395297 78.6626694,17.6618319 L78.6626694,8.77057551 L81.4991238,8.77057551 L81.4991238,17.0535669 C81.4991238,18.984234 81.8027442,20.3655649 82.4109839,21.1965608 C83.0202223,22.0295542 84.0459402,22.4450522 85.4871386,22.4450522 C85.7917578,22.4450522 86.1063646,22.4350643 86.4319576,22.4130908 C86.7535556,22.3931149 87.0591735,22.3681451 87.3438177,22.3381813 C87.6274632,22.3082175 87.8891361,22.2782537 88.1198477,22.2482899 C88.3535555,22.2153298 88.5223445,22.1823696 88.6242172,22.1384227 L88.6242172,8.77057551 L91.4576753,8.77057551 L91.4576753,24.1519896 L91.4556778,24.1519896 L91.4556778,24.1489933 Z" id="ubuntu" fill="#FFFFFF" fill-rule="nonzero"></path></g></svg>
+      </a>
+      <ul>
+        <li><a href="#">Enterprise</a></li>
+        <li><a href="#">Developer</a></li>
+        <li><a href="#">Community</a></li>
+        <li><a href="#">Download</a></li>
+      </ul>
+    </nav>
+    <nav aria-label="related navigation">
+      <a href="index.html">The UMH</a>
+      <ul>
+        <li>
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a>
+        </li>
+        <li>
+          <a href="BugReportResponses.html" title="Bug Report Responses"
+             accesskey="N">next</a>
+        </li>
+        <li>
+          <a href="BugHandling.html" title="Bug Reports"
+             accesskey="P">previous</a>
+        </li>
+        <li><a href="BugHandling.html" accesskey="U">Bug Reports</a></li>
+      </ul>
+    </nav>
+  </header>
+  <aside>
+    <nav aria-label="main navigation">
+<h3>Contents</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Concepts.html">High Level Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Setup.html">Setting up for Ubuntu Development</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="BugHandling.html">Bug Reports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CommonTasks.html">Common Tasks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PackageMaintenance.html">Package Maintenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Debugging.html">Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Reviewing.html">Reviewing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="RequestingUploadRights.html">Requesting Upload Rights</a></li>
+</ul>
+
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="https://github.com/waveform80/ubuntu-maintainers-handbook/blob/main/source/BugTriage.rst">Show on GitHub</a></li>
+    <li><a href="https://github.com/waveform80/ubuntu-maintainers-handbook/edit/main/source/BugTriage.rst">Edit on GitHub</a></li>
+  </ul>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+    </nav>
+  </aside>
+  <main>
+    
+  <div class="section" id="bug-triage">
+<h1>Bug Triage<a class="headerlink" href="#bug-triage" title="Permalink to this headline">¶</a></h1>
+<p>New bugs get reported every day, and existing tickets in Launchpad get updated
+with comments, patches, and status changes.  The triager’s job is to review the
+traffic, deal with invalid or trivial issues, ignore stuff that’s just noise,
+and flag items of importance, urgency, and/or readiness.</p>
+<p>Triaging work is shared across the team, with the goal of successfully
+reviewing every bug filed against Ubuntu Server related packages.  Each
+triaging session will focus on a subset of tickets that changed during a
+specific time period, such as the previous day.  The triager isn’t responsible
+for solving the reported problem, just to ensure it is getting appropriate
+attention it needs.</p>
+<p>All newly reported issues will need a triager’s review.  A review involves
+analyzing a bug to determine if the bug is valid and if sufficient information
+was provided, and then marking it ‘Triaged’.  Otherwise, it’s set to a more
+appropriate state with a comment explaining why, and what next actions are, if
+any.</p>
+<p>Older issues generally require no triager action if they’re progressing through
+their normal workflow. But watch for comments providing new information that
+may make the issue more actionable.</p>
+<div class="section" id="types-of-issue-tickets">
+<h2>Types of Issue Tickets<a class="headerlink" href="#types-of-issue-tickets" title="Permalink to this headline">¶</a></h2>
+<p>Items in the triaging queue tend to fall into a few categories, that are
+handled in different ways:</p>
+<dl class="docutils">
+<dt>Process Tickets</dt>
+<dd><p class="first">Bug reports are often used to track status of packaging workflow tasks:</p>
+<ul class="simple">
+<li>Sync requests</li>
+<li>Merge requests</li>
+<li>Stable release updates (SRU)</li>
+<li>Main Inclusion Requests (MIR)</li>
+<li>Freeze exception request (FFe, UI-FFe, et al.)</li>
+<li>Package promotion/demotion (“Seed management/changes”)</li>
+</ul>
+<p class="last">These will generally either be filed by or assigned to a team member; if not,
+investigate further.  Generally, for properly owned tickets ‘No action is
+required’ by the triager, unless something unusually weird is going on in
+which case ‘Raise with the Team’ (that <em>raising</em> can be “bringing it up in
+post-standup”, “bringing it up in the weekly bug meeting” or “bringing it up
+in a chat channel pinging related developers” TL;DR do not stay alone with
+the weirdness - group experience and group decisions win).</p>
+</dd>
+<dt>SRU Regression Bugs</dt>
+<dd>Problems that look like the result of an SRU update to a server package need
+to receive top priority.  For such bugs, ‘Add to Server-Next Queue’ and
+‘Raise with the Team’.  If possible, verify rolling back to the prior version
+of the package fixes the issue, and re-installing the update brings the issue
+back. In this case, also tag the bug ‘regression-update’.  Be aware that bugs
+are sometimes described as regressions simply because they’re new to the
+user, not due to being actually introduced from an SRU update. For example,
+the user could have had a bad config file already, but the SRU triggers a
+restart of the service an that’s when the user notices the problem and files
+a bug, thinking it was the update that introduced it.</dd>
+<dt>Severe Bugs</dt>
+<dd>Urgently important issues such as ones with potential for widespread
+breakage, should immediately ‘Add to Server-Next Queue’.</dd>
+<dt>High Profile Bugs</dt>
+<dd>Issues which involve an important customer or VIP, or that turn up frequently
+in search results, can generate a lot of “repeat visits” so to speak.  Just
+‘Raise issue with the team’, unless its already well known in which case ‘No
+action required’ by the triager.</dd>
+<dt>Support Requests</dt>
+<dd>Sometimes users report problems that are really just a misunderstanding of
+how to use their system.  Kindly redirect them to more appropriate venues for
+help, and/or lend any obvious advice, but otherwise close the ticket as
+“Invalid” due to being ‘Not a Bug’.</dd>
+<dt>Unclear</dt>
+<dd>If the ticket is missing log files, version details, or other information
+necessary to decide how to handle the bug, ask the user for what’s needed,
+set the ticket to “Incomplete” due to ‘Not Enough Info.’</dd>
+<dt>Duplicate</dt>
+<dd><p class="first">If the issue is clearly the same as another report</p>
+<ul class="last simple">
+<li>mark one as duplicate of the better reported (or older) issue.</li>
+<li>If there are existing tickets that sound very similar, make sure
+they are mentioned in a comment.  Ask the reporter(s) to review
+those and identify if it is indeed a dupe, or if not to then
+elaborate on how this new one differs.</li>
+</ul>
+</dd>
+<dt>Non-actionable Comment</dt>
+<dd><p class="first">If an existing ticket pops up in the queue due to a comment, check if it is
+adding information.</p>
+<ul class="last simple">
+<li>If it’s just noise (e.g. “me too!”), ‘No action is required’ by the
+triager.</li>
+<li>If it seems to describe a legitimate problem, but one completely
+unrelated to the originally reported issue, recommend filing a new
+bug report.</li>
+<li>Otherwise suggest logical next steps, to put current interest to
+work at helping the bug make forward progress.</li>
+</ul>
+</dd>
+<dt>Unreproducible Bug</dt>
+<dd>If the issue can’t be reproduced (e.g. in an lxc container) then request the
+reporter provide the ‘Missing Steps to Reproduce’ it.</dd>
+<dt>Reproducible Bug</dt>
+<dd>If there seems to be enough information to reproduce the bug, try to do so in
+an lxc container, and then itemize the steps to follow, and how to identify
+that the bug has indeed occurred.  If it all looks good, subscribe the server
+team, or if the issue looks urgent and/or important ‘Add to Server-Next
+Queue’.</dd>
+<dt>Already Fixed in Development</dt>
+<dd><p class="first">An issue that can be reproduced in a supported Ubuntu release, but not in the
+current development version of Ubuntu, may qualify for SRU processing.</p>
+<ul class="last simple">
+<li>Make sure the reproduction steps are clearly outlined</li>
+<li>If the issue is minor/trivial, it probably won’t be worth SRUing, so should
+be closed as already fixed in development.</li>
+<li>If the issue is a request for a feature (not a bug fix), it may not qualify
+as eligible for SRU.  If that’s the case, either close it as fixed in
+development, or add bug tasks for the requested releases set as ‘Wishlist’,
+and close the main bug task as fixed.</li>
+<li>If the issue is a bug fix and looks important, then determine which
+supported Ubuntu releases will need the fix and add Bug Tasks as
+appropriate.  Even though the issue is fixed in the development, leave the
+main task <em>open</em> in this case because otherwise Launchpad may not display
+it in reports and lists.</li>
+</ul>
+</dd>
+<dt>Already Fixed in Debian</dt>
+<dd><p class="first">If the issue has been solved in Debian, it will likely be worth merging
+and/or sru’ing the fix.</p>
+<ul class="last simple">
+<li>Make sure steps to reproduce it are identified.</li>
+<li>If the issue affects the development release, it is a merge opportunity.
+If past feature-freeze, decide if is it worth a freeze exception.  Make
+sure there is a merge bug in launchpad for the package, and consider to Add
+to Server-Next/Server-Todo Queue.</li>
+<li>If the issue affects a stable release and looks SRU-worthy, determine which
+supported Ubuntu releases will need the fix and add Bug Tasks as
+appropriate.</li>
+</ul>
+</dd>
+<dt>Already Fixed Upstream</dt>
+<dd><p class="first">All the steps of the “already fixed in Debian” category above apply, here as
+well -  in addition, help Debian when appropriate by:</p>
+<ul class="last simple">
+<li>filing a Debian bug about it or chime in if there is an existing one</li>
+<li>If you create a PR for Ubuntu that can be used almost as-is consider
+sending one via salsa as well</li>
+<li>Aligning our solution with Debian not only is kind, but additionally helps
+to avoid long term complex divergence and delta</li>
+</ul>
+</dd>
+<dt>Unclear</dt>
+<dd>If in doubt or none of the above applies consider bringing it up via chat or
+if looking for a group discussion and decision tag it
+<code class="docutils literal notranslate"><span class="pre">server-triage-discuss</span></code>. Those bugs we will try to resolve together in our
+weekly meeting.</dd>
+</dl>
+<div class="section" id="special-cases">
+<h3>Special cases<a class="headerlink" href="#special-cases" title="Permalink to this headline">¶</a></h3>
+<p>A few of our packages have common issue patterns or best practise triaging
+actions. This section shall list them so that anyone on triage duty can find
+all of it in one place.</p>
+<dl class="docutils">
+<dt>Mysql</dt>
+<dd><p class="first">MySQL often has low quality bug reports by users not fully aware which
+dependency brought it onto their system. Those often fall into a few common
+usage errors.  Furthermore there are a few long standing issues that affect
+many users but often are reported as new.</p>
+<blockquote class="last">
+<div><ul class="simple">
+<li>Due to that we’ve found that quite often as a first step in triaging
+mysql one might want to check for duplicates.<ul>
+<li>In the days of mysql-5.7 (Xenial/Bionic) we tagged the common core bugs
+that one would dup new bugs to, those are available as <a class="reference external" href="https://bugs.launchpad.net/ubuntu/+source/mysql-5.7/+bugs?&amp;field.tag=triage">mysql-5.7
+triage tag</a></li>
+<li>Since mysql-8.0 we no more use that tag, instead it turned out to be
+more reliable to just look at recent <a class="reference external" href="https://bugs.launchpad.net/ubuntu/+source/mysql-8.0/+bugs?orderby=-heat&amp;start=0">mysql-8.0 bugs by heat</a> to spot
+the duplication candidates</li>
+</ul>
+</li>
+<li>If not a duplicate, then still please update the bug title from the usual
+apport “failed on postinst” to whatever the bug really is about for
+better recognizing the issue in any kind of overview that just lists the
+title.</li>
+</ul>
+</div></blockquote>
+</dd>
+<dt>Virtualization controlled through libvirt</dt>
+<dd>If these reports are about the inability to access devices or <em>permission
+denied</em> issues the user often does not realize that libvirt applies an
+apparmor profile to the guest for enhanced security. If not available in the
+bug report (dmesg of the time of occurance) please make sure to ask to check
+for apparmor denials at the time the problem triggers.</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="process-and-policy">
+<h2>Process and Policy<a class="headerlink" href="#process-and-policy" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="direct-team-subscriptions">
+<h3>Direct team subscriptions<a class="headerlink" href="#direct-team-subscriptions" title="Permalink to this headline">¶</a></h3>
+<p>We subscribe <em>~ubuntu-server</em> directly to a bug to track our community bug
+backlog when the bug meets the following criteria. When the bug no longer meets
+these criteria, we unsubscribe it:</p>
+<ol class="arabic simple">
+<li>Anything that, if the bug turns out to be valid, is something that would be
+under the <em>~ubuntu-server</em> remit to fix (common use cases but not obscure
+ones - but nothing stops an individual volunteering to work on an obscure
+use case, of course).</li>
+<li>By definition, if it’s something that we wouldn’t fix and request volunteers
+even if we had time, then it doesn’t warrant a subscription.</li>
+<li>This subscription is for the Ubuntu Server triage community and is not for
+tracking of internal Canonical customer requests.   Whether a Canonical
+customer has made a request in relation to a particular bug makes no
+difference and provides no additional priority under this process. A
+Canonical customer bug may still be subscribed if it qualifies under these
+criteria.</li>
+<li>If the bug is assigned to someone on our team, leave it subscribed. No need
+to subscribe, and feel free to unsubscribe the team.</li>
+</ol>
+</div>
+<div class="section" id="tagging-server-next">
+<h3>Tagging <code class="docutils literal notranslate"><span class="pre">server-next</span></code><a class="headerlink" href="#tagging-server-next" title="Permalink to this headline">¶</a></h3>
+<p>Since the backlog is bigger than what can be achieved in a short time, there is
+the extra classification via the tag <code class="docutils literal notranslate"><span class="pre">server-next</span></code>. That tag is set by the
+Triager (or anyone else working on doing the Root-Cause-Analysis or a Fix) to
+reflect that this is an issue that shall be tackled by the Teams resources
+“next”.</p>
+<p>Another reason to add <code class="docutils literal notranslate"><span class="pre">server-next</span></code> in some cases is to preserve high quality
+contributions of the community. An example might be a report that the user
+already bisected and created a patch for - in those cases the benefit
+diminishes by bit rot way too fast, so handling that next helps to retain the
+work the reporters did. And vice versa it might encourage one or the other to
+provide more high quality bugs.</p>
+<p>The goal is to have this list around ~20 bugs most of the time, if dropping
+below we can refill with candidates from the <em>~ubuntu-server</em> subscribed bugs.
+But if it grows significantly out of this range it is non-realistic to expect
+those issues to be handled in time, we should communicate so to the reporters.</p>
+<p>The rules of the <code class="docutils literal notranslate"><span class="pre">server-next</span></code> tag are as follows:</p>
+<ol class="arabic">
+<li><p class="first">Must not tag unless bug is actionable. Doesn’t mean it must have a patch,
+only that a developer has enough information to work on the bug, even if it
+means more debugging.</p>
+</li>
+<li><p class="first">Tag only if one of these two things are true:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Delays will discourage this excellent community contribution.</li>
+<li><dl class="first docutils">
+<dt>If you believe it affects a major use case for Ubuntu server users. In</dt>
+<dd>this case you should also set the bug Importance.</dd>
+</dl>
+</li>
+</ol>
+</div></blockquote>
+</li>
+<li><p class="first">The set of all bugs tagged <code class="docutils literal notranslate"><span class="pre">server-next</span></code> must be kept small. If it grows,
+the lowest priority bugs tagged <code class="docutils literal notranslate"><span class="pre">server-next</span></code> must be removed until the
+list isn’t too big.</p>
+</li>
+<li><p class="first">This tag is for the Ubuntu Server triage community and is not for tracking
+of internal Canonical customer requests. Whether a Canonical customer has
+made a request in relation to a particular bug makes no difference and
+provides no additional priority under this process. A Canonical customer bug
+may still be tagged if it qualifies under these criteria.</p>
+</li>
+<li><p class="first">If the bug is assigned to or otherwise owned by someone on our team, there
+is no need to tag it.</p>
+</li>
+<li><p class="first">Remove the tag when the bug is assigned to or otherwise owned by someone on
+our team.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="tagging-server-todo">
+<h3>Tagging <code class="docutils literal notranslate"><span class="pre">server-todo</span></code><a class="headerlink" href="#tagging-server-todo" title="Permalink to this headline">¶</a></h3>
+<p>This is our new tag we use from now on to represent valid and work we should do
+(better than just backlog), but not as important/easy/urgent as <code class="docutils literal notranslate"><span class="pre">server-next</span></code></p>
+<p>We want to assign bugs from this queue as well, just not as
+urgently/desperately:</p>
+<p>Definition to qualify for server-todo:</p>
+<ul class="simple">
+<li>Whatever we think that we want to work on soon. For example:<ul>
+<li>An important new technology for Ubuntu-Server users</li>
+<li>Great community engagement that provide debugging and patches, but might be
+too unimportant for <code class="docutils literal notranslate"><span class="pre">server-next</span></code></li>
+<li>OTOH we don’t want to put in bugs where the next step is significantly
+larger than one day to complete, unless the bug is particularly important.
+Examples:<ul>
+<li>A feature that is Ubuntu only and important for our users -&gt; ok to be in
+the list despite likely needing more time</li>
+<li>A valid crash report, but being a corner case and having just one
+affected user; All low hanging fruits and obvious checks are done,
+therefore the next debug step is estimated to take at least a week -&gt;
+this might be ok for the backlog, but not really for <code class="docutils literal notranslate"><span class="pre">server-todo</span></code></li>
+</ul>
+</li>
+<li>Make sure it is clear if the bug needs work in development or needs SRUs,
+by defining bug tasks accordingly. (These bug tasks can help in identifying
+current vs. obsolete bugs.)</li>
+</ul>
+</li>
+<li>As with <code class="docutils literal notranslate"><span class="pre">server-next</span></code> we want to limit the number of all bugs tagged with
+this at ~40<ul>
+<li>If we exceed the size, drop the oldest/least recently touched ones</li>
+</ul>
+</li>
+<li>These bugs are not necesarily assigned/progressing at all time, but available
+for anyone from the team to grab</li>
+<li>Only bugs that qualify for the backlog qualify here. If they aren’t suitable
+for the backlog (eg. not actionable by us) then they get dropped from both
+<code class="docutils literal notranslate"><span class="pre">server-todo</span></code> and the backlog.</li>
+</ul>
+</div>
+<div class="section" id="daily-bug-expiration">
+<h3>Daily Bug Expiration<a class="headerlink" href="#daily-bug-expiration" title="Permalink to this headline">¶</a></h3>
+<p>There are two levels of expiration. The tooling will help to report these to
+the Triager.</p>
+<dl class="docutils">
+<dt>Server-next expiration (default after <strong>60 days</strong>)</dt>
+<dd><p class="first">If we considered a bug actionable and added it to server-next, but then no
+update happened in 60 days that usually means something went wrong. Often
+bugs are blocked on external constraints. This needs to be evaluated as a
+case-by-case decision. Most common cases are, that it turns out:</p>
+<ul class="last simple">
+<li>that the bug is not solvable/reasonable the way it was planned -&gt;
+re-triage, maybe drop server-next.</li>
+<li>that it is actually fixed or otherwise progressed without update -&gt; update
+bug</li>
+<li>that we failed to give it the required focus -&gt; add the
+server-triage-discuss tag to the bug and bring it in the next standup</li>
+</ul>
+</dd>
+<dt>Server subscription expiration (default after <strong>180 days</strong>)</dt>
+<dd><p class="first">If nobody touched a bug for 180 days (~= 1 release cycle) it is reasonable to
+check for changed conditions. Quite often e.g. a patch one was waiting on is
+available now. In other cases a newer release fixed it already. Essentially
+anything that is listed here needs to be fully re-triaged to ensure the list
+is reflecting the current status. It also can after this time be used as a
+metric how many more people chimed in got dupped on the bug
+(importance/#affected). Most common cases are, that it turns out:</p>
+<ul class="last simple">
+<li>that recent releases upstream or even already in Ubuntu have the fix -&gt;
+re-triage, consider tagging <code class="docutils literal notranslate"><span class="pre">server-next</span></code> for SRU</li>
+<li>that the bug should have been supported by the community but nothing
+happened -&gt; re-triage importance, consider dropping <em>~ubuntu-server</em>
+subscription</li>
+<li>that a bug that was formerly considered a real case is not qualifying
+anymore (e.g. alternative solutions have taken hold as <em>the</em> way to do it)
+-&gt; re-triage importance, consider dropping <em>~ubuntu-server</em> subscription</li>
+<li>If unsure, add the server-triage-discuss tag and bring it up at the next
+standup</li>
+</ul>
+</dd>
+</dl>
+<p>Overall for all of these we have to be honest to the bug reporter, try to
+understand why an issue was not worked on and explain it if possible. Also if
+we drop <code class="docutils literal notranslate"><span class="pre">server-next</span></code> or the <em>~ubuntu-server</em> subscription for any of the
+reasons above always add a explanatory comment. If reporters disagree with our
+re-triage they will report on the bug and it will show up in the daily triage
+duty the next day to be reconsidered with that point of view taken into
+consideration.</p>
+</div>
+</div>
+<div class="section" id="awareness-of-the-triage">
+<h2>Awareness of the Triage<a class="headerlink" href="#awareness-of-the-triage" title="Permalink to this headline">¶</a></h2>
+<p>We have several stakeholders we want to keep up-to-date on things that we’ve
+found on triage. On one hand we want to keep the community generally informed
+as well as raising issues within the team to ensure they are not falling
+through the cracks.</p>
+<p>For the community we send a mail to <a class="reference external" href="mailto:ubuntu-server&#37;&#52;&#48;lists&#46;ubuntu&#46;com">ubuntu-server<span>&#64;</span>lists<span>&#46;</span>ubuntu<span>&#46;</span>com</a> that
+summarizes how many bugs we’ve triaged and touches on the noteworthy cases.
+This can also be used to CC additional people that (for case specific reasons)
+should be aware of a case. An example of that would be if a security fix caused
+an upgrade-regression which would make us CC the uploader and/or
+ubuntu-security.</p>
+<p>Furthermore on cases that need immediate attention or at least awareness we
+might:</p>
+<ul class="simple">
+<li>Bring them up in the daily standup (mostly if they need a discussion/decision
+that one can’t do alone)</li>
+<li>Ping a subject matter expert via IRC/Mattermost</li>
+</ul>
+<p>In some cases a package maintainer might already be aware and follow a case. To
+avoid endless re-pings on such a case the agreement is that if the maintainer
+is personally subscribed (i.e. with his launchpad user, not just indirectly via
+teams like <a class="reference external" href="https://launchpad.net/~ubuntu-virt">Ubuntu Virtualisation</a>) then we consider the maintainer to be
+aware and will not do extra pings/mentions/CC.</p>
+</div>
+<div class="section" id="triage-rotation">
+<h2>Triage Rotation<a class="headerlink" href="#triage-rotation" title="Permalink to this headline">¶</a></h2>
+<p>According to load we might shift things, but generally every day Tue-Fri has a
+team member assigned. Monday is often more work and includes more low quality
+bugs as it includes all of the weekend - therefore Monday is a rotation through
+all eligible bug triagers. This is organized internally in the teams Jira and
+automation will create a Task with the “bug-triage” label assigned to the
+person on rotation.</p>
+</div>
+<div class="section" id="tooling">
+<h2>Tooling<a class="headerlink" href="#tooling" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference external" href="https://snapcraft.io/ustriage">ustriage</a> tool is available as a snap and serves as the tool a triager
+would use. It is maintained publicly on github as <a class="reference external" href="https://github.com/canonical/ubuntu-server-triage">ubuntu server triage</a>. It
+has options to identify bugs for the triage of the day as well as serving as a
+helper to check our tagged bugs ensuring that nothing falls through the cracks.
+The Readme.md of the linked project has some more details and use case example.</p>
+</div>
+</div>
+
+
+    <footer>
+      Last updated Monday, 21 February 2022.
+    </footer>
+  </main>
+  <footer>
+        &#169; Copyright 2022 Ubuntu Contributors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 1.8.5.
+  </footer>
+  </body>
+</html>

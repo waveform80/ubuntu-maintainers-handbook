@@ -1,0 +1,1123 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Merging &#8212; The UMH 1.0 documentation</title>
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Syncs" href="Syncs.html" />
+    <link rel="prev" title="Fixing a Package" href="PackageFixing.html" />
+    <link rel="preload" as="font" type="font/woff2" href="https://assets.ubuntu.com/v1/46ed6870-Ubuntu-L-subset.woff2" crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href="https://assets.ubuntu.com/v1/3baab91b-Ubuntu-Th-subset.woff2" crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href="https://assets.ubuntu.com/v1/6113b69a-Ubuntu-LI-subset.woff2" crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href="https://assets.ubuntu.com/v1/0c7b8dc0-Ubuntu-R-subset.woff2" crossorigin /> 
+  </head><body>
+  <header>
+    <nav aria-label="site navigation">
+      <a href="https://ubuntu.com/">
+        <svg width="107px" height="32px" viewBox="0 0 107 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="ubuntu-logo"><path d="M100.470409,13.7615448 C96.9385448,13.7615448 94.0754031,10.8982838 94.0754031,7.36627238 C94.0754031,3.83426097 96.9385448,0.971 100.470409,0.971 C104.002273,0.971 106.865415,3.83426097 106.865415,7.36627238 C106.865415,10.8982838 104.002273,13.7615448 100.470409,13.7615448 Z M96.479398,6.59820047 C96.0559273,6.59820047 95.7123568,6.9417853 95.7123568,7.36727117 C95.7123568,7.78976066 96.0559273,8.13434429 96.479398,8.13434429 C96.9038674,8.13434429 97.2504342,7.78976066 97.2504342,7.36727117 C97.2504342,6.9417853 96.9038674,6.59820047 96.479398,6.59820047 Z M101.966539,10.0919788 C101.601995,10.3017254 101.475153,10.7731557 101.684891,11.1377152 C101.898624,11.5092663 102.369036,11.6341154 102.73358,11.4213725 C103.103118,11.2116259 103.22996,10.7401956 103.015228,10.3726397 C102.803493,10.0030862 102.334079,9.87823709 101.966539,10.0929776 L101.966539,10.0919788 Z M98.1493106,7.36727117 C98.1493106,6.6081884 98.5268386,5.93500183 99.104117,5.52949182 L98.5428187,4.58762991 C97.8686614,5.03708681 97.3682869,5.72425648 97.1605465,6.52828495 C97.4062394,6.72804357 97.5580496,7.02768151 97.5580496,7.36727117 C97.5580496,7.70386446 97.4062394,8.00649877 97.1605465,8.20425981 C97.3682869,9.00828828 97.8696601,9.69445915 98.5428187,10.1419185 L99.104117,9.20305294 C98.5268386,8.79754293 98.1493106,8.12435636 98.1493106,7.36727117 Z M100.392506,5.11998664 C101.568037,5.11998664 102.529835,6.02089804 102.62971,7.16951013 L103.726339,7.14953427 C103.671408,6.30555408 103.30187,5.54147734 102.73358,4.98714716 C102.438948,5.09501681 102.100372,5.08003492 101.809735,4.90924129 C101.518099,4.74144405 101.337325,4.4577868 101.286389,4.15015852 C101.001745,4.07225265 100.703118,4.03030334 100.392506,4.03030334 C99.8631682,4.03030334 99.3617949,4.15415369 98.9143542,4.37388818 L99.4486863,5.33073199 C99.735328,5.19589492 100.057925,5.12098543 100.392506,5.12098543 L100.392506,5.11998664 Z M100.392506,9.61155932 C100.056926,9.61155932 99.735328,9.53565105 99.4486863,9.40181277 L98.9143542,10.3586566 C99.3607962,10.5783911 99.8631682,10.7022414 100.392506,10.7022414 C100.704117,10.7022414 101.001745,10.6622897 101.286389,10.5823862 C101.336327,10.2727604 101.518099,9.98810433 101.809735,9.82130588 C102.103368,9.65350864 102.438948,9.63553036 102.73358,9.74839398 C103.302868,9.18607345 103.670409,8.42599188 103.726339,7.5810129 L102.62971,7.56503221 C102.529835,8.71064793 101.568037,9.61056053 100.392506,9.61056053 L100.392506,9.61155932 Z M101.966539,4.64156473 C102.334079,4.85430767 102.803493,4.72945853 103.015228,4.35990507 C103.22996,3.993348 103.103118,3.52091885 102.735578,3.30917471 C102.370035,3.09942815 101.899623,3.22427729 101.686888,3.59183316 C101.474154,3.95839024 101.600996,4.4288218 101.966539,4.64056594 L101.966539,4.64156473 Z M12.7910109,24.1489933 C12.1418224,24.3107977 11.2828961,24.4855865 10.2172282,24.6663681 C9.15056154,24.850146 7.91610464,24.942035 6.5178525,24.942035 C5.29737813,24.942035 4.27365781,24.7642498 3.43970028,24.4086795 C2.60774025,24.0541079 1.93857672,23.551715 1.4322097,22.9005019 C0.922846416,22.2512863 0.558302106,21.4842132 0.335580515,20.6032777 C0.109862669,19.7153506 0,18.7385309 0,17.6598343 L0,8.76857793 L2.83146059,8.76857793 L2.83146059,17.0515693 C2.83146059,18.9822364 3.13508106,20.3635673 3.746317,21.1945632 C4.35555543,22.0275567 5.38127325,22.4430546 6.82247172,22.4430546 C7.12609218,22.4430546 7.44169767,22.4330667 7.76629191,22.4110932 C8.09188491,22.3911174 8.39750288,22.3661475 8.67915081,22.3361837 C8.96279625,22.3062199 9.22247165,22.2762561 9.45617951,22.2462924 C9.68988736,22.214331 9.85568012,22.1813708 9.95955028,22.1384227 L9.95955028,8.76857793 L12.7910109,8.76857793 L12.7910109,24.1499921 L12.7910109,24.1489933 Z M19.7033702,9.46773311 C20.049937,9.24600104 20.5722841,9.01028586 21.2734076,8.76857793 C21.9725337,8.5258712 22.7785262,8.40202085 23.6943813,8.40202085 C24.8299618,8.40202085 25.8396996,8.60777223 26.7235947,9.01128466 C27.6084886,9.41679466 28.3535572,9.98710554 28.9637944,10.7192209 C29.5700366,11.4483399 30.0324586,12.3212851 30.3470653,13.3360589 C30.6636695,14.3518315 30.8204735,15.469481 30.8204735,16.6880086 C30.8204735,17.9664638 30.6327082,19.1180723 30.2551802,20.1438328 C29.8786508,21.1685946 29.3463163,22.0365458 28.6571777,22.7466877 C27.9660416,23.459826 27.1350804,24.005167 26.1583014,24.3917 C25.1865161,24.7782329 24.0908857,24.971 22.8694126,24.971 C21.5490631,24.971 20.3825213,24.8781122 19.366791,24.6953331 C18.3520594,24.512554 17.5191006,24.328776 16.8699121,24.1459969 L16.8699121,1.45940984 L19.7023715,0.971998793 L19.7023715,9.46773311 L19.700374,9.46773311 L19.7033702,9.46773311 Z M20.9078646,22.3661475 C21.4242191,22.4390594 22.0664163,22.4730184 22.8404488,22.4730184 C24.3605486,22.4730184 25.5820217,21.9686279 26.4938819,20.9648408 C27.4077395,19.9590561 27.8651677,18.5327795 27.8651677,16.686011 C27.8651677,15.8739922 27.7852676,15.1129119 27.6214724,14.4007724 C27.4586759,13.6896317 27.1940067,13.0763727 26.8294624,12.557999 C26.4639193,12.0386266 25.9905111,11.636113 25.4152302,11.3394714 C24.8339568,11.0438287 24.1388258,10.8970061 23.3278395,10.8970061 C22.5548058,10.8970061 21.8456923,11.0298456 21.195505,11.2915294 C20.5463165,11.5582071 20.0469408,11.8308776 19.7023715,12.1155337 L19.7023715,22.1354263 C19.9880144,22.2203237 20.3885138,22.296232 20.9078646,22.3661475 Z M46.6257165,24.1489933 C45.976528,24.3107977 45.1176017,24.4855865 44.0529326,24.6663681 C42.9872647,24.850146 41.7528078,24.942035 40.3505606,24.942035 C39.1340813,24.942035 38.1083635,24.7642498 37.2764034,24.4086795 C36.4444434,24.0541079 35.7742811,23.551715 35.2689128,22.9005019 C34.7575521,22.2512863 34.3940065,21.4842132 34.1702862,20.6032777 C33.9475646,19.7173482 33.8367032,18.7395297 33.8367032,17.6618319 L33.8367032,8.77057551 L36.6681637,8.77057551 L36.6681637,17.0535669 C36.6681637,18.984234 36.9717842,20.3655649 37.5810226,21.1965608 C38.1902611,22.0295542 39.2149802,22.4450522 40.6571774,22.4450522 C40.9617966,22.4450522 41.2784008,22.4350643 41.6029951,22.4130908 C41.9275893,22.3931149 42.2322085,22.3681451 42.5168527,22.3381813 C42.7994994,22.3082175 43.0591748,22.2782537 43.2938814,22.2482899 C43.5255918,22.2153298 43.693382,22.1823696 43.7962534,22.1384227 L43.7962534,8.77057551 L46.6287128,8.77057551 L46.6287128,24.1519896 L46.6267153,24.1519896 L46.6257165,24.1489933 Z M50.7066153,9.22602518 C51.3558038,9.06222311 52.2177263,8.89142948 53.2953793,8.70665275 C54.3710347,8.52686999 55.6084878,8.43398223 57.010735,8.43398223 C58.2711594,8.43398223 59.3148547,8.61176741 60.1468148,8.96633897 C60.9807723,9.32190932 61.6449421,9.8183095 62.1423203,10.4585359 C62.6396986,11.0977635 62.9912591,11.8648366 63.1940057,12.7557601 C63.3957535,13.6526763 63.4976262,14.6354887 63.4976262,15.7121877 L63.4976262,24.6054417 L60.6641681,24.6054417 L60.6641681,16.3214515 C60.6641681,15.3456307 60.5982505,14.513636 60.467414,13.8244687 C60.3355788,13.1313063 60.117851,12.5759773 59.812233,12.1494927 C59.5096113,11.7200116 59.1011219,11.4123833 58.5937561,11.220615 C58.0873891,11.0238528 57.4551794,10.9289675 56.7061157,10.9289675 C56.4014965,10.9289675 56.0868898,10.9419518 55.764293,10.9619276 C55.4387,10.9819035 55.1280883,11.0078721 54.8354541,11.0378359 C54.5358287,11.0677997 54.2761533,11.1037563 54.0414466,11.143708 C53.8057413,11.1836597 53.6389498,11.2156211 53.5380759,11.2335994 L53.5380759,24.6044429 L50.7066153,24.6044429 L50.7066153,9.22602518 Z M70.0444424,8.76857793 L76.0449416,8.76857793 L76.0449416,11.143708 L70.0444424,11.143708 L70.0444424,18.4548737 C70.0444424,19.2439202 70.106365,19.9031237 70.2292115,20.4175021 C70.3490617,20.9368746 70.5328319,21.3443822 70.7765273,21.6380273 C71.0202227,21.9296749 71.3258407,22.1374239 71.6893862,22.262273 C72.0549293,22.3841258 72.4813962,22.4440534 72.9677882,22.4440534 C73.8396983,22.4440534 74.5298356,22.3471705 75.0401976,22.1544034 C75.5465646,21.9606375 75.8921327,21.8248017 76.0739054,21.7419018 L76.6831439,24.0591019 C76.3994984,24.2009305 75.8961277,24.3827108 75.1750291,24.6054417 C74.455928,24.8301702 73.6389492,24.9430338 72.7250916,24.9430338 C71.6484374,24.9430338 70.7595485,24.8061991 70.058425,24.5305322 C69.3592989,24.2548653 68.796003,23.8453601 68.3705349,23.2970227 C67.9430692,22.7496841 67.6434438,22.0744999 67.4716585,21.2724691 C67.2978757,20.4684406 67.2119831,19.5405618 67.2119831,18.4858362 L67.2119831,4.35191473 L70.0424449,3.8625061 L70.0424449,8.77057551 L70.0444424,8.77057551 L70.0444424,8.76857793 Z M91.4556778,24.1489933 C90.803493,24.3107977 89.947563,24.4855865 88.8788988,24.6663681 C87.8142297,24.850146 86.5817703,24.942035 85.1835182,24.942035 C83.9630438,24.942035 82.9393235,24.7642498 82.1073634,24.4086795 C81.2714084,24.0541079 80.6022449,23.551715 80.0958779,22.9005019 C79.5865146,22.2512863 79.2239678,21.4842132 78.9972512,20.6032777 C78.7775258,19.7173482 78.6626694,18.7395297 78.6626694,17.6618319 L78.6626694,8.77057551 L81.4991238,8.77057551 L81.4991238,17.0535669 C81.4991238,18.984234 81.8027442,20.3655649 82.4109839,21.1965608 C83.0202223,22.0295542 84.0459402,22.4450522 85.4871386,22.4450522 C85.7917578,22.4450522 86.1063646,22.4350643 86.4319576,22.4130908 C86.7535556,22.3931149 87.0591735,22.3681451 87.3438177,22.3381813 C87.6274632,22.3082175 87.8891361,22.2782537 88.1198477,22.2482899 C88.3535555,22.2153298 88.5223445,22.1823696 88.6242172,22.1384227 L88.6242172,8.77057551 L91.4576753,8.77057551 L91.4576753,24.1519896 L91.4556778,24.1519896 L91.4556778,24.1489933 Z" id="ubuntu" fill="#FFFFFF" fill-rule="nonzero"></path></g></svg>
+      </a>
+      <ul>
+        <li><a href="#">Enterprise</a></li>
+        <li><a href="#">Developer</a></li>
+        <li><a href="#">Community</a></li>
+        <li><a href="#">Download</a></li>
+      </ul>
+    </nav>
+    <nav aria-label="related navigation">
+      <a href="index.html">The UMH</a>
+      <ul>
+        <li>
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a>
+        </li>
+        <li>
+          <a href="Syncs.html" title="Syncs"
+             accesskey="N">next</a>
+        </li>
+        <li>
+          <a href="PackageFixing.html" title="Fixing a Package"
+             accesskey="P">previous</a>
+        </li>
+        <li><a href="PackageMaintenance.html" accesskey="U">Package Maintenance</a></li>
+      </ul>
+    </nav>
+  </header>
+  <aside>
+    <nav aria-label="main navigation">
+<h3>Contents</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Concepts.html">High Level Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Setup.html">Setting up for Ubuntu Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BugHandling.html">Bug Reports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CommonTasks.html">Common Tasks</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="PackageMaintenance.html">Package Maintenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Debugging.html">Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Reviewing.html">Reviewing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="RequestingUploadRights.html">Requesting Upload Rights</a></li>
+</ul>
+
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="https://github.com/waveform80/ubuntu-maintainers-handbook/blob/main/source/PackageMerging.rst">Show on GitHub</a></li>
+    <li><a href="https://github.com/waveform80/ubuntu-maintainers-handbook/edit/main/source/PackageMerging.rst">Edit on GitHub</a></li>
+  </ul>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+    </nav>
+  </aside>
+  <main>
+    
+  <div class="section" id="merging">
+<h1>Merging<a class="headerlink" href="#merging" title="Permalink to this headline">¶</a></h1>
+<p>Merging is the process of taking all Ubuntu changes made on top of one Debian
+version of a package, and re-doing them on top of a new Debian version of the
+package.</p>
+<p>There is a more detailed workflow
+[here](<a class="reference external" href="https://wiki.ubuntu.com/UbuntuDevelopment/Merging/GitWorkflow">https://wiki.ubuntu.com/UbuntuDevelopment/Merging/GitWorkflow</a>). This
+guide is intended to cover the majority of use cases.</p>
+<p>You can get a list of packages that have been changed in Debian, but not merged
+into Ubuntu, here:
+<a class="reference external" href="http://reqorts.qa.ubuntu.com/reports/ubuntu-server/merges.html">http://reqorts.qa.ubuntu.com/reports/ubuntu-server/merges.html</a></p>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>We do merges using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">ubuntu</span></code>. As such, the process follows in many ways
+that of a git rebase, where commits from one point are replayed on top of
+another point:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">---</span> <span class="n">something</span> <span class="mf">1.2</span> <span class="o">-----------------------------</span> <span class="n">something</span> <span class="mf">1.3</span>
+     \                                           \
+      <span class="o">--</span> <span class="n">Ubuntu</span> <span class="n">changes</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">--</span> <span class="mf">1.2</span><span class="n">ubuntu1</span>     <span class="o">--</span> <span class="n">Ubuntu</span> <span class="n">changes</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">--</span> <span class="mf">1.3</span><span class="n">ubuntu1</span>
+</pre></div>
+</div>
+<p>At a more detailed level, there are other subtasks to be done, such as:</p>
+<ul class="simple">
+<li>Splitting out large “omnibus” style commits into smaller logical units, one
+commit per logical unit.</li>
+<li>Harmonizing <code class="docutils literal notranslate"><span class="pre">debian/changelog</span></code> commits into two commits: a changelog merge
+and a reconstruction.</li>
+</ul>
+<p>With this process, we keep the Ubuntu version of a package cleanly applied to
+the end of the latest Debian version, and make it easy to drop changes as they
+become redundant.</p>
+</div>
+<div class="section" id="preliminary-steps">
+<h2>Preliminary Steps<a class="headerlink" href="#preliminary-steps" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="decide-on-a-merge-candidate">
+<h3>Decide on a Merge Candidate<a class="headerlink" href="#decide-on-a-merge-candidate" title="Permalink to this headline">¶</a></h3>
+<p>First, you’ll need to check that a newer version is even available from Debian.
+For this, we can use the <code class="docutils literal notranslate"><span class="pre">rmadison</span></code> tool:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rmadison</span> <span class="p">[</span><span class="n">package</span><span class="p">]</span>
+<span class="n">rmadison</span> <span class="o">-</span><span class="n">u</span> <span class="n">debian</span> <span class="p">[</span><span class="n">package</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ rmadison at
+ at | 3.1.13-1ubuntu1   | precise | source, amd64, armel, armhf, i386, powerpc
+ at | 3.1.14-1ubuntu1   | trusty  | source, amd64, arm64, armhf, i386, powerpc, ppc64el
+ at | 3.1.18-2ubuntu1   | xenial  | source, amd64, arm64, armhf, i386, powerpc, ppc64el, s390x
+ at | 3.1.20-3.1ubuntu2 | bionic  | source, amd64, arm64, armhf, i386, ppc64el, s390x
+ at | 3.1.20-3.1ubuntu2 | cosmic  | source, amd64, arm64, armhf, i386, ppc64el, s390x
+ at | 3.1.20-3.1ubuntu2 | disco   | source, amd64, arm64, armhf, i386, ppc64el, s390x
+$ rmadison -u debian at
+at         | 3.1.13-2+deb7u1 | oldoldstable       | source, amd64, armel, armhf, i386, ia64, kfreebsd-amd64, kfreebsd-i386, mips, mipsel, powerpc, s390, s390x, sparc
+at         | 3.1.16-1        | oldstable          | source, amd64, arm64, armel, armhf, i386, mips, mipsel, powerpc, ppc64el, s390x
+at         | 3.1.16-1        | oldstable-kfreebsd | source, kfreebsd-amd64, kfreebsd-i386
+at         | 3.1.20-3        | stable             | source, amd64, arm64, armel, armhf, i386, mips, mips64el, mipsel, ppc64el, s390x
+at         | 3.1.23-1        | testing            | source, amd64, arm64, armel, armhf, i386, mips, mips64el, mipsel, ppc64el, s390x
+at         | 3.1.23-1        | unstable           | source, amd64, arm64, armel, armhf, hurd-i386, i386, kfreebsd-amd64, kfreebsd-i386, mips, mips64el, mipsel, ppc64el, s390x
+at         | 3.1.23-1        | unstable-debug     | source
+</pre></div>
+</div>
+<p>You’ll be merging from debian unstable, which in this example is <code class="docutils literal notranslate"><span class="pre">3.1.23-1</span></code>.</p>
+</div>
+<div class="section" id="check-existing-bug-entries">
+<h3>Check existing bug entries<a class="headerlink" href="#check-existing-bug-entries" title="Permalink to this headline">¶</a></h3>
+<p>Check for any low hanging fruit in the debian or ubuntu bug list that can be
+wrapped into this merge.</p>
+<p><code class="docutils literal notranslate"><span class="pre">https://bugs.launchpad.net/ubuntu/+source/[package]</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">https://tracker.debian.org/pkg/[package]</span></code></p>
+<p>If there are bugs you’d like to fix, make a new SRU style commit at the end of
+the merge process and put them together in the same merge proposal. This
+process is described in the [Adding new changes](#adding-new-changes) section
+below.</p>
+</div>
+<div class="section" id="make-a-bug-report-for-the-merge">
+<h3>Make a bug report for the merge<a class="headerlink" href="#make-a-bug-report-for-the-merge" title="Permalink to this headline">¶</a></h3>
+<p>Search for an existing merge request bug entry in launchpad, and if you don’t
+find one, go to the package’s launchpad page
+(<a class="reference external" href="https://bugs.launchpad.net/ubuntu/+source/some-package">https://bugs.launchpad.net/ubuntu/+source/some-package</a>) and create a new bug
+report, requesting a merge.</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">URL</span><span class="p">:</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">bugs</span><span class="o">.</span><span class="n">launchpad</span><span class="o">.</span><span class="n">net</span><span class="o">/</span><span class="n">ubuntu</span><span class="o">/+</span><span class="n">source</span><span class="o">/</span><span class="n">at</span><span class="o">/+</span><span class="n">filebug</span>
+<span class="n">Summary</span><span class="p">:</span> <span class="s2">&quot;Please merge 3.1.23-1 into disco&quot;</span>
+<span class="n">Description</span><span class="p">:</span> <span class="s2">&quot;tracking bug&quot;</span>
+
+<span class="n">result</span><span class="p">:</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">bugs</span><span class="o">.</span><span class="n">launchpad</span><span class="o">.</span><span class="n">net</span><span class="o">/</span><span class="n">ubuntu</span><span class="o">/+</span><span class="n">source</span><span class="o">/</span><span class="n">at</span><span class="o">/+</span><span class="n">bug</span><span class="o">/</span><span class="mi">1802914</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Save the bug report number, because you’ll be using it throughout the merge
+process.</p>
+</div>
+</div>
+<div class="section" id="clone-the-package-repository">
+<h3>Clone the package repository<a class="headerlink" href="#clone-the-package-repository" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">ubuntu</span> <span class="n">clone</span> <span class="o">&lt;</span><span class="n">package</span><span class="o">&gt;</span> <span class="p">[</span><span class="o">&lt;</span><span class="n">package</span><span class="o">&gt;-</span><span class="n">gu</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git ubuntu clone at at-gu
+</pre></div>
+</div>
+<p>It’s a good idea to append some git ubuntu specific label (like -gu) to
+distinguish it from clones of Debian or upstream git repositories (which tend
+to want to clone as the same name).</p>
+</div>
+</div>
+<div class="section" id="the-merge-process">
+<h2>The Merge Process<a class="headerlink" href="#the-merge-process" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="start-a-git-ubuntu-merge">
+<h3>Start a Git Ubuntu Merge<a class="headerlink" href="#start-a-git-ubuntu-merge" title="Permalink to this headline">¶</a></h3>
+<p>From within the git source tree:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">ubuntu</span> <span class="n">merge</span> <span class="n">start</span> <span class="n">ubuntu</span><span class="o">/</span><span class="n">devel</span> <span class="o">--</span><span class="n">bug</span> <span class="p">[</span><span class="n">bug</span> <span class="n">number</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git ubuntu merge start ubuntu/devel --bug 1802914
+</pre></div>
+</div>
+<p>This will generate the following tags for you:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="13%" />
+<col width="87%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Tag</th>
+<th class="head">Source</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>old/ubuntu</td>
+<td>ubuntu/devel</td>
+</tr>
+<tr class="row-odd"><td>old/debian</td>
+<td>last import tag prior to old/ubuntu without ubuntu suffix in version</td>
+</tr>
+<tr class="row-even"><td>new/debian</td>
+<td>debian/sid</td>
+</tr>
+</tbody>
+</table>
+<p>The tags themselves will be name-spaced to the current bug in the format
+<code class="docutils literal notranslate"><span class="pre">lp12345678</span></code>. Thus, for example, your tags may look like:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">lp1802914/old/ubuntu</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">lp1802914/old/debian</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">lp1802914/new/debian</span></code></li>
+</ul>
+<p>If <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">ubuntu</span> <span class="pre">merge</span> <span class="pre">start</span></code> fails, [do it manually](#start-a-merge-manually)</p>
+<div class="section" id="make-a-merge-branch">
+<h4>Make a merge branch<a class="headerlink" href="#make-a-merge-branch" title="Permalink to this headline">¶</a></h4>
+<p>Use the merge tracking bug and the ubuntu version it’s going into (for example
+<code class="docutils literal notranslate"><span class="pre">disco</span></code>):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git checkout -b merge-lp1802914-disco
+</pre></div>
+</div>
+<p>If there’s no merge bug, the Debian package version you’re merging onto can be
+used (for example <code class="docutils literal notranslate"><span class="pre">merge-3.1.23-1-disco</span></code>)</p>
+<p>Sometimes you can notice a message like the following one when making the merge
+branch:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git checkout -b merge-augeas-mirespace-testing
+Switched to a new branch &#39;merge-augeas-mirespace-testing&#39;
+
+WARNING: empty directories exist but are not tracked by git:
+
+tests/root/etc/postfix
+tests/root/etc/xinetd.d/arch
+
+These will silently disappear on commit, causing extraneous
+unintended changes. See: LP: #1687057.
+</pre></div>
+</div>
+<p>These empty directories can cause that the rich history can get lost when
+uploading them to the archive. Fortunately, <a class="reference internal" href="#empty-directories">a workaround exists</a>.</p>
+</div>
+</div>
+<div class="section" id="split-commits">
+<h3>Split Commits<a class="headerlink" href="#split-commits" title="Permalink to this headline">¶</a></h3>
+<p>In this phase, you split out old-style commits that lumped multiple changes
+together.</p>
+<div class="section" id="check-if-there-are-commits-to-split">
+<h4>Check if there are commits to split<a class="headerlink" href="#check-if-there-are-commits-to-split" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git log --oneline
+
+2af0cb7 (HEAD -&gt; merge-3.1.20-6-disco, tag: lp1802914/reconstruct/3.1.20-3.1ubuntu2, tag: lp1802914/split/3.1.20-3.1ubuntu2) import patches-unapplied version 3.1.20-3.1ubuntu2 to ubuntu/disco-proposed
+2a71755 (tag: pkg/import/3.1.20-5) Import patches-unapplied version 3.1.20-5 to debian/sid
+9c3cf29 (tag: pkg/import/3.1.20-3.1) Import patches-unapplied version 3.1.20-3.1 to debian/sid
+...
+</pre></div>
+</div>
+<p>Get all commit hashes since old/debian, and:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">show</span> <span class="p">[</span><span class="nb">hash</span><span class="p">]</span> <span class="o">|</span> <span class="n">diffstat</span>
+</pre></div>
+</div>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git show 2af0cb7 | diffstat
+changelog |    6 ++++++
+control   |    4 ++--
+2 files changed, 8 insertions(+), 2 deletions(-)
+</pre></div>
+</div>
+<p>Here’s another typical example, for the nspr package:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git show d7ebe661 | diffstat
+changelog                                   |  501 ++++++++++++++++++++++++++++
+control                                     |    3
+patches/fix_test_errcodes_for_runpath.patch |   11
+patches/series                              |    1
+rules                                       |    5
+5 files changed, 520 insertions(+), 1 deletion(-)
+</pre></div>
+</div>
+<p>Any time you see <code class="docutils literal notranslate"><span class="pre">changelog</span></code> and any other file(s) changing in a single
+commit, it’s guaranteed that you’ll need to split it; <code class="docutils literal notranslate"><span class="pre">changelog</span></code> should only
+ever change in it own commit. You should still look over commits to make sure,
+but this is a dead giveaway.</p>
+<p>Another giveaway would be a commit named <code class="docutils literal notranslate"><span class="pre">Import</span> <span class="pre">patches-unapplied</span> <span class="pre">version</span>
+<span class="pre">1.2.3ubuntu4</span> <span class="pre">to</span> <span class="pre">ubuntu/cosmic-proposed</span></code>, where it’s applying from an ubuntu
+source rather than a debian one (in this case <code class="docutils literal notranslate"><span class="pre">ubuntu4</span></code>).</p>
+<p>If there are no commits to split, simply <a class="reference internal" href="#tag-split">add the split tag</a> and
+<a class="reference internal" href="#prepare-the-logical-view">move on</a>.</p>
+</div>
+<div class="section" id="identify-logical-changes">
+<h4>Identify logical changes<a class="headerlink" href="#identify-logical-changes" title="Permalink to this headline">¶</a></h4>
+<p>The next step is to separate the changes into logical units.  For the <em>at</em>
+package, this is trivial: just put the changelog change in one commit, and the
+control change in the other.</p>
+<p>The second example, for nspr, is more instructive.  Here we have 5 files
+changed, that need split out:</p>
+<ul class="simple">
+<li>All changelog changes go to one commit called <code class="docutils literal notranslate"><span class="pre">changelog</span></code>.</li>
+<li>Update maintainer (in debian/control) goes to one commit called <code class="docutils literal notranslate"><span class="pre">update</span>
+<span class="pre">maintainers</span></code>.</li>
+<li>All other logically separable commits go into individual commits.</li>
+</ul>
+<p>Look in <code class="docutils literal notranslate"><span class="pre">debian/changelog</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nspr</span> <span class="p">(</span><span class="mi">2</span><span class="p">:</span><span class="mf">4.18</span><span class="o">-</span><span class="mi">1</span><span class="n">ubuntu1</span><span class="p">)</span> <span class="n">bionic</span><span class="p">;</span> <span class="n">urgency</span><span class="o">=</span><span class="n">medium</span>
+
+  <span class="o">*</span> <span class="n">Resynchronize</span> <span class="k">with</span> <span class="n">Debian</span><span class="p">,</span> <span class="n">remaining</span> <span class="n">changes</span>
+    <span class="o">-</span> <span class="n">rules</span><span class="p">:</span> <span class="n">Enable</span> <span class="n">Thumb2</span> <span class="n">build</span> <span class="n">on</span> <span class="n">armel</span><span class="p">,</span> <span class="n">armhf</span><span class="o">.</span>
+    <span class="o">-</span> <span class="n">d</span><span class="o">/</span><span class="n">p</span><span class="o">/</span><span class="n">fix_test_errcodes_for_runpath</span><span class="o">.</span><span class="n">patch</span><span class="p">:</span> <span class="n">Fix</span> <span class="n">testcases</span> <span class="n">to</span> <span class="n">handle</span>
+      <span class="n">zesty</span> <span class="n">linker</span> <span class="n">default</span> <span class="n">changing</span> <span class="n">to</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">new</span><span class="o">-</span><span class="n">dtags</span> <span class="k">for</span> <span class="o">-</span><span class="n">rpath</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>There are two logical changes, which we’ll need to separate. Look at the
+changes in individual files to see which file changes should be logically
+grouped together.</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git show d7ebe661 -- debian/rules
+</pre></div>
+</div>
+<p>In this case, we have the following file changes to separate into logical
+units:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="19%" />
+<col width="81%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">File(s)</th>
+<th class="head">Logical Unit</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">debian/rules</span></code></td>
+<td>Enable Thumb2 build on armel, armhf.</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">debian/patches/*</span></code></td>
+<td>Fix testcases to handle zesty linker default changing to –enable-new-dtags for -rpath.</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">debian/control</span></code></td>
+<td>Change maintainer</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">debian/changelog</span></code></td>
+<td>Changelog</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="split-out-logical-commits">
+<h4>Split out Logical Commits<a class="headerlink" href="#split-out-logical-commits" title="Permalink to this headline">¶</a></h4>
+<p>Start a rebase at old/debian, and then reset to HEAD^ to bring back the changes
+as uncommitted changes.</p>
+<ol class="arabic simple">
+<li>Start a rebase: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">rebase</span> <span class="pre">-i</span> <span class="pre">lp1803562/old/debian</span></code></li>
+<li>Change the commit(s) you’re going to split from <code class="docutils literal notranslate"><span class="pre">pick</span></code> to <code class="docutils literal notranslate"><span class="pre">edit</span></code>.</li>
+<li>git reset to get your changes back: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">reset</span> <span class="pre">HEAD^</span></code></li>
+</ol>
+<p>Next, add the commits:</p>
+<hr class="docutils" />
+<p>Logical Unit:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git add debian/patches/*
+$ git commit
+</pre></div>
+</div>
+<p>Commit Message:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="n">d</span><span class="o">/</span><span class="n">p</span><span class="o">/</span><span class="n">fix_test_errcodes_for_runpath</span><span class="o">.</span><span class="n">patch</span><span class="p">:</span> <span class="n">Fix</span> <span class="n">testcases</span> <span class="n">to</span> <span class="n">handle</span>
+  <span class="n">zesty</span> <span class="n">linker</span> <span class="n">default</span> <span class="n">changing</span> <span class="n">to</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">new</span><span class="o">-</span><span class="n">dtags</span> <span class="k">for</span> <span class="o">-</span><span class="n">rpath</span><span class="o">.</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p>Logical Unit:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git add debian/rules
+$ git commit
+</pre></div>
+</div>
+<p>Commit Message:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="n">d</span><span class="o">/</span><span class="n">rules</span><span class="p">:</span> <span class="n">Enable</span> <span class="n">Thumb2</span> <span class="n">build</span> <span class="n">on</span> <span class="n">armel</span><span class="p">,</span> <span class="n">armhf</span><span class="o">.</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p>Maintainers:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git commit -m &quot;update maintainers&quot; debian/control
+</pre></div>
+</div>
+<hr class="docutils" />
+<p>Changelog:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git commit -m changelog debian/changelog
+</pre></div>
+</div>
+<hr class="docutils" />
+<p>Finally, complete the rebase:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git rebase --continue
+</pre></div>
+</div>
+<p>The result of this rebase should be a sequence of smaller commits, one per
+<code class="docutils literal notranslate"><span class="pre">debian/changelog</span></code> entry (with potentially additional commits for previously
+undocumented changes).</p>
+<p>It should represent a broken-out history (viewable with git-log) for the latest
+Ubuntu version and no contentful differences to that Ubuntu version. This can
+be verified with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span> <span class="pre">-p</span> <span class="pre">lp1803562/old/ubuntu</span></code>.</p>
+</div>
+<div class="section" id="tag-split">
+<h4>Tag Split<a class="headerlink" href="#tag-split" title="Permalink to this headline">¶</a></h4>
+<p>Note: Do this even if there were no commits to split.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git ubuntu tag --split --bug 1803562
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="prepare-the-logical-view">
+<h3>Prepare the Logical View<a class="headerlink" href="#prepare-the-logical-view" title="Permalink to this headline">¶</a></h3>
+<p>In this phase, we make a clean, “logical” view of the history. This history is
+cleaned up (but has the same delta), and only contains the actual changes that
+affect the package’s behavior.</p>
+<p>Start a rebase from old/debian:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git rebase -i lp1803562/old/debian
+</pre></div>
+</div>
+<p>Now we do some cleaning:</p>
+<ul class="simple">
+<li>Delete imports, etc</li>
+<li>Delete changelog, maintainer</li>
+<li>Possibly rearrange commits if it makes logical sense</li>
+</ul>
+<p>You should also squash these kinds of commits together:</p>
+<ul class="simple">
+<li>Changes and reversions of those changes, since they resolve to a no-op.</li>
+<li>Multiple changes to the same patch file, since they should be a logical unit.</li>
+</ul>
+<p>To squash a commit, move its line underneath the one you want it to become part
+of, and then change it from <code class="docutils literal notranslate"><span class="pre">pick</span></code> to <code class="docutils literal notranslate"><span class="pre">fixup</span></code>.</p>
+<div class="section" id="check-the-result">
+<h4>Check the result<a class="headerlink" href="#check-the-result" title="Permalink to this headline">¶</a></h4>
+<p>At the end of the squash and clean phase, the only delta you should see from
+the split tag is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git diff lp1803562/split/2%4.18-1ubuntu1 |diffstat
+ changelog |  762 --------------------------------------------------------------
+ control   |    3
+ 2 files changed, 1 insertion(+), 764 deletions(-)
+</pre></div>
+</div>
+<p>Only changelog and control were changed, which is what we want.</p>
+</div>
+<div class="section" id="create-logical-tag">
+<h4>Create logical tag<a class="headerlink" href="#create-logical-tag" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git ubuntu tag --logical --bug 1803562
+</pre></div>
+</div>
+<p>This may fail with an error like: <code class="docutils literal notranslate"><span class="pre">ERROR:HEAD</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">a</span> <span class="pre">defined</span> <span class="pre">object</span> <span class="pre">in</span> <span class="pre">this</span>
+<span class="pre">git</span> <span class="pre">repository.</span></code>, in which case <a class="reference internal" href="#create-logical-tag-manually">do it manually</a>.</p>
+</div>
+</div>
+<div class="section" id="rebase-onto-new-debian">
+<h3>Rebase onto New Debian<a class="headerlink" href="#rebase-onto-new-debian" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git rebase -i --onto lp1803562/new/debian lp1803562/old/debian
+</pre></div>
+</div>
+<div class="section" id="conflicts">
+<h4>Conflicts<a class="headerlink" href="#conflicts" title="Permalink to this headline">¶</a></h4>
+<p>If a conflict occurs, you must resolve it. We do so by modifying the
+conflicting commit during the rebase.</p>
+<p>An example, merging logwatch 7.5.0-1:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git rebase -i --onto lp1810928/new/debian lp1810928/old/debian
+...
+CONFLICT (content): Merge conflict in debian/control
+error: could not apply c0efd06... - Drop libsys-cpu-perl and libsys-meminfo-perl from Recommends to
+...
+</pre></div>
+</div>
+<p>Take a look at the conflict in debian/control:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span> <span class="n">HEAD</span>
+<span class="n">Recommends</span><span class="p">:</span> <span class="n">libdate</span><span class="o">-</span><span class="n">manip</span><span class="o">-</span><span class="n">perl</span><span class="p">,</span> <span class="n">libsys</span><span class="o">-</span><span class="n">cpu</span><span class="o">-</span><span class="n">perl</span><span class="p">,</span> <span class="n">libsys</span><span class="o">-</span><span class="n">meminfo</span><span class="o">-</span><span class="n">perl</span>
+<span class="o">=======</span>
+<span class="n">Recommends</span><span class="p">:</span> <span class="n">libdate</span><span class="o">-</span><span class="n">manip</span><span class="o">-</span><span class="n">perl</span>
+<span class="n">Suggests</span><span class="p">:</span> <span class="n">fortune</span><span class="o">-</span><span class="n">mod</span><span class="p">,</span> <span class="n">libsys</span><span class="o">-</span><span class="n">cpu</span><span class="o">-</span><span class="n">perl</span><span class="p">,</span> <span class="n">libsys</span><span class="o">-</span><span class="n">meminfo</span><span class="o">-</span><span class="n">perl</span>
+<span class="o">&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span> <span class="n">c0efd06</span><span class="o">...</span> <span class="o">-</span> <span class="n">Drop</span> <span class="n">libsys</span><span class="o">-</span><span class="n">cpu</span><span class="o">-</span><span class="n">perl</span> <span class="ow">and</span> <span class="n">libsys</span><span class="o">-</span><span class="n">meminfo</span><span class="o">-</span><span class="n">perl</span> <span class="kn">from</span> <span class="nn">Recommends</span> <span class="n">to</span>
+</pre></div>
+</div>
+<p>Upstream removed <code class="docutils literal notranslate"><span class="pre">fortune-mod</span></code>, and deleted the entire line since it was no
+longer needed. Resolve it to:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Recommends</span><span class="p">:</span> <span class="n">libdate</span><span class="o">-</span><span class="n">manip</span><span class="o">-</span><span class="n">perl</span>
+<span class="n">Suggests</span><span class="p">:</span> <span class="n">libsys</span><span class="o">-</span><span class="n">cpu</span><span class="o">-</span><span class="n">perl</span><span class="p">,</span> <span class="n">libsys</span><span class="o">-</span><span class="n">meminfo</span><span class="o">-</span><span class="n">perl</span>
+</pre></div>
+</div>
+<p>Continue with the rebase:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git add debian/control
+$ git rebase --continue
+</pre></div>
+</div>
+</div>
+<div class="section" id="empty-commits">
+<h4>Empty commits<a class="headerlink" href="#empty-commits" title="Permalink to this headline">¶</a></h4>
+<p>If a commit becomes empty, it’s because the change has already been applied
+upstream:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">previous</span> <span class="n">cherry</span><span class="o">-</span><span class="n">pick</span> <span class="ow">is</span> <span class="n">now</span> <span class="n">empty</span><span class="p">,</span> <span class="n">possibly</span> <span class="n">due</span> <span class="n">to</span> <span class="n">conflict</span> <span class="n">resolution</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>In such a case, the commit can be dropped:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git rebase --abort
+$ git rebase -i lp1803296/old/debian
+</pre></div>
+</div>
+<p>Keep a copy of the unneeded commit’s commit message, then delete it in the
+rebase.</p>
+</div>
+<div class="section" id="sync-request">
+<h4>Sync request<a class="headerlink" href="#sync-request" title="Permalink to this headline">¶</a></h4>
+<p>If all the commits are empty, or you realized there aren’t logical changes,
+you’re facing a <strong>Sync Request</strong>, not a merge anymore. Check <a class="reference internal" href="Syncs.html"><span class="doc">this</span></a> to continue.</p>
+</div>
+<div class="section" id="check-that-the-patches-still-apply-cleanly">
+<h4>Check that the patches still apply cleanly<a class="headerlink" href="#check-that-the-patches-still-apply-cleanly" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ quilt push -a --fuzz=0
+</pre></div>
+</div>
+<div class="section" id="if-quilt-fails">
+<h5>If quilt fails<a class="headerlink" href="#if-quilt-fails" title="Permalink to this headline">¶</a></h5>
+<p>Quilt can fail at this point if the file being patched has changed
+significantly upstream. The most common reason is that the issue the patch
+addresses has since been fixed upstream.</p>
+<p>For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ quilt push -a --fuzz=0
+...
+Applying patch ssh-ignore-disconnected.patch
+patching file scripts/services/sshd
+Hunk #1 FAILED at 297.
+1 out of 1 hunk FAILED -- rejects in file scripts/services/sshd
+Patch ssh-ignore-disconnected.patch does not apply (enforce with -f)
+</pre></div>
+</div>
+<p>If this patch fails because the changes in <code class="docutils literal notranslate"><span class="pre">ssh-ignore-disconnected.patch</span></code>
+are already applied upstream, you must remove this patch.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git log --oneline
+
+1aed93f (HEAD -&gt; ubuntu/devel)   * d/p/ssh-ignore-disconnected.patch: [sshd] ignore disconnected from user     USER (LP: 1644057)
+7d9d752 - Drop libsys-cpu-perl and libsys-meminfo-perl from Recommends to   Suggests as they are in universe.
+</pre></div>
+</div>
+<p>Removing <code class="docutils literal notranslate"><span class="pre">1aed93f</span></code> will remove the patch.</p>
+<ul class="simple">
+<li>Save the commit message from <code class="docutils literal notranslate"><span class="pre">1aed93f</span></code> for later including in the <code class="docutils literal notranslate"><span class="pre">Dropped</span>
+<span class="pre">Changes</span></code> section of the new changelog entry.</li>
+<li><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">rebase</span> <span class="pre">-i</span> <span class="pre">7d9d752</span></code> and delete commit <code class="docutils literal notranslate"><span class="pre">1aed93f</span></code>.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="unapply-patches-before-continuing">
+<h4>Unapply patches before continuing<a class="headerlink" href="#unapply-patches-before-continuing" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ quilt pop -a
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="adding-new-changes">
+<h3>Adding new changes<a class="headerlink" href="#adding-new-changes" title="Permalink to this headline">¶</a></h3>
+<p>Add any new changes you may want to include with the merge. For instance, the
+new package version may FTBFS in Ubuntu due to new versions of specific
+libraries or runtimes.</p>
+<p>Each logical change should be in its own commit to match the work done up to
+this point on splitting the logical changes. Moreover, there is no need to add
+changelog entries for these changes manually. They will be generated from the
+commit messages with the merge finish process described below.</p>
+</div>
+<div class="section" id="finish-the-merge">
+<h3>Finish the Merge<a class="headerlink" href="#finish-the-merge" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git ubuntu merge finish ubuntu/devel --bug 1803296
+</pre></div>
+</div>
+<ul class="simple">
+<li>If this fails, <a class="reference internal" href="#finish-the-merge-manually">do it manually</a></li>
+</ul>
+</div>
+<div class="section" id="fix-the-changelog">
+<h3>Fix the Changelog<a class="headerlink" href="#fix-the-changelog" title="Permalink to this headline">¶</a></h3>
+<p>Git ubuntu attempts to put together a changelog entry, but it will likely have
+problems. Fix it up to make sure it follows the standards. See
+<a class="reference internal" href="CommittingChanges.html"><span class="doc">Committing Your Changes</span></a> for information about what it should look like.</p>
+<div class="section" id="add-dropped-changes">
+<h4>Add dropped changes<a class="headerlink" href="#add-dropped-changes" title="Permalink to this headline">¶</a></h4>
+<p>If you dropped any changes (due to upstream fixes), you must note them in the
+changelog entry:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="n">Dropped</span> <span class="n">Changes</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">Foo</span><span class="p">:</span> <span class="n">change</span> <span class="n">to</span> <span class="n">bar</span>
+    <span class="p">[</span><span class="n">Fixed</span> <span class="ow">in</span> <span class="mf">1.2</span><span class="o">.</span><span class="mi">3</span><span class="o">-</span><span class="mi">4</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="format-any-new-added-changes">
+<h4>Format any new added changes<a class="headerlink" href="#format-any-new-added-changes" title="Permalink to this headline">¶</a></h4>
+<p>If you added any new changes, they should be in their own section in the
+changelog:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="n">New</span> <span class="n">Changes</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">Bar</span><span class="p">:</span> <span class="n">change</span> <span class="n">to</span> <span class="n">foo</span>
+  <span class="o">-</span> <span class="n">Baz</span><span class="p">:</span> <span class="n">adjust</span> <span class="k">for</span> <span class="n">Foo</span> <span class="n">changes</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="commit-the-changelog-fix">
+<h4>Commit the changelog fix<a class="headerlink" href="#commit-the-changelog-fix" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git commit debian/changelog -m changelog
+</pre></div>
+</div>
+</div>
+<div class="section" id="rebase-and-squash-changelog">
+<h4>Rebase and squash changelog<a class="headerlink" href="#rebase-and-squash-changelog" title="Permalink to this headline">¶</a></h4>
+<p>Now you must rebase and squash the changelog changes into the
+“reconstruct-changelog” commit. Do a rebase with the new/debian tag:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git rebase -i lp1810928/new/debian
+</pre></div>
+</div>
+<p>Change the order from:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pick</span> <span class="n">e431327</span> <span class="n">merge</span><span class="o">-</span><span class="n">changelogs</span>
+<span class="n">pick</span> <span class="n">cf3b93a</span> <span class="n">reconstruct</span><span class="o">-</span><span class="n">changelog</span>
+<span class="n">pick</span> <span class="mi">21</span><span class="n">cea1a</span> <span class="n">update</span><span class="o">-</span><span class="n">maintainer</span>
+<span class="n">pick</span> <span class="mi">08</span><span class="n">c2f4d</span> <span class="n">changelog</span>
+</pre></div>
+</div>
+<p>to:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pick</span> <span class="n">e431327</span> <span class="n">merge</span><span class="o">-</span><span class="n">changelogs</span>
+<span class="n">pick</span> <span class="n">cf3b93a</span> <span class="n">reconstruct</span><span class="o">-</span><span class="n">changelog</span>
+<span class="n">f</span> <span class="mi">08</span><span class="n">c2f4d</span> <span class="n">changelog</span>
+<span class="n">pick</span> <span class="mi">21</span><span class="n">cea1a</span> <span class="n">update</span><span class="o">-</span><span class="n">maintainer</span>
+</pre></div>
+</div>
+<p>Notice above that you must also change the <code class="docutils literal notranslate"><span class="pre">changelog</span></code> rebase command to
+<code class="docutils literal notranslate"><span class="pre">fixup</span></code> (or <code class="docutils literal notranslate"><span class="pre">f</span></code>).</p>
+</div>
+</div>
+</div>
+<div class="section" id="upload-a-ppa">
+<h2>Upload a PPA<a class="headerlink" href="#upload-a-ppa" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="get-orig-tarball">
+<h3>Get orig tarball<a class="headerlink" href="#get-orig-tarball" title="Permalink to this headline">¶</a></h3>
+<p>Ubuntu doesn’t know about the new tarball yet, so we must create it:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git ubuntu export-orig
+</pre></div>
+</div>
+<ul class="simple">
+<li>If this fails, <a class="reference internal" href="#get-orig-tarball-manually">do it manually</a></li>
+</ul>
+</div>
+<div class="section" id="build-source-package">
+<h3>Build source package<a class="headerlink" href="#build-source-package" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ dpkg-buildpackage -S -nc -d -sa -v3.1.20-3.1ubuntu2
+</pre></div>
+</div>
+<p>The switches are:</p>
+<ul class="simple">
+<li>-S = build source only</li>
+<li>-nc = no clean</li>
+<li>-d = do not check build dependencies and conflicts</li>
+<li>-sa = include orig tarball (required on a merge)</li>
+<li>-vXYZ = include changelog since XYZ</li>
+</ul>
+<p>Changes should be from the last ubuntu version</p>
+</div>
+<div class="section" id="check-the-built-package-for-errors">
+<h3>Check the built package for errors<a class="headerlink" href="#check-the-built-package-for-errors" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ lintian --pedantic --display-info --verbose --info --profile ubuntu ../at_3.1.23-1ubuntu1.dsc
+</pre></div>
+</div>
+</div>
+<div class="section" id="push-to-your-launchpad-repository">
+<h3>Push to your launchpad repository<a class="headerlink" href="#push-to-your-launchpad-repository" title="Permalink to this headline">¶</a></h3>
+<p>Now that the package is tested and builds successfully, it’s time to push it to
+your launchpad repository.</p>
+<p>The easiest way is to run it like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">push</span> <span class="n">your</span><span class="o">-</span><span class="n">lp</span><span class="o">-</span><span class="n">username</span>
+</pre></div>
+</div>
+<p>You’ll get an error message and a suggestion for how to set upstream. For
+example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git push kstenerud
+fatal: The current branch merge-lp1802914-disco has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream kstenerud merge-lp1802914-disco
+</pre></div>
+</div>
+<p>Run the suggested command to push to your repository.</p>
+<div class="section" id="push-your-lp-tags">
+<h4>Push your lp tags<a class="headerlink" href="#push-your-lp-tags" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git push kstenerud $(git tag |grep &quot;^lp1802914&quot; | xargs)
+To ssh://git.launchpad.net/~kstenerud/ubuntu/+source/at
+ * [new tag]         lp1802914/split/3.1.20-3.1ubuntu2 -&gt; lp1802914/split/3.1.20-3.1ubuntu2
+ * [new tag]         lp1802914/logical/3.1.20-3.1ubuntu2 -&gt; lp1802914/logical/3.1.20-3.1ubuntu2
+ * [new tag]         lp1802914/new/debian -&gt; lp1802914/new/debian
+ * [new tag]         lp1802914/old/debian -&gt; lp1802914/old/debian
+ * [new tag]         lp1802914/old/ubuntu -&gt; lp1802914/old/ubuntu
+ * [new tag]         lp1802914/reconstruct/3.1.20-3.1ubuntu2 -&gt; lp1802914/reconstruct/3.1.20-3.1ubuntu2
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="create-a-ppa">
+<h3>Create a PPA<a class="headerlink" href="#create-a-ppa" title="Permalink to this headline">¶</a></h3>
+<p>You’ll need to have a PPA for reviewers to test.</p>
+<div class="section" id="create-a-ppa-repository">
+<h4>Create a PPA repository<a class="headerlink" href="#create-a-ppa-repository" title="Permalink to this headline">¶</a></h4>
+<p><a class="reference external" href="https://launchpad.net/~your-username/+activate-ppa">https://launchpad.net/~your-username/+activate-ppa</a></p>
+<p>Give it a name that identifies the ubuntu version, package name, and bug
+number, such as <code class="docutils literal notranslate"><span class="pre">at-merge-lp1802914</span></code></p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Be sure to enable all architectures to check that it builds (click on
+<code class="docutils literal notranslate"><span class="pre">Change</span> <span class="pre">details</span></code> in the top right corner of the newly created PPA page).</p>
+</div>
+</div>
+<div class="section" id="upload-files">
+<h4>Upload files<a class="headerlink" href="#upload-files" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ dput ppa:kstenerud/at-merge-lp1802914 ../at_3.1.23-1ubuntu1_source.changes
+</pre></div>
+</div>
+</div>
+<div class="section" id="wait-for-packages-to-be-ready">
+<h4>Wait for packages to be ready<a class="headerlink" href="#wait-for-packages-to-be-ready" title="Permalink to this headline">¶</a></h4>
+<p>Check the PPA page to see when packages are finished building:
+<a class="reference external" href="https://launchpad.net/~kstenerud/+archive/ubuntu/disco-at-merge-1802914">https://launchpad.net/~kstenerud/+archive/ubuntu/disco-at-merge-1802914</a></p>
+<p>Also, look at the package contents to make sure they have actually been
+published:
+<a class="reference external" href="https://launchpad.net/~kstenerud/+archive/ubuntu/disco-at-merge-1802914/+packages">https://launchpad.net/~kstenerud/+archive/ubuntu/disco-at-merge-1802914/+packages</a></p>
+</div>
+</div>
+</div>
+<div class="section" id="test-the-new-build">
+<h2>Test the New Build<a class="headerlink" href="#test-the-new-build" title="Permalink to this headline">¶</a></h2>
+<p>Test the following:</p>
+<ol class="arabic simple">
+<li>Package Tests</li>
+<li>Upgrading from the previous version</li>
+<li>Installing the latest where nothing was installed before</li>
+<li>Other smoke tests</li>
+</ol>
+<div class="section" id="package-tests">
+<h3>Package Tests<a class="headerlink" href="#package-tests" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference internal" href="PackageTests.html"><span class="doc">Running Package Tests</span></a></p>
+</div>
+<div class="section" id="test-upgrading-from-the-previous-version">
+<h3>Test upgrading from the previous version<a class="headerlink" href="#test-upgrading-from-the-previous-version" title="Permalink to this headline">¶</a></h3>
+<p>Example:</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Disco is not yet available at the time of writing, so we use cosmic.</p>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ lxc launch images:ubuntu/cosmic tester &amp;&amp; lxc exec tester bash
+$ apt update &amp;&amp; apt dist-upgrade -y &amp;&amp; apt install -y at
+</pre></div>
+</div>
+<p>The test:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s2">&quot;echo xyz &gt;test.txt&quot;</span> <span class="o">|</span><span class="n">at</span> <span class="n">now</span> <span class="o">+</span> <span class="mi">1</span> <span class="n">minute</span> <span class="o">&amp;&amp;</span> <span class="n">sleep</span> <span class="mi">1</span><span class="n">m</span> <span class="o">&amp;&amp;</span> <span class="n">cat</span> <span class="n">test</span><span class="o">.</span><span class="n">txt</span> <span class="o">&amp;&amp;</span> <span class="n">rm</span> <span class="n">test</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p>Upgrade:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ add-apt-repository -y ppa:kstenerud/at-merge-lp1802914
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Disco is not yet available at the time of writing, so we must modify the
+source list entry:</p>
+<div class="last highlight-default notranslate"><div class="highlight"><pre><span></span>$ vi /etc/apt/sources.list.d/kstenerud-ubuntu-at-merge-lp1802914-cosmic.list
+* change cosmic to disco
+
+$ apt update &amp;&amp; apt dist-upgrade -y
+</pre></div>
+</div>
+</div>
+<p>Test the upgraded version:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ echo &quot;echo abc &gt;test.txt&quot; | at now + 1 minute &amp;&amp; sleep 1m &amp;&amp; cat test.txt &amp;&amp; rm test.txt
+</pre></div>
+</div>
+</div>
+<div class="section" id="test-installing-the-latest-from-scratch">
+<h3>Test installing the latest from scratch<a class="headerlink" href="#test-installing-the-latest-from-scratch" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ lxc launch images:ubuntu/cosmic tester &amp;&amp; lxc exec tester bash
+$ add-apt-repository -y ppa:kstenerud/at-merge-lp1802914
+$ apt update &amp;&amp; apt dist-upgrade -y &amp;&amp; apt install at
+$ echo &quot;echo abc &gt;test.txt&quot; | at now + 1 minute &amp;&amp; sleep 1m &amp;&amp; cat test.txt &amp;&amp; rm test.txt
+</pre></div>
+</div>
+</div>
+<div class="section" id="other-smoke-tests">
+<h3>Other smoke tests<a class="headerlink" href="#other-smoke-tests" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Try running various basic commands.</li>
+<li>Try running regression tests: <a class="reference external" href="https://git.launchpad.net/qa-regression-testing">https://git.launchpad.net/qa-regression-testing</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="submit-merge-proposal">
+<h2>Submit Merge Proposal<a class="headerlink" href="#submit-merge-proposal" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Git branch with % in name doesn’t work. Use something like _</p>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git ubuntu submit --reviewer canonical-server-packageset-reviewers --target-branch debian/sid
+Your merge proposal is now available at: https://code.launchpad.net/~kstenerud/ubuntu/+source/at/+git/at/+merge/358655
+If it looks OK, please move it to the &#39;Needs Review&#39; state.
+</pre></div>
+</div>
+<ul class="simple">
+<li>If this fails, <a class="reference internal" href="#submit-merge-proposal-manually">do it manually</a></li>
+</ul>
+<div class="section" id="update-the-merge-proposal">
+<h3>Update the merge proposal<a class="headerlink" href="#update-the-merge-proposal" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li>Link the PPA</li>
+<li>add any other info that will help reviewer to mp as a comment.</li>
+</ul>
+</div></blockquote>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>PPA: https://launchpad.net/~kstenerud/+archive/ubuntu/disco-at-merge-1802914
+
+Basic test:
+
+$ echo &quot;echo abc &gt;test.txt&quot; | at now + 1 minute &amp;&amp; sleep 1m &amp;&amp; cat test.txt &amp;&amp; rm test.txt
+
+Package tests:
+
+This package contains no tests.
+</pre></div>
+</div>
+<div class="section" id="open-the-review">
+<h4>Open the review<a class="headerlink" href="#open-the-review" title="Permalink to this headline">¶</a></h4>
+<p>Change the MP status from “work in progress” to “needs review”</p>
+</div>
+</div>
+</div>
+<div class="section" id="follow-migration">
+<h2>Follow Migration<a class="headerlink" href="#follow-migration" title="Permalink to this headline">¶</a></h2>
+<p>Once the merge proposal goes through, you must follow the package to make sure
+it gets to its destination.</p>
+<div class="section" id="id1">
+<h3>Package Tests<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>The results from the latest package tests will be published for each ubuntu
+release.</p>
+<p>For example: <a class="reference external" href="http://autopkgtest.ubuntu.com/packages/o/openssh/focal/amd64">http://autopkgtest.ubuntu.com/packages/o/openssh/focal/amd64</a></p>
+</div>
+<div class="section" id="proposed-migration">
+<h3>Proposed Migration<a class="headerlink" href="#proposed-migration" title="Permalink to this headline">¶</a></h3>
+<p>The status of all packages will be available from
+<a class="reference external" href="http://people.canonical.com/~ubuntu-archive/proposed-migration">http://people.canonical.com/~ubuntu-archive/proposed-migration</a> or one of its
+subdirectories. The top level directory is for the current dev release.
+Previous releases are in subdirectories.</p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="manual-steps">
+<h2>Manual Steps<a class="headerlink" href="#manual-steps" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="start-a-merge-manually">
+<h3>Start a merge manually<a class="headerlink" href="#start-a-merge-manually" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="generate-the-merge-branch">
+<h4>Generate the merge branch<a class="headerlink" href="#generate-the-merge-branch" title="Permalink to this headline">¶</a></h4>
+<p>Create a branch to do the merge work in:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git checkout -b merge-lp1802914-disco
+</pre></div>
+</div>
+</div>
+<div class="section" id="create-tags">
+<h4>Create tags<a class="headerlink" href="#create-tags" title="Permalink to this headline">¶</a></h4>
+<table border="1" class="docutils">
+<colgroup>
+<col width="13%" />
+<col width="87%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Tag</th>
+<th class="head">Source</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>old/ubuntu</td>
+<td>ubuntu/disco-devel</td>
+</tr>
+<tr class="row-odd"><td>old/debian</td>
+<td>last import tag prior to old/ubuntu without ubuntu suffix in version</td>
+</tr>
+<tr class="row-even"><td>new/debian</td>
+<td>debian/sid</td>
+</tr>
+</tbody>
+</table>
+<p>per: <a class="reference external" href="https://www.debian.org/releases/">https://www.debian.org/releases/</a>
+“debian/sid” always matches to debian unstable.</p>
+<p>You can find the last import tag using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">&quot;tag:</span> <span class="pre">pkg/import&quot;</span> <span class="pre">|</span> <span class="pre">grep</span>
+<span class="pre">-v</span> <span class="pre">ubuntu</span> <span class="pre">|</span> <span class="pre">head</span> <span class="pre">-1</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">...</span>
+<span class="n">commit</span> <span class="mi">9</span><span class="n">c3cf29c05c3fddd7359e71c978ff9a9a76e4404</span> <span class="p">(</span><span class="n">tag</span><span class="p">:</span> <span class="n">pkg</span><span class="o">/</span><span class="n">import</span><span class="o">/</span><span class="mf">3.1</span><span class="o">.</span><span class="mi">20</span><span class="o">-</span><span class="mf">3.1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>So, we create the following tags:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git tag lp1802914/old/ubuntu pkg/ubuntu/disco-devel
+$ git tag lp1802914/old/debian 9c3cf29c05c3fddd7359e71c978ff9a9a76e4404
+$ git tag lp1802914/new/debian pkg/debian/sid
+</pre></div>
+</div>
+</div>
+<div class="section" id="start-a-rebase">
+<h4>Start a rebase<a class="headerlink" href="#start-a-rebase" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git rebase -i lp1802914/old/debian
+</pre></div>
+</div>
+</div>
+<div class="section" id="clear-any-history-prior-to-and-including-the-last-debian-version">
+<h4>Clear any history prior to, and including the last debian version<a class="headerlink" href="#clear-any-history-prior-to-and-including-the-last-debian-version" title="Permalink to this headline">¶</a></h4>
+<p>If the package hasn’t been updated since the git repository structure has
+changed, it will grab all changes throughout time rather than since the last
+debian version. Simply delete the older lines from the interactive rebase</p>
+<p>In this case, up to, and including import of 3.1.20-3.1</p>
+</div>
+<div class="section" id="create-reconstruct-tag">
+<h4>Create reconstruct tag<a class="headerlink" href="#create-reconstruct-tag" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git ubuntu tag --reconstruct --bug 1802914
+</pre></div>
+</div>
+<p>Next step: <a class="reference internal" href="#split-commits">Split Commits</a></p>
+</div>
+</div>
+<div class="section" id="create-logical-tag-manually">
+<h3>Create logical tag manually<a class="headerlink" href="#create-logical-tag-manually" title="Permalink to this headline">¶</a></h3>
+<p>Use the version number of the last ubuntu change. So if there are
+<code class="docutils literal notranslate"><span class="pre">3.1.20-3.1ubuntu1</span></code> and <code class="docutils literal notranslate"><span class="pre">3.1.20-3.1ubuntu2</span></code>, use <code class="docutils literal notranslate"><span class="pre">3.1.20-3.1ubuntu2</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git tag -a -m &quot;Logical delta of 3.1.20-3.1ubuntu2&quot; lp1802914/logical/3.1.20-3.1ubuntu2
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Certain characters aren’t allowed in git. For example, <code class="docutils literal notranslate"><span class="pre">:</span></code> should be
+replaced with <code class="docutils literal notranslate"><span class="pre">%</span></code>.</p>
+</div>
+<p>Next step: <a class="reference internal" href="#rebase-onto-new-debian">Rebase onto New Debian</a></p>
+</div>
+<div class="section" id="finish-the-merge-manually">
+<h3>Finish the merge manually<a class="headerlink" href="#finish-the-merge-manually" title="Permalink to this headline">¶</a></h3>
+<p>Merge changelogs of old ubuntu and new debian:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git show lp1802914/new/debian:debian/changelog &gt;/tmp/debnew.txt
+$ git show lp1802914/old/ubuntu:debian/changelog &gt;/tmp/ubuntuold.txt
+$ merge-changelog /tmp/debnew.txt /tmp/ubuntuold.txt &gt;debian/changelog
+$ git commit -m &quot;Merge changelogs&quot; debian/changelog
+</pre></div>
+</div>
+<p>Create new changelog entry for the merge:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ dch -i
+</pre></div>
+</div>
+<p>Which creates for example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">at</span> <span class="p">(</span><span class="mf">3.1</span><span class="o">.</span><span class="mi">23</span><span class="o">-</span><span class="mi">1</span><span class="n">ubuntu1</span><span class="p">)</span> <span class="n">disco</span><span class="p">;</span> <span class="n">urgency</span><span class="o">=</span><span class="n">medium</span>
+
+  <span class="o">*</span> <span class="n">Merge</span> <span class="k">with</span> <span class="n">Debian</span> <span class="n">unstable</span> <span class="p">(</span><span class="n">LP</span><span class="p">:</span> <span class="c1">#1802914). Remaining changes:</span>
+    <span class="o">-</span> <span class="n">Suggest</span> <span class="n">an</span> <span class="n">MTA</span> <span class="n">rather</span> <span class="n">than</span> <span class="n">Recommending</span> <span class="n">one</span><span class="o">.</span>
+
+ <span class="o">--</span> <span class="n">Karl</span> <span class="n">Stenerud</span> <span class="o">&lt;</span><span class="n">karl</span><span class="o">.</span><span class="n">stenerud</span><span class="nd">@canonical</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span>  <span class="n">Mon</span><span class="p">,</span> <span class="mi">12</span> <span class="n">Nov</span> <span class="mi">2018</span> <span class="mi">18</span><span class="p">:</span><span class="mi">11</span><span class="p">:</span><span class="mi">53</span> <span class="o">+</span><span class="mi">0100</span>
+</pre></div>
+</div>
+<p>Commit the changelog:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git commit -m &quot;changelog: Merge of 3.1.23-1&quot; debian/changelog
+</pre></div>
+</div>
+<p>Update maintainer:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ update-maintainer
+$ git commit -m &quot;Update maintainer&quot; debian/control
+</pre></div>
+</div>
+<p>Next step: <a class="reference internal" href="#fix-the-changelog">Fix the Changelog</a></p>
+</div>
+<div class="section" id="get-orig-tarball-manually">
+<h3>Get orig tarball manually<a class="headerlink" href="#get-orig-tarball-manually" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git checkout -b pkg/importer/debian/pristine-tar
+$ pristine-tar checkout at_3.1.23.orig.tar.gz
+$ git checkout merge-3.1.23-1-disco
+</pre></div>
+</div>
+<div class="section" id="if-git-checkout-also-fails">
+<h4>If git checkout also fails<a class="headerlink" href="#if-git-checkout-also-fails" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git checkout merge-lp1802914-disco
+$ cd /tmp
+$ pull-debian-source at
+$ mv at_3.1.23.orig.tar.gz{,.asc} ~/work/packages/ubuntu/
+$ cd -
+</pre></div>
+</div>
+<p>Next step: <a class="reference internal" href="#build-source-package">Build source package</a></p>
+</div>
+</div>
+<div class="section" id="submit-merge-proposal-manually">
+<h3>Submit merge proposal manually<a class="headerlink" href="#submit-merge-proposal-manually" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git push kstenerud merge-lp1802914-disco
+</pre></div>
+</div>
+<p>Then, create a MP manually in launchpad, and save the URL.</p>
+<p>Next step: <a class="reference internal" href="#update-the-merge-proposal">Update the merge proposal</a></p>
+</div>
+</div>
+<div class="section" id="known-issues">
+<h2>Known Issues<a class="headerlink" href="#known-issues" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="empty-directories">
+<h3>Empty directories<a class="headerlink" href="#empty-directories" title="Permalink to this headline">¶</a></h3>
+<p>We need to use a <a class="reference external" href="https://git.launchpad.net/~racb/usd-importer/plain/wip/emptydirfixup.py?h=emptydirfixup">python script</a> written by Robie Basak (&#64;racb). Why is it a
+problem that we get empty dirs?</p>
+<p>git’s frontend doesn’t let you add an empty directory. Usually the workaround
+is to create any necessary empty directory at build time, or failing that to
+create a placeholder file like “.empty” and check that in.</p>
+<p>Neither of these approaches work for git-ubuntu’s importer in the general case.
+A source package can ship an empty directory by nature of the source package
+format. But the build system (ie. debian/rules) in the source package expects
+the source exactly as packed. Just as some builds break if empty directories
+are missing, other builds might break if empty directories are not actually
+empty.</p>
+<p>Internally, git supports empty directories just fine. Directories map to git
+tree objects. An empty tree object is the obvious way of representing an empty
+directory, and git seems to accept them if they are represented this way. It’s
+just the git index and front end that do not support them.</p>
+<p>In git-ubuntu, we therefore import empty directories “correctly” and losslessly
+by using empty tree objects as necessary. However when at the client end such a
+tree is checked out, the empty directories disappear as they pass through the
+index, and get lost. A subsequent commit made by a developer then gets created
+from the index, so does not include the empty directories even if they haven’t
+been touched.</p>
+<p>This becomes an issue if a such a commit is subsequently presented back to
+git-ubuntu as rich history to be adopted against an upload. git-ubuntu finds
+that the upload (with empty directories) doesn’t match the rich history commit
+(with missing empty directories).</p>
+<p>This tool restores the empty directories locally as a workaround. It takes a
+non-merge commit and examines its parent to examine what empty directories have
+been lost. It provides an equivalent replacement commit.</p>
+<p>Run it with “fix-head” to replace HEAD with a commit that has empty directories
+restored.</p>
+<p>Run it with “fix-many” and a parameter pointing to a base commit to run
+git-rebase to fix a set of commits.</p>
+<p>Note that in both cases, the parent must have the empty directories in order
+for them to be copied down through the fixed up commits. In the common case
+where this tool is needed, you’ll be starting from an “official” git-ubuntu
+import tag or branch, so this will be true in these cases. However, this does
+mean that you need to use “fix-many” all the way back to the first commit after
+such an “official” commit. If you have intermediary un-fixed commits and then
+just try to apply “fix-head” to the end, then it won’t work as the empty
+directories won’t get copied forward.</p>
+<p>Example of use:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">ubuntu</span> <span class="n">clone</span> <span class="n">apache2</span>
+<span class="n">cd</span> <span class="n">apache2</span>
+<span class="n">git</span> <span class="n">tag</span> <span class="o">-</span><span class="n">f</span> <span class="n">base</span>
+<span class="o">&lt;</span><span class="n">add</span> <span class="n">commits</span><span class="o">&gt;</span>
+<span class="n">python3</span> <span class="n">emptydirfixup</span><span class="o">.</span><span class="n">py</span> <span class="n">fix</span><span class="o">-</span><span class="n">many</span> <span class="n">base</span>
+<span class="n">git</span> <span class="n">ubuntu</span> <span class="n">tag</span> <span class="o">--</span><span class="n">upload</span>
+</pre></div>
+</div>
+<p>For an entire real case you can follow this workflow:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># get emptydirfxup script
+wget -O ../emptydirfixup.py &quot;https://git.launchpad.net/~racb/usd-importer/plain/wip/emptydirfixup.py?h=emptydirfixup&quot;
+
+# clone as usual
+git ubuntu clone &quot;${source_package}&quot; &quot;${source_package}-gu&quot;
+cd &quot;${source_package}-gu/&quot;
+
+# make the merge branch (here you see the warning message)
+git checkout &quot;${last_remote}&quot; -b &quot;${branch_name}&quot;
+
+# tag the base and rebase on ubuntu/devel
+git tag -f base
+git checkout ubuntu/devel
+git rebase base
+
+# start the merge
+git ubuntu merge -f start
+
+#... Merge work as usual ...
+
+# Workaround LP: #1939747
+rm .git/hooks/pre-commit
+
+# finish the merge
+git ubuntu merge finish pkg/ubuntu/devel debian/sid
+
+#... Create MP as usual, get reviewed/approved, etc. ...
+
+# Fix the empty dir set of commits
+python3 ../emptydirfixup.py fix-many base
+
+# Build the package
+debuild -S $(git ubuntu push-for-upload)
+
+# Uploading
+git push pkg &quot;upload/${version}&quot;
+dput ubuntu &quot;${changes_file}&quot;
+
+#... Done! ...
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+    <footer>
+      Last updated Monday, 21 February 2022.
+    </footer>
+  </main>
+  <footer>
+        &#169; Copyright 2022 Ubuntu Contributors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 1.8.5.
+  </footer>
+  </body>
+</html>

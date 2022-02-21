@@ -1,0 +1,639 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>High Level Concepts &#8212; The UMH 1.0 documentation</title>
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Setting up for Ubuntu Development" href="Setup.html" />
+    <link rel="prev" title="The Ubuntu Maintainer’s Handbook" href="index.html" />
+    <link rel="preload" as="font" type="font/woff2" href="https://assets.ubuntu.com/v1/46ed6870-Ubuntu-L-subset.woff2" crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href="https://assets.ubuntu.com/v1/3baab91b-Ubuntu-Th-subset.woff2" crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href="https://assets.ubuntu.com/v1/6113b69a-Ubuntu-LI-subset.woff2" crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href="https://assets.ubuntu.com/v1/0c7b8dc0-Ubuntu-R-subset.woff2" crossorigin /> 
+  </head><body>
+  <header>
+    <nav aria-label="site navigation">
+      <a href="https://ubuntu.com/">
+        <svg width="107px" height="32px" viewBox="0 0 107 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="ubuntu-logo"><path d="M100.470409,13.7615448 C96.9385448,13.7615448 94.0754031,10.8982838 94.0754031,7.36627238 C94.0754031,3.83426097 96.9385448,0.971 100.470409,0.971 C104.002273,0.971 106.865415,3.83426097 106.865415,7.36627238 C106.865415,10.8982838 104.002273,13.7615448 100.470409,13.7615448 Z M96.479398,6.59820047 C96.0559273,6.59820047 95.7123568,6.9417853 95.7123568,7.36727117 C95.7123568,7.78976066 96.0559273,8.13434429 96.479398,8.13434429 C96.9038674,8.13434429 97.2504342,7.78976066 97.2504342,7.36727117 C97.2504342,6.9417853 96.9038674,6.59820047 96.479398,6.59820047 Z M101.966539,10.0919788 C101.601995,10.3017254 101.475153,10.7731557 101.684891,11.1377152 C101.898624,11.5092663 102.369036,11.6341154 102.73358,11.4213725 C103.103118,11.2116259 103.22996,10.7401956 103.015228,10.3726397 C102.803493,10.0030862 102.334079,9.87823709 101.966539,10.0929776 L101.966539,10.0919788 Z M98.1493106,7.36727117 C98.1493106,6.6081884 98.5268386,5.93500183 99.104117,5.52949182 L98.5428187,4.58762991 C97.8686614,5.03708681 97.3682869,5.72425648 97.1605465,6.52828495 C97.4062394,6.72804357 97.5580496,7.02768151 97.5580496,7.36727117 C97.5580496,7.70386446 97.4062394,8.00649877 97.1605465,8.20425981 C97.3682869,9.00828828 97.8696601,9.69445915 98.5428187,10.1419185 L99.104117,9.20305294 C98.5268386,8.79754293 98.1493106,8.12435636 98.1493106,7.36727117 Z M100.392506,5.11998664 C101.568037,5.11998664 102.529835,6.02089804 102.62971,7.16951013 L103.726339,7.14953427 C103.671408,6.30555408 103.30187,5.54147734 102.73358,4.98714716 C102.438948,5.09501681 102.100372,5.08003492 101.809735,4.90924129 C101.518099,4.74144405 101.337325,4.4577868 101.286389,4.15015852 C101.001745,4.07225265 100.703118,4.03030334 100.392506,4.03030334 C99.8631682,4.03030334 99.3617949,4.15415369 98.9143542,4.37388818 L99.4486863,5.33073199 C99.735328,5.19589492 100.057925,5.12098543 100.392506,5.12098543 L100.392506,5.11998664 Z M100.392506,9.61155932 C100.056926,9.61155932 99.735328,9.53565105 99.4486863,9.40181277 L98.9143542,10.3586566 C99.3607962,10.5783911 99.8631682,10.7022414 100.392506,10.7022414 C100.704117,10.7022414 101.001745,10.6622897 101.286389,10.5823862 C101.336327,10.2727604 101.518099,9.98810433 101.809735,9.82130588 C102.103368,9.65350864 102.438948,9.63553036 102.73358,9.74839398 C103.302868,9.18607345 103.670409,8.42599188 103.726339,7.5810129 L102.62971,7.56503221 C102.529835,8.71064793 101.568037,9.61056053 100.392506,9.61056053 L100.392506,9.61155932 Z M101.966539,4.64156473 C102.334079,4.85430767 102.803493,4.72945853 103.015228,4.35990507 C103.22996,3.993348 103.103118,3.52091885 102.735578,3.30917471 C102.370035,3.09942815 101.899623,3.22427729 101.686888,3.59183316 C101.474154,3.95839024 101.600996,4.4288218 101.966539,4.64056594 L101.966539,4.64156473 Z M12.7910109,24.1489933 C12.1418224,24.3107977 11.2828961,24.4855865 10.2172282,24.6663681 C9.15056154,24.850146 7.91610464,24.942035 6.5178525,24.942035 C5.29737813,24.942035 4.27365781,24.7642498 3.43970028,24.4086795 C2.60774025,24.0541079 1.93857672,23.551715 1.4322097,22.9005019 C0.922846416,22.2512863 0.558302106,21.4842132 0.335580515,20.6032777 C0.109862669,19.7153506 0,18.7385309 0,17.6598343 L0,8.76857793 L2.83146059,8.76857793 L2.83146059,17.0515693 C2.83146059,18.9822364 3.13508106,20.3635673 3.746317,21.1945632 C4.35555543,22.0275567 5.38127325,22.4430546 6.82247172,22.4430546 C7.12609218,22.4430546 7.44169767,22.4330667 7.76629191,22.4110932 C8.09188491,22.3911174 8.39750288,22.3661475 8.67915081,22.3361837 C8.96279625,22.3062199 9.22247165,22.2762561 9.45617951,22.2462924 C9.68988736,22.214331 9.85568012,22.1813708 9.95955028,22.1384227 L9.95955028,8.76857793 L12.7910109,8.76857793 L12.7910109,24.1499921 L12.7910109,24.1489933 Z M19.7033702,9.46773311 C20.049937,9.24600104 20.5722841,9.01028586 21.2734076,8.76857793 C21.9725337,8.5258712 22.7785262,8.40202085 23.6943813,8.40202085 C24.8299618,8.40202085 25.8396996,8.60777223 26.7235947,9.01128466 C27.6084886,9.41679466 28.3535572,9.98710554 28.9637944,10.7192209 C29.5700366,11.4483399 30.0324586,12.3212851 30.3470653,13.3360589 C30.6636695,14.3518315 30.8204735,15.469481 30.8204735,16.6880086 C30.8204735,17.9664638 30.6327082,19.1180723 30.2551802,20.1438328 C29.8786508,21.1685946 29.3463163,22.0365458 28.6571777,22.7466877 C27.9660416,23.459826 27.1350804,24.005167 26.1583014,24.3917 C25.1865161,24.7782329 24.0908857,24.971 22.8694126,24.971 C21.5490631,24.971 20.3825213,24.8781122 19.366791,24.6953331 C18.3520594,24.512554 17.5191006,24.328776 16.8699121,24.1459969 L16.8699121,1.45940984 L19.7023715,0.971998793 L19.7023715,9.46773311 L19.700374,9.46773311 L19.7033702,9.46773311 Z M20.9078646,22.3661475 C21.4242191,22.4390594 22.0664163,22.4730184 22.8404488,22.4730184 C24.3605486,22.4730184 25.5820217,21.9686279 26.4938819,20.9648408 C27.4077395,19.9590561 27.8651677,18.5327795 27.8651677,16.686011 C27.8651677,15.8739922 27.7852676,15.1129119 27.6214724,14.4007724 C27.4586759,13.6896317 27.1940067,13.0763727 26.8294624,12.557999 C26.4639193,12.0386266 25.9905111,11.636113 25.4152302,11.3394714 C24.8339568,11.0438287 24.1388258,10.8970061 23.3278395,10.8970061 C22.5548058,10.8970061 21.8456923,11.0298456 21.195505,11.2915294 C20.5463165,11.5582071 20.0469408,11.8308776 19.7023715,12.1155337 L19.7023715,22.1354263 C19.9880144,22.2203237 20.3885138,22.296232 20.9078646,22.3661475 Z M46.6257165,24.1489933 C45.976528,24.3107977 45.1176017,24.4855865 44.0529326,24.6663681 C42.9872647,24.850146 41.7528078,24.942035 40.3505606,24.942035 C39.1340813,24.942035 38.1083635,24.7642498 37.2764034,24.4086795 C36.4444434,24.0541079 35.7742811,23.551715 35.2689128,22.9005019 C34.7575521,22.2512863 34.3940065,21.4842132 34.1702862,20.6032777 C33.9475646,19.7173482 33.8367032,18.7395297 33.8367032,17.6618319 L33.8367032,8.77057551 L36.6681637,8.77057551 L36.6681637,17.0535669 C36.6681637,18.984234 36.9717842,20.3655649 37.5810226,21.1965608 C38.1902611,22.0295542 39.2149802,22.4450522 40.6571774,22.4450522 C40.9617966,22.4450522 41.2784008,22.4350643 41.6029951,22.4130908 C41.9275893,22.3931149 42.2322085,22.3681451 42.5168527,22.3381813 C42.7994994,22.3082175 43.0591748,22.2782537 43.2938814,22.2482899 C43.5255918,22.2153298 43.693382,22.1823696 43.7962534,22.1384227 L43.7962534,8.77057551 L46.6287128,8.77057551 L46.6287128,24.1519896 L46.6267153,24.1519896 L46.6257165,24.1489933 Z M50.7066153,9.22602518 C51.3558038,9.06222311 52.2177263,8.89142948 53.2953793,8.70665275 C54.3710347,8.52686999 55.6084878,8.43398223 57.010735,8.43398223 C58.2711594,8.43398223 59.3148547,8.61176741 60.1468148,8.96633897 C60.9807723,9.32190932 61.6449421,9.8183095 62.1423203,10.4585359 C62.6396986,11.0977635 62.9912591,11.8648366 63.1940057,12.7557601 C63.3957535,13.6526763 63.4976262,14.6354887 63.4976262,15.7121877 L63.4976262,24.6054417 L60.6641681,24.6054417 L60.6641681,16.3214515 C60.6641681,15.3456307 60.5982505,14.513636 60.467414,13.8244687 C60.3355788,13.1313063 60.117851,12.5759773 59.812233,12.1494927 C59.5096113,11.7200116 59.1011219,11.4123833 58.5937561,11.220615 C58.0873891,11.0238528 57.4551794,10.9289675 56.7061157,10.9289675 C56.4014965,10.9289675 56.0868898,10.9419518 55.764293,10.9619276 C55.4387,10.9819035 55.1280883,11.0078721 54.8354541,11.0378359 C54.5358287,11.0677997 54.2761533,11.1037563 54.0414466,11.143708 C53.8057413,11.1836597 53.6389498,11.2156211 53.5380759,11.2335994 L53.5380759,24.6044429 L50.7066153,24.6044429 L50.7066153,9.22602518 Z M70.0444424,8.76857793 L76.0449416,8.76857793 L76.0449416,11.143708 L70.0444424,11.143708 L70.0444424,18.4548737 C70.0444424,19.2439202 70.106365,19.9031237 70.2292115,20.4175021 C70.3490617,20.9368746 70.5328319,21.3443822 70.7765273,21.6380273 C71.0202227,21.9296749 71.3258407,22.1374239 71.6893862,22.262273 C72.0549293,22.3841258 72.4813962,22.4440534 72.9677882,22.4440534 C73.8396983,22.4440534 74.5298356,22.3471705 75.0401976,22.1544034 C75.5465646,21.9606375 75.8921327,21.8248017 76.0739054,21.7419018 L76.6831439,24.0591019 C76.3994984,24.2009305 75.8961277,24.3827108 75.1750291,24.6054417 C74.455928,24.8301702 73.6389492,24.9430338 72.7250916,24.9430338 C71.6484374,24.9430338 70.7595485,24.8061991 70.058425,24.5305322 C69.3592989,24.2548653 68.796003,23.8453601 68.3705349,23.2970227 C67.9430692,22.7496841 67.6434438,22.0744999 67.4716585,21.2724691 C67.2978757,20.4684406 67.2119831,19.5405618 67.2119831,18.4858362 L67.2119831,4.35191473 L70.0424449,3.8625061 L70.0424449,8.77057551 L70.0444424,8.77057551 L70.0444424,8.76857793 Z M91.4556778,24.1489933 C90.803493,24.3107977 89.947563,24.4855865 88.8788988,24.6663681 C87.8142297,24.850146 86.5817703,24.942035 85.1835182,24.942035 C83.9630438,24.942035 82.9393235,24.7642498 82.1073634,24.4086795 C81.2714084,24.0541079 80.6022449,23.551715 80.0958779,22.9005019 C79.5865146,22.2512863 79.2239678,21.4842132 78.9972512,20.6032777 C78.7775258,19.7173482 78.6626694,18.7395297 78.6626694,17.6618319 L78.6626694,8.77057551 L81.4991238,8.77057551 L81.4991238,17.0535669 C81.4991238,18.984234 81.8027442,20.3655649 82.4109839,21.1965608 C83.0202223,22.0295542 84.0459402,22.4450522 85.4871386,22.4450522 C85.7917578,22.4450522 86.1063646,22.4350643 86.4319576,22.4130908 C86.7535556,22.3931149 87.0591735,22.3681451 87.3438177,22.3381813 C87.6274632,22.3082175 87.8891361,22.2782537 88.1198477,22.2482899 C88.3535555,22.2153298 88.5223445,22.1823696 88.6242172,22.1384227 L88.6242172,8.77057551 L91.4576753,8.77057551 L91.4576753,24.1519896 L91.4556778,24.1519896 L91.4556778,24.1489933 Z" id="ubuntu" fill="#FFFFFF" fill-rule="nonzero"></path></g></svg>
+      </a>
+      <ul>
+        <li><a href="#">Enterprise</a></li>
+        <li><a href="#">Developer</a></li>
+        <li><a href="#">Community</a></li>
+        <li><a href="#">Download</a></li>
+      </ul>
+    </nav>
+    <nav aria-label="related navigation">
+      <a href="index.html">The UMH</a>
+      <ul>
+        <li>
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a>
+        </li>
+        <li>
+          <a href="Setup.html" title="Setting up for Ubuntu Development"
+             accesskey="N">next</a>
+        </li>
+        <li>
+          <a href="index.html" title="The Ubuntu Maintainer’s Handbook"
+             accesskey="P">previous</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <aside>
+    <nav aria-label="main navigation">
+<h3>Contents</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">High Level Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Setup.html">Setting up for Ubuntu Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BugHandling.html">Bug Reports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CommonTasks.html">Common Tasks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PackageMaintenance.html">Package Maintenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Debugging.html">Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Reviewing.html">Reviewing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="RequestingUploadRights.html">Requesting Upload Rights</a></li>
+</ul>
+
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="https://github.com/waveform80/ubuntu-maintainers-handbook/blob/main/source/Concepts.rst">Show on GitHub</a></li>
+    <li><a href="https://github.com/waveform80/ubuntu-maintainers-handbook/edit/main/source/Concepts.rst">Edit on GitHub</a></li>
+  </ul>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+    </nav>
+  </aside>
+  <main>
+    
+  <div class="section" id="high-level-concepts">
+<h1>High Level Concepts<a class="headerlink" href="#high-level-concepts" title="Permalink to this headline">¶</a></h1>
+<p>An Ubuntu installation is made up of packages copied and unpacked onto the
+target machine.  The Ubuntu project is the group of people who care for these
+packages, including both Canonical employees and the wider community.</p>
+<p>Ubuntu’s collection of packages is derived from the collection maintained by
+the community driven Debian project.  An important part of a Ubuntu packager’s
+role is to collaborate with Debian by keeping the Ubuntu copies of packages up
+to date, and by sharing improvements made in Ubuntu back up to Debian.</p>
+<p>Ubuntu and Debian have distinct differences in infrastructure, procedures, and
+release schedules.</p>
+<p>An overriding principle in Ubuntu is that processes are meant to make common
+cases easy to handle, but there will be exceptional situations.  For these
+cases, a request for an exception is filed with the appropriate review team,
+and if granted will permit the deviation.</p>
+<div class="section" id="ubuntu-release-cadence">
+<h2>Ubuntu Release Cadence<a class="headerlink" href="#ubuntu-release-cadence" title="Permalink to this headline">¶</a></h2>
+<p>Ubuntu follows a strict time-based release cycle.  Every six months a new
+Ubuntu version is released and its set of packages declared “stable”.
+Simultaneously, a new version begins development; it is given its own codename
+but also referred to as the “current development release”, or “devel”.</p>
+<p>The development process follows a defined schedule, with periods of active
+development followed by various freezes where the type of packaging activity
+changes to focus more on stabilization and preparations for release.</p>
+<p>After a Ubuntu version is released, the software packages are altered only due
+to pressing needs such as to fix defects or to update critically important
+components.  These post-release updates to the stable versions of Ubuntu are
+referred to as “Stable Release Updates”, or “SRU’s”.  SRU work is a primary
+activity of Ubuntu packagers, and will be discussed through this document.</p>
+<p>In addition to the regular Ubuntu releases, every 2 years (i.e. every 4th
+release) a release is declared to be a Long Term Support (LTS) release.  The
+LTS releases are special in that they have much longer than usual support
+periods.</p>
+</div>
+<div class="section" id="launchpad-the-project-repository">
+<h2>Launchpad, The Project Repository<a class="headerlink" href="#launchpad-the-project-repository" title="Permalink to this headline">¶</a></h2>
+<p>One of the most major differences between Ubuntu and Debian is its
+infrastructure, which is built around a Github-like project repository named
+Launchpad.</p>
+<p>Launchpad and Github operate on similar principles. Each has users/groups and
+projects. But while Github puts users at the top level, Launchpad puts projects
+at the top level.</p>
+<p>Launchpad projects are accessed at the top level: <a class="reference external" href="https://launchpad.net/ubuntu">https://launchpad.net/ubuntu</a></p>
+<p>Users and groups begin with a tilde: <a class="reference external" href="https://launchpad.net/~ubuntu-server">https://launchpad.net/~ubuntu-server</a></p>
+<div class="section" id="quick-access">
+<h3>Quick Access<a class="headerlink" href="#quick-access" title="Permalink to this headline">¶</a></h3>
+<p>You can quickly access Launchpad pages using the shortcut URL pad.lv, or using
+<code class="docutils literal notranslate"><span class="pre">!upkg</span> <span class="pre">some-package</span></code> in duckduckgo.</p>
+<p>Alternatively, if using Firefox you can add a shortcut bookmark.  In Firefox,
+create a ‘Shortcuts’ folder under ‘Other Bookmarks’, and inside it add a ‘New
+Bookmark’, with these fields:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Name</span><span class="p">:</span>     <span class="n">Launchpad</span> <span class="n">Bugs</span>
+<span class="n">Location</span><span class="p">:</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">bugs</span><span class="o">.</span><span class="n">launchpad</span><span class="o">.</span><span class="n">net</span><span class="o">/</span><span class="n">ubuntu</span><span class="o">/+</span><span class="n">bug</span><span class="o">/%</span><span class="n">s</span>
+<span class="n">Tags</span><span class="p">:</span>
+<span class="n">Keyword</span><span class="p">:</span>  <span class="n">lpb</span>
+</pre></div>
+</div>
+<p>Add another one for Debian bugs:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Name:     Debian Bugs
+Location: http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=%s
+Tags:
+Keyword:  debb
+</pre></div>
+</div>
+<p>If you expect to work with other upstream bug trackers frequently, add
+shortcuts for them too.</p>
+</div>
+</div>
+<div class="section" id="suite-package-model">
+<h2>Suite (Package) Model<a class="headerlink" href="#suite-package-model" title="Permalink to this headline">¶</a></h2>
+<p>There are binary and source packages, each in effectively parallel namespaces.</p>
+<p>In practice, binary and source packages are stored together in a master
+directory. Their namespaces are parallel because they have different filename
+endings (.deb for binary packages, .dsc for source packages). By convention, we
+give binary and source packages the same base name. Note, however, that a
+single source package can generate multiple binary packages, so the name of a
+binary package may not match exactly with the source package.</p>
+<p>For example, in <a class="reference external" href="http://archive.ubuntu.com/ubuntu/pool/main/b/bash">http://archive.ubuntu.com/ubuntu/pool/main/b/bash</a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bash_4</span><span class="o">.</span><span class="mi">2</span><span class="o">-</span><span class="mi">2</span><span class="n">ubuntu2</span><span class="o">.</span><span class="mf">6.</span><span class="n">diff</span><span class="o">.</span><span class="n">gz</span>         <span class="mi">2014</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">09</span> <span class="mi">12</span><span class="p">:</span><span class="mi">18</span>    <span class="mi">90</span><span class="n">K</span>
+<span class="n">bash_4</span><span class="o">.</span><span class="mi">2</span><span class="o">-</span><span class="mi">2</span><span class="n">ubuntu2</span><span class="o">.</span><span class="mf">6.</span><span class="n">dsc</span>             <span class="mi">2014</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">09</span> <span class="mi">12</span><span class="p">:</span><span class="mi">18</span>    <span class="mf">2.2</span><span class="n">K</span>
+<span class="n">bash_4</span><span class="o">.</span><span class="mi">2</span><span class="o">-</span><span class="mi">2</span><span class="n">ubuntu2</span><span class="o">.</span><span class="mi">6</span><span class="n">_amd64</span><span class="o">.</span><span class="n">deb</span>       <span class="mi">2014</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">09</span> <span class="mi">12</span><span class="p">:</span><span class="mi">18</span>    <span class="mi">626</span><span class="n">K</span>
+<span class="n">bash_4</span><span class="o">.</span><span class="mi">2</span><span class="o">-</span><span class="mi">2</span><span class="n">ubuntu2</span><span class="o">.</span><span class="mi">6</span><span class="n">_i386</span><span class="o">.</span><span class="n">deb</span>        <span class="mi">2014</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">09</span> <span class="mi">12</span><span class="p">:</span><span class="mi">18</span>    <span class="mi">601</span><span class="n">K</span>
+<span class="n">bash_4</span><span class="o">.</span><span class="mi">2</span><span class="o">-</span><span class="mi">2</span><span class="n">ubuntu2</span><span class="o">.</span><span class="n">diff</span><span class="o">.</span><span class="n">gz</span>           <span class="mi">2012</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">03</span> <span class="mi">16</span><span class="p">:</span><span class="mi">05</span>    <span class="mi">79</span><span class="n">K</span>
+<span class="n">bash_4</span><span class="o">.</span><span class="mi">2</span><span class="o">-</span><span class="mi">2</span><span class="n">ubuntu2</span><span class="o">.</span><span class="n">dsc</span>               <span class="mi">2012</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">03</span> <span class="mi">16</span><span class="p">:</span><span class="mi">05</span>    <span class="mf">1.5</span><span class="n">K</span>
+<span class="n">bash_4</span><span class="o">.</span><span class="mi">2</span><span class="o">-</span><span class="mi">2</span><span class="n">ubuntu2_amd64</span><span class="o">.</span><span class="n">deb</span>         <span class="mi">2012</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">03</span> <span class="mi">16</span><span class="p">:</span><span class="mi">05</span>    <span class="mi">626</span><span class="n">K</span>
+<span class="n">bash_4</span><span class="o">.</span><span class="mi">2</span><span class="o">-</span><span class="mi">2</span><span class="n">ubuntu2_i386</span><span class="o">.</span><span class="n">deb</span>          <span class="mi">2012</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">03</span> <span class="mi">16</span><span class="p">:</span><span class="mi">07</span>    <span class="mi">601</span><span class="n">K</span>
+<span class="n">bash_4</span><span class="o">.</span><span class="mf">2.</span><span class="n">orig</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span>                <span class="mi">2011</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">24</span> <span class="mi">01</span><span class="p">:</span><span class="mi">04</span>    <span class="mf">4.1</span><span class="n">M</span>
+<span class="n">bash_4</span><span class="o">.</span><span class="mi">3</span><span class="o">-</span><span class="mi">6</span><span class="n">ubuntu1</span><span class="o">.</span><span class="n">debian</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span>     <span class="mi">2014</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">09</span> <span class="mi">00</span><span class="p">:</span><span class="mi">58</span>    <span class="mi">76</span><span class="n">K</span>
+<span class="n">bash_4</span><span class="o">.</span><span class="mi">3</span><span class="o">-</span><span class="mi">6</span><span class="n">ubuntu1</span><span class="o">.</span><span class="n">dsc</span>               <span class="mi">2014</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">09</span> <span class="mi">00</span><span class="p">:</span><span class="mi">58</span>    <span class="mf">1.6</span><span class="n">K</span>
+<span class="n">bash_4</span><span class="o">.</span><span class="mi">3</span><span class="o">-</span><span class="mi">6</span><span class="n">ubuntu1_amd64</span><span class="o">.</span><span class="n">deb</span>         <span class="mi">2014</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">09</span> <span class="mi">01</span><span class="p">:</span><span class="mi">18</span>    <span class="mi">561</span><span class="n">K</span>
+<span class="n">bash_4</span><span class="o">.</span><span class="mi">3</span><span class="o">-</span><span class="mi">6</span><span class="n">ubuntu1_i386</span><span class="o">.</span><span class="n">deb</span>          <span class="mi">2014</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">09</span> <span class="mi">01</span><span class="p">:</span><span class="mi">18</span>    <span class="mi">535</span><span class="n">K</span>
+<span class="n">bash_4</span><span class="o">.</span><span class="mi">3</span><span class="o">-</span><span class="mi">7</span><span class="n">ubuntu1</span><span class="o">.</span><span class="mf">7.</span><span class="n">debian</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span>   <span class="mi">2017</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">17</span> <span class="mi">17</span><span class="p">:</span><span class="mi">03</span>    <span class="mi">98</span><span class="n">K</span>
+<span class="n">bash_4</span><span class="o">.</span><span class="mi">3</span><span class="o">-</span><span class="mi">7</span><span class="n">ubuntu1</span><span class="o">.</span><span class="mf">7.</span><span class="n">dsc</span>             <span class="mi">2017</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">17</span> <span class="mi">17</span><span class="p">:</span><span class="mi">03</span>    <span class="mf">2.2</span><span class="n">K</span>
+<span class="n">bash_4</span><span class="o">.</span><span class="mi">3</span><span class="o">-</span><span class="mi">7</span><span class="n">ubuntu1</span><span class="o">.</span><span class="mi">7</span><span class="n">_amd64</span><span class="o">.</span><span class="n">deb</span>       <span class="mi">2017</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">17</span> <span class="mi">17</span><span class="p">:</span><span class="mi">03</span>    <span class="mi">561</span><span class="n">K</span>
+<span class="n">bash_4</span><span class="o">.</span><span class="mi">3</span><span class="o">-</span><span class="mi">7</span><span class="n">ubuntu1</span><span class="o">.</span><span class="mi">7</span><span class="n">_i386</span><span class="o">.</span><span class="n">deb</span>        <span class="mi">2017</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">17</span> <span class="mi">17</span><span class="p">:</span><span class="mi">03</span>    <span class="mi">535</span><span class="n">K</span>
+</pre></div>
+</div>
+<p>All packages for all ubuntu releases are stored together in one master
+directory, and pointed to by the various releases. This means that you cannot
+have two packages with the same version, even across releases, but you can have
+multiple releases point to the same package version.</p>
+<p>Once a package is uploaded to Launchpad, it cannot be replaced, even if the
+package Launchpad uploads to the apt repository gets deleted (for whatever
+reason). If a package does get deleted from the archive, it will show as
+“Deleted” in Launchpad.</p>
+<div class="section" id="suites">
+<h3>Suites<a class="headerlink" href="#suites" title="Permalink to this headline">¶</a></h3>
+<p>Each release of ubuntu is made up of suites, containing references to packages.
+We use release codenames in suites rather than version numbers (bionic vs
+18.04) because the suite will be created before release (which decides the
+version number since we use the release month of the year for the second part
+of the number).</p>
+<p>For example, in <a class="reference external" href="http://archive.ubuntu.com/ubuntu/dists">http://archive.ubuntu.com/ubuntu/dists</a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bionic</span><span class="o">-</span><span class="n">backports</span><span class="o">/</span>   <span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">12</span> <span class="mi">05</span><span class="p">:</span><span class="mi">30</span>    <span class="o">-</span>
+<span class="n">bionic</span><span class="o">-</span><span class="n">proposed</span><span class="o">/</span>    <span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">12</span> <span class="mi">06</span><span class="p">:</span><span class="mi">50</span>    <span class="o">-</span>
+<span class="n">bionic</span><span class="o">-</span><span class="n">security</span><span class="o">/</span>    <span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">12</span> <span class="mi">06</span><span class="p">:</span><span class="mi">50</span>    <span class="o">-</span>
+<span class="n">bionic</span><span class="o">-</span><span class="n">updates</span><span class="o">/</span>     <span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">12</span> <span class="mi">07</span><span class="p">:</span><span class="mi">06</span>    <span class="o">-</span>
+<span class="n">bionic</span><span class="o">/</span>             <span class="mi">2018</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">26</span> <span class="mi">23</span><span class="p">:</span><span class="mi">38</span>    <span class="o">-</span>
+</pre></div>
+</div>
+<p>Within each suite is a Release file, and then various repositories, with
+different levels of support.</p>
+<p>For example, in <a class="reference external" href="http://archive.ubuntu.com/ubuntu/dists/bionic">http://archive.ubuntu.com/ubuntu/dists/bionic</a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Contents</span><span class="o">-</span><span class="n">amd64</span><span class="o">.</span><span class="n">gz</span>   <span class="mi">2018</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">26</span> <span class="mi">05</span><span class="p">:</span><span class="mi">59</span>    <span class="mi">38</span><span class="n">M</span>
+<span class="n">Contents</span><span class="o">-</span><span class="n">i386</span><span class="o">.</span><span class="n">gz</span>    <span class="mi">2018</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">26</span> <span class="mi">07</span><span class="p">:</span><span class="mi">25</span>    <span class="mi">37</span><span class="n">M</span>
+<span class="n">InRelease</span>           <span class="mi">2018</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">26</span> <span class="mi">23</span><span class="p">:</span><span class="mi">38</span>    <span class="mi">236</span><span class="n">K</span>
+<span class="n">Release</span>             <span class="mi">2018</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">26</span> <span class="mi">23</span><span class="p">:</span><span class="mi">38</span>    <span class="mi">236</span><span class="n">K</span>
+<span class="n">Release</span><span class="o">.</span><span class="n">gpg</span>         <span class="mi">2018</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">26</span> <span class="mi">23</span><span class="p">:</span><span class="mi">38</span>    <span class="mi">819</span>
+<span class="n">by</span><span class="o">-</span><span class="nb">hash</span><span class="o">/</span>            <span class="mi">2017</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">25</span> <span class="mi">09</span><span class="p">:</span><span class="mi">04</span>    <span class="o">-</span>
+<span class="n">main</span><span class="o">/</span>               <span class="mi">2018</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">24</span> <span class="mi">01</span><span class="p">:</span><span class="mi">33</span>    <span class="o">-</span>
+<span class="n">multiverse</span><span class="o">/</span>         <span class="mi">2017</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">25</span> <span class="mi">13</span><span class="p">:</span><span class="mi">33</span>    <span class="o">-</span>
+<span class="n">restricted</span><span class="o">/</span>         <span class="mi">2017</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">24</span> <span class="mi">22</span><span class="p">:</span><span class="mi">44</span>    <span class="o">-</span>
+<span class="n">universe</span><span class="o">/</span>           <span class="mi">2017</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">25</span> <span class="mi">13</span><span class="p">:</span><span class="mi">33</span>    <span class="o">-</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="repositories">
+<h3>Repositories<a class="headerlink" href="#repositories" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="main">
+<h4>Main<a class="headerlink" href="#main" title="Permalink to this headline">¶</a></h4>
+<p>The main packages in this distribution, supported by the Ubuntu team.</p>
+</div>
+<div class="section" id="restricted">
+<h4>Restricted<a class="headerlink" href="#restricted" title="Permalink to this headline">¶</a></h4>
+<p>Software from this repository may not have been tested as extensively as that
+contained in the main release, although it includes newer versions of some
+applications which may provide useful features. Software in backports will not
+receive any review or updates from the Ubuntu security team.</p>
+</div>
+<div class="section" id="universe">
+<h4>Universe<a class="headerlink" href="#universe" title="Permalink to this headline">¶</a></h4>
+<p>Software from this repository is entirely unsupported by the Ubuntu team.
+Software in universe will not receive any review or updates from the Ubuntu
+security team.</p>
+</div>
+<div class="section" id="multiverse">
+<h4>Multiverse<a class="headerlink" href="#multiverse" title="Permalink to this headline">¶</a></h4>
+<p>Software from this repository is entirely unsupported by the Ubuntu team, and
+may not be under a free license. Software in multiverse will not receive any
+review or updates from the Ubuntu security team.</p>
+</div>
+</div>
+<div class="section" id="apt">
+<h3>Apt<a class="headerlink" href="#apt" title="Permalink to this headline">¶</a></h3>
+<p>Apt uses <code class="docutils literal notranslate"><span class="pre">sources.list</span></code> and <code class="docutils literal notranslate"><span class="pre">sources.list.d</span></code> to tell it which suites to
+use.</p>
+<p>Example /etc/apt/sources.list:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">deb</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">archive</span><span class="o">.</span><span class="n">ubuntu</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">ubuntu</span><span class="o">/</span> <span class="n">focal</span> <span class="n">main</span> <span class="n">restricted</span> <span class="n">universe</span>
+<span class="n">deb</span><span class="o">-</span><span class="n">src</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">archive</span><span class="o">.</span><span class="n">ubuntu</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">ubuntu</span><span class="o">/</span> <span class="n">focal</span> <span class="n">main</span> <span class="n">restricted</span> <span class="n">universe</span>
+
+<span class="c1">## Major bug fix updates produced after the final release of the distribution.</span>
+<span class="n">deb</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">archive</span><span class="o">.</span><span class="n">ubuntu</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">ubuntu</span><span class="o">/</span> <span class="n">focal</span><span class="o">-</span><span class="n">updates</span> <span class="n">main</span> <span class="n">restricted</span> <span class="n">universe</span>
+<span class="c1"># deb-src http://archive.ubuntu.com/ubuntu/ focal-updates main restricted universe</span>
+
+<span class="c1">## Important security fixes.</span>
+<span class="n">deb</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">security</span><span class="o">.</span><span class="n">ubuntu</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">ubuntu</span><span class="o">/</span> <span class="n">focal</span><span class="o">-</span><span class="n">security</span> <span class="n">main</span> <span class="n">restricted</span> <span class="n">universe</span>
+<span class="c1"># deb-src http://security.ubuntu.com/ubuntu/ focal-security main restricted universe</span>
+</pre></div>
+</div>
+<p>When apt encounters multiple versions of a package, it uses an internal scoring
+system to decide which version should be installed.</p>
+<p>Notice that some lines start with ‘deb’, while others ‘deb-src’.  The ‘deb’
+lines provide binary packages, while the ‘deb-src’ provide source packages.
+You’ll usually notice the ‘deb-src’ lines are commented out with ‘#’ to disable
+them; this makes updates run a bit faster for the vast majority of people who
+don’t need access to the sources.  You’re one of the select few who do need
+access, so uncomment the ‘deb-src’ lines appropriate you what you’ll be working
+on.</p>
+<p>Depending on your geographical area, you may find it beneficial to pull from
+one of Canonical’s mirrors.  To do this, replace the hostname portion of each
+line above with the corresponding mirror hostname.  For example, in Germany you
+might use:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">deb</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">de</span><span class="o">.</span><span class="n">archive</span><span class="o">.</span><span class="n">ubuntu</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">ubuntu</span><span class="o">/</span> <span class="n">focal</span> <span class="n">main</span> <span class="n">restricted</span> <span class="n">universe</span>
+<span class="n">deb</span><span class="o">-</span><span class="n">src</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">de</span><span class="o">.</span><span class="n">archive</span><span class="o">.</span><span class="n">ubuntu</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">ubuntu</span><span class="o">/</span> <span class="n">focal</span> <span class="n">main</span> <span class="n">restricted</span> <span class="n">universe</span>
+<span class="c1"># etc.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="partial-suites">
+<h3>Partial Suites<a class="headerlink" href="#partial-suites" title="Permalink to this headline">¶</a></h3>
+<p>Some suites are known as “partial suites”. They contain only a subset of the
+total packages required to install Ubuntu, but contain packages that supersede
+those in a different suite if overlaid on top of it. <code class="docutils literal notranslate"><span class="pre">backports</span></code>,
+<code class="docutils literal notranslate"><span class="pre">proposed</span></code>, <code class="docutils literal notranslate"><span class="pre">security</span></code>, <code class="docutils literal notranslate"><span class="pre">updates</span></code> are partial suites.</p>
+</div>
+</div>
+<div class="section" id="source-launchpad-model">
+<h2>Source (Launchpad) Model<a class="headerlink" href="#source-launchpad-model" title="Permalink to this headline">¶</a></h2>
+<p>Launchpad only understands source package files. Uploading packages to
+Launchpad effectively “creates” them; there’s no other way to make Launchpad
+aware of a source package. Everything is once again stored in the same
+namespace, so you can’t have multiple copies of the same version package.</p>
+<p>It’s easiest to think of a package name as a directory, with each version of
+the package stored within that directory. For example,
+<a class="reference external" href="https://launchpad.net/ubuntu/+source/hello">https://launchpad.net/ubuntu/+source/hello</a> would conceptually be:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>hello
+├── hello_2.7.orig.tar.gz
+├── hello_2.7-2.debian.tar.gz
+├── hello_2.7-2.dsc
+├── hello_2.8.orig.tar.gz
+├── hello_2.8-4.debian.tar.gz
+├── hello_2.8-4.dsc
+├── hello_2.10.orig.tar.gz
+├── hello_2.10-1.debian.tar.xz
+├── hello_2.10-1.dsc
+├── hello_2.10-1build1.debian.tar.xz
+├── hello_2.10-1build1.dsc
+├── hello_2.10-1ubuntu1.debian.tar.xz
+└── hello_2.10-1ubuntu1.dsc
+</pre></div>
+</div>
+<p>The .dsc file tells which files are part of this source package.</p>
+<p>Example: <code class="docutils literal notranslate"><span class="pre">hello_2.10-1ubuntu1.dsc</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Checksums</span><span class="o">-</span><span class="n">Sha1</span><span class="p">:</span>
+ <span class="n">f7bebf6f9c62a2295e889f66e05ce9bfaed9ace3</span> <span class="mi">725946</span> <span class="n">hello_2</span><span class="o">.</span><span class="mf">10.</span><span class="n">orig</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span>
+ <span class="n">b5e2e2280486138576a4c978fb2d36028985bb33</span> <span class="mi">6356</span> <span class="n">hello_2</span><span class="o">.</span><span class="mi">10</span><span class="o">-</span><span class="mi">1</span><span class="n">ubuntu1</span><span class="o">.</span><span class="n">debian</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">xz</span>
+</pre></div>
+</div>
+<p>The .dsc file also tells what dependencies the package has:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Build</span><span class="o">-</span><span class="n">Depends</span><span class="p">:</span> <span class="n">debhelper</span> <span class="p">(</span><span class="o">&gt;=</span> <span class="mf">9.20120311</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>and which binary packages to produce:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Package</span><span class="o">-</span><span class="n">List</span><span class="p">:</span>
+ <span class="n">hello</span> <span class="n">deb</span> <span class="n">devel</span> <span class="n">optional</span> <span class="n">arch</span><span class="o">=</span><span class="nb">any</span>
+</pre></div>
+</div>
+<p>In the case of <code class="docutils literal notranslate"><span class="pre">hello_2.10-1ubuntu1.dsc</span></code>, the following are produced for the
+archive:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">hello</span><span class="o">-</span><span class="n">dbgsym_2</span><span class="o">.</span><span class="mi">10</span><span class="o">-</span><span class="mi">1</span><span class="n">ubuntu1_amd64</span><span class="o">.</span><span class="n">ddeb</span> <span class="p">(</span><span class="mf">33.9</span> <span class="n">KiB</span><span class="p">)</span>
+<span class="n">hello</span><span class="o">-</span><span class="n">dbgsym_2</span><span class="o">.</span><span class="mi">10</span><span class="o">-</span><span class="mi">1</span><span class="n">ubuntu1_arm64</span><span class="o">.</span><span class="n">ddeb</span> <span class="p">(</span><span class="mf">33.4</span> <span class="n">KiB</span><span class="p">)</span>
+<span class="n">hello</span><span class="o">-</span><span class="n">dbgsym_2</span><span class="o">.</span><span class="mi">10</span><span class="o">-</span><span class="mi">1</span><span class="n">ubuntu1_armhf</span><span class="o">.</span><span class="n">ddeb</span> <span class="p">(</span><span class="mf">33.4</span> <span class="n">KiB</span><span class="p">)</span>
+<span class="n">hello</span><span class="o">-</span><span class="n">dbgsym_2</span><span class="o">.</span><span class="mi">10</span><span class="o">-</span><span class="mi">1</span><span class="n">ubuntu1_i386</span><span class="o">.</span><span class="n">ddeb</span> <span class="p">(</span><span class="mf">30.9</span> <span class="n">KiB</span><span class="p">)</span>
+<span class="n">hello</span><span class="o">-</span><span class="n">dbgsym_2</span><span class="o">.</span><span class="mi">10</span><span class="o">-</span><span class="mi">1</span><span class="n">ubuntu1_ppc64el</span><span class="o">.</span><span class="n">ddeb</span> <span class="p">(</span><span class="mf">44.4</span> <span class="n">KiB</span><span class="p">)</span>
+<span class="n">hello</span><span class="o">-</span><span class="n">dbgsym_2</span><span class="o">.</span><span class="mi">10</span><span class="o">-</span><span class="mi">1</span><span class="n">ubuntu1_s390x</span><span class="o">.</span><span class="n">ddeb</span> <span class="p">(</span><span class="mf">33.4</span> <span class="n">KiB</span><span class="p">)</span>
+<span class="n">hello_2</span><span class="o">.</span><span class="mi">10</span><span class="o">-</span><span class="mi">1</span><span class="n">ubuntu1</span><span class="o">.</span><span class="n">debian</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">xz</span> <span class="p">(</span><span class="mf">6.2</span> <span class="n">KiB</span><span class="p">)</span>
+<span class="n">hello_2</span><span class="o">.</span><span class="mi">10</span><span class="o">-</span><span class="mi">1</span><span class="n">ubuntu1</span><span class="o">.</span><span class="n">dsc</span> <span class="p">(</span><span class="mf">1.7</span> <span class="n">KiB</span><span class="p">)</span>
+<span class="n">hello_2</span><span class="o">.</span><span class="mi">10</span><span class="o">-</span><span class="mi">1</span><span class="n">ubuntu1_amd64</span><span class="o">.</span><span class="n">deb</span> <span class="p">(</span><span class="mf">27.4</span> <span class="n">KiB</span><span class="p">)</span>
+<span class="n">hello_2</span><span class="o">.</span><span class="mi">10</span><span class="o">-</span><span class="mi">1</span><span class="n">ubuntu1_arm64</span><span class="o">.</span><span class="n">deb</span> <span class="p">(</span><span class="mf">26.7</span> <span class="n">KiB</span><span class="p">)</span>
+<span class="n">hello_2</span><span class="o">.</span><span class="mi">10</span><span class="o">-</span><span class="mi">1</span><span class="n">ubuntu1_armhf</span><span class="o">.</span><span class="n">deb</span> <span class="p">(</span><span class="mf">25.7</span> <span class="n">KiB</span><span class="p">)</span>
+<span class="n">hello_2</span><span class="o">.</span><span class="mi">10</span><span class="o">-</span><span class="mi">1</span><span class="n">ubuntu1_i386</span><span class="o">.</span><span class="n">deb</span> <span class="p">(</span><span class="mf">27.9</span> <span class="n">KiB</span><span class="p">)</span>
+<span class="n">hello_2</span><span class="o">.</span><span class="mi">10</span><span class="o">-</span><span class="mi">1</span><span class="n">ubuntu1_ppc64el</span><span class="o">.</span><span class="n">deb</span> <span class="p">(</span><span class="mf">30.5</span> <span class="n">KiB</span><span class="p">)</span>
+<span class="n">hello_2</span><span class="o">.</span><span class="mi">10</span><span class="o">-</span><span class="mi">1</span><span class="n">ubuntu1_s390x</span><span class="o">.</span><span class="n">deb</span> <span class="p">(</span><span class="mf">26.9</span> <span class="n">KiB</span><span class="p">)</span>
+<span class="n">hello_2</span><span class="o">.</span><span class="mf">10.</span><span class="n">orig</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span> <span class="p">(</span><span class="mf">708.9</span> <span class="n">KiB</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="section" id="series-pockets-suites">
+<h3>Series, Pockets, Suites<a class="headerlink" href="#series-pockets-suites" title="Permalink to this headline">¶</a></h3>
+<p>Where apt has the concept of suites, Launchpad has the concept of series and
+pockets:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="24%" />
+<col width="58%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Series</th>
+<th class="head">Pocket</th>
+<th class="head">Corresponding Suite</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Warty</td>
+<td>Release</td>
+<td>warty</td>
+</tr>
+<tr class="row-odd"><td>Warty</td>
+<td>Updates</td>
+<td>warty-updates</td>
+</tr>
+<tr class="row-even"><td>Bionic</td>
+<td>Release</td>
+<td>bionic</td>
+</tr>
+<tr class="row-odd"><td>Bionic</td>
+<td>Security</td>
+<td>bionic-security</td>
+</tr>
+</tbody>
+</table>
+<p>Launchpad will automatically map from series and pocket to suite when
+generating binary packages.</p>
+</div>
+<div class="section" id="source-packages">
+<h3>Source Packages<a class="headerlink" href="#source-packages" title="Permalink to this headline">¶</a></h3>
+<p>Let’s next examine the files involved in a specific release.  From above, let’s
+look at the 2.7-2 release:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>├── hello_2.7.orig.tar.gz
+├── hello_2.7-2.debian.tar.gz
+├── hello_2.7-2.dsc
+</pre></div>
+</div>
+<p>The first file, <code class="docutils literal notranslate"><span class="pre">hello_2.7.orig.tar.gz</span></code>, or the “orig tarball” as it’s termed,
+corresponds to the upstream project’s official source code for their 2.7
+release.  Often, this will literally be a copy of the upstream project’s
+released archive tarball, renamed to suit Debian’s file naming policy.  Other
+times there are more structured processes provided by Debian for managing the
+orig tarball, such as “pristine-tar”.</p>
+<p>The next file, <code class="docutils literal notranslate"><span class="pre">hello_2.7-2.debian.tar.gz</span></code> is sometimes referred to as the
+“Debian delta”.  It contains all of the packaging changes needed to transform
+the orig tarball into the appropriate .deb file(s).  The “-2” in its filename
+indicates it is the second update to the Debian delta for 2.7.  This “dash
+number” is updated when new packaging changes are uploaded.</p>
+<p>Before we can work on these files, we need to unpack them into a working tree,
+with the debian changes applied.  A variety of tools exist to do this,
+including <code class="docutils literal notranslate"><span class="pre">dget</span> <span class="pre">&lt;url&gt;.dsc</span></code>, <code class="docutils literal notranslate"><span class="pre">apt-get</span> <span class="pre">source</span> <span class="pre">&lt;pkg&gt;</span></code> and similar.  A low level
+way to do this is with the dpkg-source command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ dpkg-source -x hello_2.10-2ubuntu2.dsc
+dpkg-source: info: extracting hello in hello-2.10
+dpkg-source: info: unpacking hello_2.10.orig.tar.gz
+dpkg-source: info: unpacking hello_2.10-2ubuntu2.debian.tar.xz
+</pre></div>
+</div>
+<p>Looking into the hello-2.10/ directory, you’ll notice there has been a
+“debian/” directory added.  Debian’s policy is to contain all of its additions
+to the orig tarball into a debian/ directory within the unpacked tree.  Let’s
+look at the contents of the debian/ directory:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ find hello-2.10/debian/
+hello-2.10/debian/
+hello-2.10/debian/control
+hello-2.10/debian/copyright
+hello-2.10/debian/changelog
+hello-2.10/debian/source
+hello-2.10/debian/source/format
+hello-2.10/debian/tests
+hello-2.10/debian/tests/control
+hello-2.10/debian/rules-old
+hello-2.10/debian/watch
+hello-2.10/debian/rules
+</pre></div>
+</div>
+<p>Some packages also have a patches/ directory, with .diff or .patch files that
+will be applied to the packaging prior to building it.  The control file
+contains metadata about the source and binary packages.  The rules file
+contains build directives.  The changelog file lists the sequence of changes
+made to the package, with the most recent at the top.  Here’s one recent change
+from hello’s changelog:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">hello</span> <span class="p">(</span><span class="mf">2.10</span><span class="o">-</span><span class="mi">2</span><span class="n">ubuntu1</span><span class="p">)</span> <span class="n">eoan</span><span class="p">;</span> <span class="n">urgency</span><span class="o">=</span><span class="n">low</span>
+
+  <span class="o">*</span> <span class="n">Merge</span> <span class="kn">from</span> <span class="nn">Debian</span> <span class="n">unstable</span><span class="o">.</span>  <span class="n">Remaining</span> <span class="n">changes</span><span class="p">:</span>
+    <span class="o">-</span> <span class="n">Run</span> <span class="n">the</span> <span class="n">upstream</span> <span class="n">tests</span> <span class="k">as</span> <span class="n">an</span> <span class="n">autopkg</span> <span class="n">test</span> <span class="k">as</span> <span class="n">well</span><span class="o">.</span>
+  <span class="o">*</span> <span class="n">Dropped</span> <span class="n">changes</span><span class="p">,</span> <span class="n">included</span> <span class="ow">in</span> <span class="n">Debian</span><span class="p">:</span>
+    <span class="o">-</span> <span class="n">Bump</span> <span class="n">the</span> <span class="n">standards</span> <span class="n">version</span><span class="o">.</span>
+
+ <span class="o">--</span> <span class="n">Steve</span> <span class="n">Langasek</span> <span class="o">&lt;</span><span class="n">steve</span><span class="o">.</span><span class="n">langasek</span><span class="nd">@ubuntu</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span>  <span class="n">Wed</span><span class="p">,</span> <span class="mi">22</span> <span class="n">May</span> <span class="mi">2019</span> <span class="mi">16</span><span class="p">:</span><span class="mi">36</span><span class="p">:</span><span class="mi">23</span> <span class="o">-</span><span class="mi">0700</span>
+</pre></div>
+</div>
+<p>We’ll be creating our own changelog entry later and will discuss the various
+elements at that point.  But for now note how the first line contains the
+package name (‘hello’), version number (‘2.10-2ubuntu1’), and the Ubuntu
+release codename (‘eoan’).</p>
+</div>
+</div>
+<div class="section" id="the-build-process">
+<h2>The Build Process<a class="headerlink" href="#the-build-process" title="Permalink to this headline">¶</a></h2>
+<p>The build process starts when a source package is uploaded to a series/pocket
+and accepted in Launchpad.</p>
+<p>Upon acceptance, it will appear in the <code class="docutils literal notranslate"><span class="pre">Latest</span> <span class="pre">upload</span></code> section of the package
+source page (for example, <a class="reference external" href="https://launchpad.net/ubuntu/+source/hello">https://launchpad.net/ubuntu/+source/hello</a>).</p>
+<p>Launchpad will also schedule builders to build the required binary packages.
+You can see the build queue at <a class="reference external" href="https://launchpad.net/builders">https://launchpad.net/builders</a>.</p>
+<p>If you click on the latest version in the <code class="docutils literal notranslate"><span class="pre">+source/some-package</span></code> page, you’ll
+see under <code class="docutils literal notranslate"><span class="pre">Builds</span></code> the latest status of the builds for each architecture.</p>
+<p>Once built, the build artifacts are queued for publication, and eventually get
+pushed to the apt master mirror. If the build fails, the build info page will
+show the build log.</p>
+</div>
+<div class="section" id="change-process">
+<h2>Change Process<a class="headerlink" href="#change-process" title="Permalink to this headline">¶</a></h2>
+<p>All changes to Ubuntu packages follow a similar process:</p>
+<ol class="arabic simple">
+<li>Open a bug report listing the reason why a change is needed. You use the
+same process even for merges (which technically aren’t bugs).</li>
+<li>Clone the source repository.</li>
+<li>Make a branch for yourself.</li>
+<li>Make your changes and push them to your launchpad repository.</li>
+<li>Open a merge proposal and get reviews.</li>
+<li>Upload, or get a sponsor for your changes.</li>
+<li>Track migration of your package through the build system.</li>
+<li>Verify that the package works as intended, and hasn’t introduced
+regressions.</li>
+</ol>
+</div>
+<div class="section" id="source-code-repositories">
+<h2>Source Code Repositories<a class="headerlink" href="#source-code-repositories" title="Permalink to this headline">¶</a></h2>
+<p>All changes to packages are done through their source code repositories. This
+used to be done through bazaar, but is now done through git. The preferred
+method is to use <code class="docutils literal notranslate"><span class="pre">git-ubuntu</span></code>, which you can install using snap:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">snap</span> <span class="n">install</span> <span class="o">--</span><span class="n">edge</span> <span class="o">--</span><span class="n">classic</span> <span class="n">git</span><span class="o">-</span><span class="n">ubuntu</span>
+</pre></div>
+</div>
+<p>(Note:  –edge requests installation of the current development version of
+git-ubuntu, which is the best tested.)</p>
+<div class="section" id="cloning-a-repository">
+<h3>Cloning a Repository<a class="headerlink" href="#cloning-a-repository" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git ubuntu clone hello
+</pre></div>
+</div>
+<p>This will attempt to clone the <code class="docutils literal notranslate"><span class="pre">hello</span></code> Ubuntu source code repository into a
+subdirectory <code class="docutils literal notranslate"><span class="pre">hello</span></code>. There will be many branches and tags set up, for
+example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git ubuntu clone hello
+From https://git.launchpad.net/~usd-import-team/ubuntu/+source/hello
+ * [new branch]      applied/debian/buster          -&gt; pkg/applied/debian/buster
+ * [new branch]      applied/debian/jessie          -&gt; pkg/applied/debian/jessie
+ ...
+ * [new branch]      applied/ubuntu/artful          -&gt; pkg/applied/ubuntu/artful
+ * [new branch]      applied/ubuntu/artful-devel    -&gt; pkg/applied/ubuntu/artful-devel
+ * [new branch]      applied/ubuntu/bionic          -&gt; pkg/applied/ubuntu/bionic
+ * [new branch]      applied/ubuntu/bionic-devel    -&gt; pkg/applied/ubuntu/bionic-devel
+...
+ * [new branch]      debian/buster                  -&gt; pkg/debian/buster
+ * [new branch]      debian/jessie                  -&gt; pkg/debian/jessie
+...
+ * [new branch]      importer/debian/dsc            -&gt; pkg/importer/debian/dsc
+ * [new branch]      importer/debian/pristine-tar   -&gt; pkg/importer/debian/pristine-tar
+ * [new branch]      importer/ubuntu/dsc            -&gt; pkg/importer/ubuntu/dsc
+ * [new branch]      importer/ubuntu/pristine-tar   -&gt; pkg/importer/ubuntu/pristine-tar
+...
+ * [new branch]      ubuntu/artful                  -&gt; pkg/ubuntu/artful
+ * [new branch]      ubuntu/artful-devel            -&gt; pkg/ubuntu/artful-devel
+ * [new branch]      ubuntu/bionic                  -&gt; pkg/ubuntu/bionic
+ * [new branch]      ubuntu/bionic-devel            -&gt; pkg/ubuntu/bionic-devel
+ ...
+ * [new branch]      ubuntu/devel                   -&gt; pkg/ubuntu/devel
+ ...
+ * [new tag]         applied/2.1.1-4                -&gt; pkg/applied/2.1.1-4
+ * [new tag]         applied/2.1.1-5                -&gt; pkg/applied/2.1.1-5
+ * [new tag]         applied/2.10-1                 -&gt; pkg/applied/2.10-1
+ * [new tag]         applied/2.10-1build1           -&gt; pkg/applied/2.10-1build1
+ * [new tag]         applied/2.10-1ubuntu1          -&gt; pkg/applied/2.10-1ubuntu1
+...
+ * [new tag]         import/2.1.1-4                 -&gt; pkg/import/2.1.1-4
+ * [new tag]         import/2.1.1-5                 -&gt; pkg/import/2.1.1-5
+ * [new tag]         import/2.10-1                  -&gt; pkg/import/2.10-1
+ * [new tag]         import/2.10-1build1            -&gt; pkg/import/2.10-1build1
+ * [new tag]         import/2.10-1ubuntu1           -&gt; pkg/import/2.10-1ubuntu1
+...
+ * [new tag]         upstream/debian/2.10.gz        -&gt; pkg/upstream/debian/2.10.gz
+ * [new tag]         upstream/debian/2.2.gz         -&gt; pkg/upstream/debian/2.2.gz
+ * [new tag]         upstream/debian/2.4.gz         -&gt; pkg/upstream/debian/2.4.gz
+</pre></div>
+</div>
+<p>The branches you’ll be interested in are <code class="docutils literal notranslate"><span class="pre">ubuntu/somerelease-devel</span></code>.
+<code class="docutils literal notranslate"><span class="pre">ubuntu/somerelease</span></code> is the package set as it was on release day. The
+<code class="docutils literal notranslate"><span class="pre">-devel</span></code> branch is that release plus all changes to date. The special
+<code class="docutils literal notranslate"><span class="pre">ubuntu/devel</span></code> branch points to the (unreleased) leading edge of development
+for the package in Ubuntu.</p>
+<p>You’ll be using the <code class="docutils literal notranslate"><span class="pre">-devel</span></code> branches for your changes.</p>
+</div>
+<div class="section" id="creating-a-branch-for-your-work">
+<h3>Creating a branch for your work<a class="headerlink" href="#creating-a-branch-for-your-work" title="Permalink to this headline">¶</a></h3>
+<p>Before making changes, create a branch for yourself. It’s recommended to give
+the branch a meaningful name that will remind you of its purpose after not
+looking at it for a few months.  You’ll also potentially have matching PPAs and
+LXC containers, so having a consistent naming scheme helps.</p>
+<p>For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">hello</span><span class="o">-</span><span class="n">fix</span><span class="o">-</span><span class="n">lp1234567</span><span class="o">-</span><span class="n">segfault</span><span class="o">-</span><span class="n">bionic</span>
+</pre></div>
+</div>
+<p>Where:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">hello</span></code>: The package you are changing.</li>
+<li><code class="docutils literal notranslate"><span class="pre">fix-lp1234567-segfault</span></code>: Job being done including a bug #, merge #, or
+debian version.</li>
+<li><code class="docutils literal notranslate"><span class="pre">bionic</span></code>: The Ubuntu release this change is for.</li>
+</ul>
+<p>Be aware that git, LXD, and PPA each have restrictions on what kinds of
+punctuation they accept, and LXD has a length limit of &lt;63 chars max.  Dashes
+are safe in all three, other punctuation is disallowed by one or another.</p>
+<p>Create the branch like so:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git branch hello-fix-lp1234567-segfault-bionic pkg/ubuntu/bionic-devel
+</pre></div>
+</div>
+</div>
+<div class="section" id="pushing-your-changes">
+<h3>Pushing Your Changes<a class="headerlink" href="#pushing-your-changes" title="Permalink to this headline">¶</a></h3>
+<p>Once your changes are ready to push, do so:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git push mylaunchpadusername hello-fix-lp1234567-segfault-bionic
+</pre></div>
+</div>
+<p>Now you’ll be able to see it on launchpad. Go to your code section:
+<a class="reference external" href="https://code.launchpad.net/~your-launchpad-username/+git">https://code.launchpad.net/~your-launchpad-username/+git</a></p>
+<p>You’ll see a list of repositories:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">lp</span><span class="p">:</span><span class="o">~</span><span class="n">yourlaunchpadname</span><span class="o">/</span><span class="n">ubuntu</span><span class="o">/+</span><span class="n">source</span><span class="o">/</span><span class="n">hello</span>      <span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">20</span>
+<span class="n">lp</span><span class="p">:</span><span class="o">~</span><span class="n">yourlaunchpadname</span><span class="o">/</span><span class="n">ubuntu</span><span class="o">/+</span><span class="n">source</span><span class="o">/</span><span class="n">logwatch</span>   <span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">18</span>
+<span class="n">lp</span><span class="p">:</span><span class="o">~</span><span class="n">yourlaunchpadname</span><span class="o">/</span><span class="n">ubuntu</span><span class="o">/+</span><span class="n">source</span><span class="o">/</span><span class="n">tomcat8</span>    <span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">10</span>
+<span class="n">lp</span><span class="p">:</span><span class="o">~</span><span class="n">yourlaunchpadname</span><span class="o">/</span><span class="n">ubuntu</span><span class="o">/+</span><span class="n">source</span><span class="o">/</span><span class="n">php7</span><span class="o">.</span><span class="mi">3</span>     <span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">05</span>
+</pre></div>
+</div>
+<p>Click on a repository, and you’ll see a list of branches at the bottom:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Name</span>                                  <span class="n">Last</span> <span class="n">Modified</span>   <span class="n">Last</span> <span class="n">Commit</span>
+<span class="n">hello</span><span class="o">-</span><span class="n">fix</span><span class="o">-</span><span class="n">lp1234567</span><span class="o">-</span><span class="n">segfault</span><span class="o">-</span><span class="n">bionic</span>   <span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">10</span>      <span class="n">changelog</span>
+</pre></div>
+</div>
+<p>Click on the branch to get to its merge status will either provide a link to
+<code class="docutils literal notranslate"><span class="pre">Propose</span> <span class="pre">for</span> <span class="pre">merging</span></code>, or if it’s already been proposed will show the merge
+status, like so:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Approved</span> <span class="k">for</span> <span class="n">merging</span> <span class="n">into</span> <span class="n">ubuntu</span><span class="o">/+</span><span class="n">source</span><span class="o">/</span><span class="n">hello</span><span class="p">:</span><span class="n">ubuntu</span><span class="o">/</span><span class="n">bionic</span><span class="o">-</span><span class="n">devel</span>
+
+   <span class="n">John</span> <span class="n">Smith</span><span class="p">:</span> <span class="n">Approve</span> <span class="n">on</span> <span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">20</span>
+   <span class="n">Canonical</span> <span class="n">Server</span> <span class="n">Team</span><span class="p">:</span> <span class="n">Pending</span> <span class="n">requested</span> <span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">21</span>
+   <span class="n">Diff</span><span class="p">:</span> <span class="mi">171</span> <span class="n">lines</span> <span class="p">(</span><span class="o">+</span><span class="mi">149</span><span class="o">/-</span><span class="mi">0</span><span class="p">)</span>
+   <span class="mi">3</span> <span class="n">files</span> <span class="n">modified</span>
+</pre></div>
+</div>
+<p>Clicking the merge link (<code class="docutils literal notranslate"><span class="pre">Approved</span></code> in this case) brings you to the actual
+merge proposal.</p>
+</div>
+</div>
+<div class="section" id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="https://www.debian.org/doc/debian-policy/">https://www.debian.org/doc/debian-policy/</a></li>
+<li><a class="reference external" href="https://ubuntu.com/legal/terms-and-policies">https://ubuntu.com/legal/terms-and-policies</a></li>
+<li>apt install ubuntu-policy</li>
+</ul>
+</div>
+</div>
+
+
+    <footer>
+      Last updated Monday, 21 February 2022.
+    </footer>
+  </main>
+  <footer>
+        &#169; Copyright 2022 Ubuntu Contributors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 1.8.5.
+  </footer>
+  </body>
+</html>

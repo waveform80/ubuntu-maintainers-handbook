@@ -90,24 +90,35 @@ body > footer {
     body > aside { margin-left: 1.5rem; }
     body > main { margin-right: 1.5rem; }
 
-    body > header nav {
-        grid-template-columns: 1.5rem 112px 1fr 1.5rem;
-    }
-
-    body > footer {
-        padding: 2.5rem 1.5rem;
-    }
+    body > header nav { grid-template-columns: 1.5rem 112px 1fr 1.5rem; }
+    body > footer { padding: 2.5rem 1.5rem; }
 }
 
 @media screen and (max-width: 45rem) {
     body {
         grid-template-areas:
-            "header  header header"
-            "lmargin aside  rmargin"
-            "lmargin main   rmargin"
-            "footer  footer footer";
+            "header"
+            "aside"
+            "main"
+            "footer";
         grid-template-rows: auto auto 1fr auto;
-        grid-template-columns: 0 1fr 0;
+        grid-template-columns: 100%;
+    }
+
+    body > aside,
+    body > main { margin: 0 1.5rem; }
+
+    html body > aside nav { margin: 0; }
+    html body > aside nav :is(h1, h2, h3, h4, h5, h6),
+    html body > aside nav a,
+    html body > aside nav a:visited { padding: 0.25rem 0; }
+
+    html body > aside nav :is(h1, h2, h3, h4, h5, h6):not(:first-child),
+    html body > aside nav > ul > li + li.current,
+    html body > aside nav > ul > li.current + li {
+        background:
+            linear-gradient(#e5e5e5, #e5e5e5) top left 0 / 100% 1px no-repeat,
+            transparent;
     }
 }
 
@@ -235,4 +246,23 @@ body > main footer {
                 0 2px 2px -1px #00000026,
                 0 0 3px 0 #00000033;
     border-radius: 0.125rem;
+}
+
+body > main hr {
+    border: 0 none;
+    border-bottom: 1px solid #d9d9d9;
+}
+
+body > main table {
+    border: 0 none;
+    border-collapse: collapse;
+    width: 100%;
+}
+body > main table tbody tr { border-top: 1px solid #d9d9d9; }
+body > main table th { font-weight: 400; }
+body > main table th,
+body > main table td {
+    text-align: left;
+    border: 0 none;
+    padding: calc(0.5rem - 1px) 0.5rem 0.5rem 0.5rem;
 }

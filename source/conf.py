@@ -47,7 +47,7 @@ html_context = {
     'display_github': True,
     'github_user': 'waveform80',
     'github_repo': 'ubuntu-maintainers-handbook',
-    'github_version': 'rest',
+    'github_version': 'main',
     'conf_py_path': '/source/',
 }
 html_show_sourcelink = False
